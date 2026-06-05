@@ -1,0 +1,763 @@
+ParticipantID,Order,PoliticalLeaning,Condition,Alignment,Civility,ViolationRecognition,EnforcementSeverity,ContentType,Age,Gender,Ethnicity,Employment,Education
+iP0141600f8a004b14,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,20,Male,White/Caucasian,Work part time,"Some college credit, no degree"
+iP0141600f8a004b14,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,20,Male,White/Caucasian,Work part time,"Some college credit, no degree"
+iP0141600f8a004b14,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,1,1,Baseline,20,Male,White/Caucasian,Work part time,"Some college credit, no degree"
+iP042ac96f7706a889,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,39,Male,White/Caucasian,Student,Bachelor's degree
+iP042ac96f7706a889,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,39,Male,White/Caucasian,Student,Bachelor's degree
+iP042ac96f7706a889,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,39,Male,White/Caucasian,Student,Bachelor's degree
+iP05303acb955f5eed,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,24,Male,Asian,Student,Bachelor's degree
+iP05303acb955f5eed,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,24,Male,Asian,Student,Bachelor's degree
+iP05303acb955f5eed,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,1,Baseline,24,Male,Asian,Student,Bachelor's degree
+iP05dc70d51faf501f,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,67,Male,White/Caucasian,Work full time,Associate degree
+iP05dc70d51faf501f,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,67,Male,White/Caucasian,Work full time,Associate degree
+iP05dc70d51faf501f,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,67,Male,White/Caucasian,Work full time,Associate degree
+iP0647c9fcd925c047,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,66,Female,White/Caucasian,Work full time,Associate degree
+iP0647c9fcd925c047,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,66,Female,White/Caucasian,Work full time,Associate degree
+iP0647c9fcd925c047,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,1,Baseline,66,Female,White/Caucasian,Work full time,Associate degree
+iP066cfde9ef3242ca,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,56,Male,White/Caucasian,Work full time,Master's degree
+iP066cfde9ef3242ca,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,56,Male,White/Caucasian,Work full time,Master's degree
+iP066cfde9ef3242ca,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,56,Male,White/Caucasian,Work full time,Master's degree
+iP07969473e31168c8,Order6,Democrat (Left-aligned),MC 1,NA,Civil,1,2,Baseline,47,Female,Black/African American,Work full time,"Some college credit, no degree"
+iP07969473e31168c8,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,1,2,Baseline,47,Female,Black/African American,Work full time,"Some college credit, no degree"
+iP07969473e31168c8,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,47,Female,Black/African American,Work full time,"Some college credit, no degree"
+iP07a72d4b864089e1,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,74,Male,White/Caucasian,Retired,"Some college credit, no degree"
+iP07a72d4b864089e1,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,74,Male,White/Caucasian,Retired,"Some college credit, no degree"
+iP07a72d4b864089e1,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,0,0,Baseline,74,Male,White/Caucasian,Retired,"Some college credit, no degree"
+iP0b7c6c338bbeb60e,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,55,Female,White/Caucasian,Other,Associate degree
+iP0b7c6c338bbeb60e,Order4,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,55,Female,White/Caucasian,Other,Associate degree
+iP0b7c6c338bbeb60e,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,55,Female,White/Caucasian,Other,Associate degree
+iP0bf708af562ad890,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,22,Female,Asian,Work part time,Trade/technical/vocational training
+iP0bf708af562ad890,Order4,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,22,Female,Asian,Work part time,Trade/technical/vocational training
+iP0bf708af562ad890,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,22,Female,Asian,Work part time,Trade/technical/vocational training
+iP0d2d043d91b90425,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,28,Female,Black/African American,Work full time,Bachelor's degree
+iP0d2d043d91b90425,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,28,Female,Black/African American,Work full time,Bachelor's degree
+iP0d2d043d91b90425,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,28,Female,Black/African American,Work full time,Bachelor's degree
+iP0d90d2623115dc59,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,40,Female,Asian,Work full time,Associate degree
+iP0d90d2623115dc59,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,40,Female,Asian,Work full time,Associate degree
+iP0d90d2623115dc59,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,0,0,Baseline,40,Female,Asian,Work full time,Associate degree
+iP0dbb8af3721de7da,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,54,Male,White/Caucasian,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP0dbb8af3721de7da,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,54,Male,White/Caucasian,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP0dbb8af3721de7da,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,54,Male,White/Caucasian,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP0e09df3326a1e8d6,Order5,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,35,Male,Black/African American,Work full time,Master's degree
+iP0e09df3326a1e8d6,Order5,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,35,Male,Black/African American,Work full time,Master's degree
+iP0e09df3326a1e8d6,Order5,Republican (Right-aligned),MC 3,NA,Uncivil,0,0,Baseline,35,Male,Black/African American,Work full time,Master's degree
+iP0e2b9c299c9f6b49,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,57,Male,White/Caucasian,Work part time,"Some college credit, no degree"
+iP0e2b9c299c9f6b49,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,57,Male,White/Caucasian,Work part time,"Some college credit, no degree"
+iP0e2b9c299c9f6b49,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,57,Male,White/Caucasian,Work part time,"Some college credit, no degree"
+iP0f85a437f6e2e595,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,54,Female,Other race or ethnicity,Work full time,Associate degree
+iP0f85a437f6e2e595,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,1,2,Baseline,54,Female,Other race or ethnicity,Work full time,Associate degree
+iP0f85a437f6e2e595,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,54,Female,Other race or ethnicity,Work full time,Associate degree
+iP0fafb8854592bb6f,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,25,Male,Other race or ethnicity,Unemployed - looking for work,"Some college credit, no degree"
+iP0fafb8854592bb6f,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,25,Male,Other race or ethnicity,Unemployed - looking for work,"Some college credit, no degree"
+iP0fafb8854592bb6f,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,25,Male,Other race or ethnicity,Unemployed - looking for work,"Some college credit, no degree"
+iP126021b686bcac6e,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,56,Male,White/Caucasian,Work full time,Bachelor's degree
+iP126021b686bcac6e,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,56,Male,White/Caucasian,Work full time,Bachelor's degree
+iP126021b686bcac6e,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,56,Male,White/Caucasian,Work full time,Bachelor's degree
+iP14eaa1a0e99322ea,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,33,Female,White/Caucasian,Unemployed - not looking for work,Bachelor's degree
+iP14eaa1a0e99322ea,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,33,Female,White/Caucasian,Unemployed - not looking for work,Bachelor's degree
+iP14eaa1a0e99322ea,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,33,Female,White/Caucasian,Unemployed - not looking for work,Bachelor's degree
+iP15016655c6fc8550,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,30,Female,White/Caucasian,Other,Bachelor's degree
+iP15016655c6fc8550,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,30,Female,White/Caucasian,Other,Bachelor's degree
+iP15016655c6fc8550,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,30,Female,White/Caucasian,Other,Bachelor's degree
+iP15c66dbcd79dfe45,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,89,Male,White/Caucasian,Retired,Bachelor's degree
+iP15c66dbcd79dfe45,Order3,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,89,Male,White/Caucasian,Retired,Bachelor's degree
+iP15c66dbcd79dfe45,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,89,Male,White/Caucasian,Retired,Bachelor's degree
+iP1673ba1066f02445,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,45,Male,Other race or ethnicity,Work part time,Master's degree
+iP1673ba1066f02445,Order4,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,45,Male,Other race or ethnicity,Work part time,Master's degree
+iP1673ba1066f02445,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,45,Male,Other race or ethnicity,Work part time,Master's degree
+iP18a809fe84834d45,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,47,Female,Black/African American,Work full time,"Some college credit, no degree"
+iP18a809fe84834d45,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,47,Female,Black/African American,Work full time,"Some college credit, no degree"
+iP18a809fe84834d45,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,0,0,Baseline,47,Female,Black/African American,Work full time,"Some college credit, no degree"
+iP1950164fe549d745,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,35,Male,White/Caucasian,Work full time,Bachelor's degree
+iP1950164fe549d745,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,35,Male,White/Caucasian,Work full time,Bachelor's degree
+iP1950164fe549d745,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,0,0,Baseline,35,Male,White/Caucasian,Work full time,Bachelor's degree
+iP19d7306adf74ad1d,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,53,Male,White/Caucasian,Work full time,Bachelor's degree
+iP19d7306adf74ad1d,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,53,Male,White/Caucasian,Work full time,Bachelor's degree
+iP19d7306adf74ad1d,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,53,Male,White/Caucasian,Work full time,Bachelor's degree
+iP1aa7cc479710d9be,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,61,Female,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iP1aa7cc479710d9be,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,61,Female,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iP1aa7cc479710d9be,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,61,Female,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iP1b353dc3f0d4fd33,Order2,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,23,Male,Other race or ethnicity,Work full time,Bachelor's degree
+iP1b353dc3f0d4fd33,Order2,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,23,Male,Other race or ethnicity,Work full time,Bachelor's degree
+iP1b353dc3f0d4fd33,Order2,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,23,Male,Other race or ethnicity,Work full time,Bachelor's degree
+iP1eaff6c8fe769bc2,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,38,Male,White/Caucasian,Work full time,Bachelor's degree
+iP1eaff6c8fe769bc2,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,38,Male,White/Caucasian,Work full time,Bachelor's degree
+iP1eaff6c8fe769bc2,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,0,0,Baseline,38,Male,White/Caucasian,Work full time,Bachelor's degree
+iP209b8727c71b19c4,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,20,Female,White/Caucasian,Work part time,Less than high school graduate
+iP209b8727c71b19c4,Order3,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,20,Female,White/Caucasian,Work part time,Less than high school graduate
+iP209b8727c71b19c4,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,20,Female,White/Caucasian,Work part time,Less than high school graduate
+iP227c0b54ba4a3c43,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,49,Female,White/Caucasian,Work part time,"Some college credit, no degree"
+iP227c0b54ba4a3c43,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,49,Female,White/Caucasian,Work part time,"Some college credit, no degree"
+iP227c0b54ba4a3c43,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,49,Female,White/Caucasian,Work part time,"Some college credit, no degree"
+iP22c83f5b5c33d3ee,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,41,Female,Black/African American,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP22c83f5b5c33d3ee,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,41,Female,Black/African American,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP22c83f5b5c33d3ee,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,41,Female,Black/African American,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP231e8e77a2ee39ce,Order2,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,69,Female,White/Caucasian,Work part time,Bachelor's degree
+iP231e8e77a2ee39ce,Order2,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,69,Female,White/Caucasian,Work part time,Bachelor's degree
+iP231e8e77a2ee39ce,Order2,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,69,Female,White/Caucasian,Work part time,Bachelor's degree
+iP23c207a95eea5ead,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,28,Female,White/Caucasian,Homemaker,"High school graduate, diploma or the equivalent (for example: GED)"
+iP23c207a95eea5ead,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,28,Female,White/Caucasian,Homemaker,"High school graduate, diploma or the equivalent (for example: GED)"
+iP23c207a95eea5ead,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,28,Female,White/Caucasian,Homemaker,"High school graduate, diploma or the equivalent (for example: GED)"
+iP23d23cd7466f0a8a,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,50,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP23d23cd7466f0a8a,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,50,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP23d23cd7466f0a8a,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,50,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP24cec73bc69809db,Order5,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,30,Male,Other race or ethnicity,Work full time,Bachelor's degree
+iP24cec73bc69809db,Order5,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,30,Male,Other race or ethnicity,Work full time,Bachelor's degree
+iP24cec73bc69809db,Order5,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,30,Male,Other race or ethnicity,Work full time,Bachelor's degree
+iP25ca70e220487b9d,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,42,Male,White/Caucasian,Work full time,Master's degree
+iP25ca70e220487b9d,Order3,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,42,Male,White/Caucasian,Work full time,Master's degree
+iP25ca70e220487b9d,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,42,Male,White/Caucasian,Work full time,Master's degree
+iP28698e03289f2b42,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,70,Male,White/Caucasian,Retired,Less than high school graduate
+iP28698e03289f2b42,Order4,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,70,Male,White/Caucasian,Retired,Less than high school graduate
+iP28698e03289f2b42,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,70,Male,White/Caucasian,Retired,Less than high school graduate
+iP2a5557f6c45d3c4e,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,53,Male,White/Caucasian,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP2a5557f6c45d3c4e,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,53,Male,White/Caucasian,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP2a5557f6c45d3c4e,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,0,0,Baseline,53,Male,White/Caucasian,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP2a5f7f5f200ad498,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,59,Male,White/Caucasian,Work full time,"Some college credit, no degree"
+iP2a5f7f5f200ad498,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,59,Male,White/Caucasian,Work full time,"Some college credit, no degree"
+iP2a5f7f5f200ad498,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,59,Male,White/Caucasian,Work full time,"Some college credit, no degree"
+iP2bfb65be0f291ffd,Order6,Republican (Right-aligned),MC 1,NA,Civil,1,1,Baseline,81,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP2bfb65be0f291ffd,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,81,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP2bfb65be0f291ffd,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,81,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP2c6899fafe436460,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,31,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP2c6899fafe436460,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,31,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP2c6899fafe436460,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,1,Baseline,31,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP2cd292a1ecf6003c,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,20,Female,White/Caucasian,Student,"High school graduate, diploma or the equivalent (for example: GED)"
+iP2cd292a1ecf6003c,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,20,Female,White/Caucasian,Student,"High school graduate, diploma or the equivalent (for example: GED)"
+iP2cd292a1ecf6003c,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,20,Female,White/Caucasian,Student,"High school graduate, diploma or the equivalent (for example: GED)"
+iP2da57c6f463f0b74,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,39,Female,White/Caucasian,Work full time,Bachelor's degree
+iP2da57c6f463f0b74,Order1,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,39,Female,White/Caucasian,Work full time,Bachelor's degree
+iP2da57c6f463f0b74,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,39,Female,White/Caucasian,Work full time,Bachelor's degree
+iP2e18e43366e0e316,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,50,Male,White/Caucasian,Student,Trade/technical/vocational training
+iP2e18e43366e0e316,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,50,Male,White/Caucasian,Student,Trade/technical/vocational training
+iP2e18e43366e0e316,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,50,Male,White/Caucasian,Student,Trade/technical/vocational training
+iP2e36d295439c5968,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,35,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iP2e36d295439c5968,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,35,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iP2e36d295439c5968,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,35,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iP30ad606a15d626b0,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,21,Female,White/Caucasian,Student,"Some college credit, no degree"
+iP30ad606a15d626b0,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,1,3,Baseline,21,Female,White/Caucasian,Student,"Some college credit, no degree"
+iP30ad606a15d626b0,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,21,Female,White/Caucasian,Student,"Some college credit, no degree"
+iP330f745213486de9,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,52,Male,White/Caucasian,Unemployed - looking for work,Bachelor's degree
+iP330f745213486de9,Order4,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,52,Male,White/Caucasian,Unemployed - looking for work,Bachelor's degree
+iP330f745213486de9,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,0,0,Baseline,52,Male,White/Caucasian,Unemployed - looking for work,Bachelor's degree
+iP342d5c63fac14440,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,46,Female,White/Caucasian,Work part time,Trade/technical/vocational training
+iP342d5c63fac14440,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,46,Female,White/Caucasian,Work part time,Trade/technical/vocational training
+iP342d5c63fac14440,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,46,Female,White/Caucasian,Work part time,Trade/technical/vocational training
+iP34c3c9603df79c62,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,19,Female,American Indian or Alaskan native,Student,"High school graduate, diploma or the equivalent (for example: GED)"
+iP34c3c9603df79c62,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,19,Female,American Indian or Alaskan native,Student,"High school graduate, diploma or the equivalent (for example: GED)"
+iP34c3c9603df79c62,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,19,Female,American Indian or Alaskan native,Student,"High school graduate, diploma or the equivalent (for example: GED)"
+iP355732c17e09a5f3,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,65,Female,White/Caucasian,Work part time,Master's degree
+iP355732c17e09a5f3,Order4,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,65,Female,White/Caucasian,Work part time,Master's degree
+iP355732c17e09a5f3,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,65,Female,White/Caucasian,Work part time,Master's degree
+iP37118f803964f368,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,25,Male,Black/African American,Work full time,Associate degree
+iP37118f803964f368,Order3,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,25,Male,Black/African American,Work full time,Associate degree
+iP37118f803964f368,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,25,Male,Black/African American,Work full time,Associate degree
+iP394153defad125a5,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,43,Female,White/Caucasian,Work full time,Associate degree
+iP394153defad125a5,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,43,Female,White/Caucasian,Work full time,Associate degree
+iP394153defad125a5,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,43,Female,White/Caucasian,Work full time,Associate degree
+iP3a8691bd9a5d25d7,Order2,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,23,Male,White/Caucasian,Student,Associate degree
+iP3a8691bd9a5d25d7,Order2,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,23,Male,White/Caucasian,Student,Associate degree
+iP3a8691bd9a5d25d7,Order2,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,23,Male,White/Caucasian,Student,Associate degree
+iP3b78d266c6c6076c,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,37,Female,White/Caucasian,Unemployed - looking for work,Bachelor's degree
+iP3b78d266c6c6076c,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,37,Female,White/Caucasian,Unemployed - looking for work,Bachelor's degree
+iP3b78d266c6c6076c,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,37,Female,White/Caucasian,Unemployed - looking for work,Bachelor's degree
+iP3b8aa1f076c42e46,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,29,Female,White/Caucasian,Unemployed - looking for work,Bachelor's degree
+iP3b8aa1f076c42e46,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,29,Female,White/Caucasian,Unemployed - looking for work,Bachelor's degree
+iP3b8aa1f076c42e46,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,29,Female,White/Caucasian,Unemployed - looking for work,Bachelor's degree
+iP3b92f70b4f7cc6f5,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,59,Male,White/Caucasian,Work full time,Bachelor's degree
+iP3b92f70b4f7cc6f5,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,59,Male,White/Caucasian,Work full time,Bachelor's degree
+iP3b92f70b4f7cc6f5,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,59,Male,White/Caucasian,Work full time,Bachelor's degree
+iP3c096db31b66e650,Order1,Republican (Right-aligned),MC 1,NA,Civil,1,2,Baseline,53,Male,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP3c096db31b66e650,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,53,Male,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP3c096db31b66e650,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,53,Male,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP3c128982313c1e54,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,61,Male,Black/African American,Work part time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP3c128982313c1e54,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,61,Male,Black/African American,Work part time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP3c128982313c1e54,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,61,Male,Black/African American,Work part time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP3cdb8c54e0c1e048,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,62,Male,White/Caucasian,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP3cdb8c54e0c1e048,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,62,Male,White/Caucasian,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP3cdb8c54e0c1e048,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,62,Male,White/Caucasian,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP3d5345227b3bc4f0,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,63,Female,White/Caucasian,Work full time,Associate degree
+iP3d5345227b3bc4f0,Order3,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,63,Female,White/Caucasian,Work full time,Associate degree
+iP3d5345227b3bc4f0,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,63,Female,White/Caucasian,Work full time,Associate degree
+iP3e33e2a0cc3304b8,Order2,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,34,Male,White/Caucasian,Work full time,Bachelor's degree
+iP3e33e2a0cc3304b8,Order2,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,34,Male,White/Caucasian,Work full time,Bachelor's degree
+iP3e33e2a0cc3304b8,Order2,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,34,Male,White/Caucasian,Work full time,Bachelor's degree
+iP3ea6b93cf50ebfbd,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,75,Female,White/Caucasian,Retired,Bachelor's degree
+iP3ea6b93cf50ebfbd,Order3,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,75,Female,White/Caucasian,Retired,Bachelor's degree
+iP3ea6b93cf50ebfbd,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,75,Female,White/Caucasian,Retired,Bachelor's degree
+iP3f75f8ff1cb3c2bc,Order2,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,56,Female,Black/African American,Work full time,Trade/technical/vocational training
+iP3f75f8ff1cb3c2bc,Order2,Democrat (Left-aligned),MC 2,NA,Borderline,1,3,Baseline,56,Female,Black/African American,Work full time,Trade/technical/vocational training
+iP3f75f8ff1cb3c2bc,Order2,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,56,Female,Black/African American,Work full time,Trade/technical/vocational training
+iP3ff12c618fa5a2bc,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,25,Male,Black/African American,Student,"Some college credit, no degree"
+iP3ff12c618fa5a2bc,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,25,Male,Black/African American,Student,"Some college credit, no degree"
+iP3ff12c618fa5a2bc,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,25,Male,Black/African American,Student,"Some college credit, no degree"
+iP4120d0d8cc1ddad7,Order5,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,31,Female,White/Caucasian,Homemaker,"Some college credit, no degree"
+iP4120d0d8cc1ddad7,Order5,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,31,Female,White/Caucasian,Homemaker,"Some college credit, no degree"
+iP4120d0d8cc1ddad7,Order5,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,31,Female,White/Caucasian,Homemaker,"Some college credit, no degree"
+iP43e5f85aab7a902f,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,47,Male,White/Caucasian,Work full time,Bachelor's degree
+iP43e5f85aab7a902f,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,47,Male,White/Caucasian,Work full time,Bachelor's degree
+iP43e5f85aab7a902f,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,1,1,Baseline,47,Male,White/Caucasian,Work full time,Bachelor's degree
+iP443f4bafd3c5b9fe,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,37,Male,White/Caucasian,Student,"High school graduate, diploma or the equivalent (for example: GED)"
+iP443f4bafd3c5b9fe,Order4,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,37,Male,White/Caucasian,Student,"High school graduate, diploma or the equivalent (for example: GED)"
+iP443f4bafd3c5b9fe,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,37,Male,White/Caucasian,Student,"High school graduate, diploma or the equivalent (for example: GED)"
+iP449050d224f405db,Order5,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,63,Male,White/Caucasian,Work full time,Bachelor's degree
+iP449050d224f405db,Order5,Republican (Right-aligned),MC 2,NA,Borderline,1,2,Baseline,63,Male,White/Caucasian,Work full time,Bachelor's degree
+iP449050d224f405db,Order5,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,63,Male,White/Caucasian,Work full time,Bachelor's degree
+iP44db71902d504ac3,Order2,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,28,Male,White/Caucasian,Homemaker,"High school graduate, diploma or the equivalent (for example: GED)"
+iP44db71902d504ac3,Order2,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,28,Male,White/Caucasian,Homemaker,"High school graduate, diploma or the equivalent (for example: GED)"
+iP44db71902d504ac3,Order2,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,28,Male,White/Caucasian,Homemaker,"High school graduate, diploma or the equivalent (for example: GED)"
+iP45eb3da8250554f4,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,58,Female,White/Caucasian,Work full time,Associate degree
+iP45eb3da8250554f4,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,58,Female,White/Caucasian,Work full time,Associate degree
+iP45eb3da8250554f4,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,58,Female,White/Caucasian,Work full time,Associate degree
+iP469fc1858ecec418,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,62,Female,White/Caucasian,Work part time,Master's degree
+iP469fc1858ecec418,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,62,Female,White/Caucasian,Work part time,Master's degree
+iP469fc1858ecec418,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,62,Female,White/Caucasian,Work part time,Master's degree
+iP4982d06142a83ca9,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,67,Male,White/Caucasian,Retired,Associate degree
+iP4982d06142a83ca9,Order3,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,67,Male,White/Caucasian,Retired,Associate degree
+iP4982d06142a83ca9,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,67,Male,White/Caucasian,Retired,Associate degree
+iP49f21b20a074eca1,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,66,Male,Black/African American,Retired,Trade/technical/vocational training
+iP49f21b20a074eca1,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,66,Male,Black/African American,Retired,Trade/technical/vocational training
+iP49f21b20a074eca1,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,66,Male,Black/African American,Retired,Trade/technical/vocational training
+iP4ce842d9c39f533d,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,60,Male,White/Caucasian,Work full time,Bachelor's degree
+iP4ce842d9c39f533d,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,60,Male,White/Caucasian,Work full time,Bachelor's degree
+iP4ce842d9c39f533d,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,60,Male,White/Caucasian,Work full time,Bachelor's degree
+iP4cfecad8fa71e0b5,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,25,Female,Black/African American,Work full time,Bachelor's degree
+iP4cfecad8fa71e0b5,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,25,Female,Black/African American,Work full time,Bachelor's degree
+iP4cfecad8fa71e0b5,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,25,Female,Black/African American,Work full time,Bachelor's degree
+iP4e5449788b793fb0,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,46,Female,Other race or ethnicity,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP4e5449788b793fb0,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,46,Female,Other race or ethnicity,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP4e5449788b793fb0,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,46,Female,Other race or ethnicity,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP4f8d262d226b7ca7,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,47,Male,White/Caucasian,Work full time,Master's degree
+iP4f8d262d226b7ca7,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,47,Male,White/Caucasian,Work full time,Master's degree
+iP4f8d262d226b7ca7,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,47,Male,White/Caucasian,Work full time,Master's degree
+iP5038529e568cce99,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,45,Male,White/Caucasian,Homemaker,"Some college credit, no degree"
+iP5038529e568cce99,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,45,Male,White/Caucasian,Homemaker,"Some college credit, no degree"
+iP5038529e568cce99,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,45,Male,White/Caucasian,Homemaker,"Some college credit, no degree"
+iP5103bd794595cb19,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,50,Female,White/Caucasian,Work part time,Bachelor's degree
+iP5103bd794595cb19,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,50,Female,White/Caucasian,Work part time,Bachelor's degree
+iP5103bd794595cb19,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,1,Baseline,50,Female,White/Caucasian,Work part time,Bachelor's degree
+iP511c3b171a872a4e,Order2,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,21,Male,Other race or ethnicity,Student,"Some college credit, no degree"
+iP511c3b171a872a4e,Order2,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,21,Male,Other race or ethnicity,Student,"Some college credit, no degree"
+iP511c3b171a872a4e,Order2,Republican (Right-aligned),MC 3,NA,Uncivil,0,0,Baseline,21,Male,Other race or ethnicity,Student,"Some college credit, no degree"
+iP519ab5d3c289f919,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,57,Male,Black/African American,Retired,Bachelor's degree
+iP519ab5d3c289f919,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,57,Male,Black/African American,Retired,Bachelor's degree
+iP519ab5d3c289f919,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,1,Baseline,57,Male,Black/African American,Retired,Bachelor's degree
+iP51aa72150edf6be3,Order2,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,56,Male,White/Caucasian,Other,"Some college credit, no degree"
+iP51aa72150edf6be3,Order2,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,56,Male,White/Caucasian,Other,"Some college credit, no degree"
+iP51aa72150edf6be3,Order2,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,56,Male,White/Caucasian,Other,"Some college credit, no degree"
+iP524084e761b382f1,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,40,Male,White/Caucasian,Work full time,Master's degree
+iP524084e761b382f1,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,40,Male,White/Caucasian,Work full time,Master's degree
+iP524084e761b382f1,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,0,0,Baseline,40,Male,White/Caucasian,Work full time,Master's degree
+iP5461ca2b0df2625a,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,23,Male,Black/African American,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP5461ca2b0df2625a,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,23,Male,Black/African American,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP5461ca2b0df2625a,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,23,Male,Black/African American,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP5475a3cbd450931c,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,71,Female,White/Caucasian,Work part time,Master's degree
+iP5475a3cbd450931c,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,71,Female,White/Caucasian,Work part time,Master's degree
+iP5475a3cbd450931c,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,71,Female,White/Caucasian,Work part time,Master's degree
+iP552c313136ed3186,Order2,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,34,Female,White/Caucasian,Work full time,Bachelor's degree
+iP552c313136ed3186,Order2,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,34,Female,White/Caucasian,Work full time,Bachelor's degree
+iP552c313136ed3186,Order2,Democrat (Left-aligned),MC 3,NA,Uncivil,1,1,Baseline,34,Female,White/Caucasian,Work full time,Bachelor's degree
+iP565b43f7a4ea2a37,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,33,Female,White/Caucasian,Unemployed - looking for work,Less than high school graduate
+iP565b43f7a4ea2a37,Order3,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,33,Female,White/Caucasian,Unemployed - looking for work,Less than high school graduate
+iP565b43f7a4ea2a37,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,33,Female,White/Caucasian,Unemployed - looking for work,Less than high school graduate
+iP575a36cba5225d4a,Order2,Democrat (Left-aligned),MC 1,NA,Civil,1,1,Baseline,23,Male,Black/African American,Work full time,Trade/technical/vocational training
+iP575a36cba5225d4a,Order2,Democrat (Left-aligned),MC 2,NA,Borderline,1,3,Baseline,23,Male,Black/African American,Work full time,Trade/technical/vocational training
+iP575a36cba5225d4a,Order2,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,23,Male,Black/African American,Work full time,Trade/technical/vocational training
+iP57635b6e287cd4ba,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,31,Male,Other race or ethnicity,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP57635b6e287cd4ba,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,31,Male,Other race or ethnicity,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP57635b6e287cd4ba,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,31,Male,Other race or ethnicity,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP57f00ae89d5c5858,Order1,Republican (Right-aligned),MC 1,NA,Civil,1,1,Baseline,46,Male,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP57f00ae89d5c5858,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,46,Male,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP57f00ae89d5c5858,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,46,Male,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP58c615a2607736db,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,45,Male,White/Caucasian,Work full time,Master's degree
+iP58c615a2607736db,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,45,Male,White/Caucasian,Work full time,Master's degree
+iP58c615a2607736db,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,45,Male,White/Caucasian,Work full time,Master's degree
+iP5928f5b7d42631dd,Order2,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,62,Female,White/Caucasian,Work part time,Bachelor's degree
+iP5928f5b7d42631dd,Order2,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,62,Female,White/Caucasian,Work part time,Bachelor's degree
+iP5928f5b7d42631dd,Order2,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,62,Female,White/Caucasian,Work part time,Bachelor's degree
+iP59ce8381cbe0bca8,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,69,Male,White/Caucasian,Retired,Bachelor's degree
+iP59ce8381cbe0bca8,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,69,Male,White/Caucasian,Retired,Bachelor's degree
+iP59ce8381cbe0bca8,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,1,1,Baseline,69,Male,White/Caucasian,Retired,Bachelor's degree
+iP59fcd875cacada3a,Order5,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,78,Female,White/Caucasian,Retired,Associate degree
+iP59fcd875cacada3a,Order5,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,78,Female,White/Caucasian,Retired,Associate degree
+iP59fcd875cacada3a,Order5,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,78,Female,White/Caucasian,Retired,Associate degree
+iP5a648249b2e3c9c9,Order1,Republican (Right-aligned),MC 1,NA,Civil,1,1,Baseline,68,Male,White/Caucasian,Unemployed - looking for work,Associate degree
+iP5a648249b2e3c9c9,Order1,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,68,Male,White/Caucasian,Unemployed - looking for work,Associate degree
+iP5a648249b2e3c9c9,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,68,Male,White/Caucasian,Unemployed - looking for work,Associate degree
+iP5afa67287a769e24,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,28,Female,Black/African American,Unemployed - looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP5afa67287a769e24,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,28,Female,Black/African American,Unemployed - looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP5afa67287a769e24,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,1,Baseline,28,Female,Black/African American,Unemployed - looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP5bcc8fceefc9e9da,Order2,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,58,Male,White/Caucasian,Work part time,"Some college credit, no degree"
+iP5bcc8fceefc9e9da,Order2,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,58,Male,White/Caucasian,Work part time,"Some college credit, no degree"
+iP5bcc8fceefc9e9da,Order2,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,58,Male,White/Caucasian,Work part time,"Some college credit, no degree"
+iP5ce710f1c3a0ca06,Order2,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,75,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP5ce710f1c3a0ca06,Order2,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,75,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP5ce710f1c3a0ca06,Order2,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,75,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP5fae2cdb8882f4b5,Order2,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,55,Male,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iP5fae2cdb8882f4b5,Order2,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,55,Male,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iP5fae2cdb8882f4b5,Order2,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,55,Male,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iP5fb688a298b8e1d5,Order6,Republican (Right-aligned),MC 1,NA,Civil,1,2,Baseline,70,Female,White/Caucasian,Work part time,Bachelor's degree
+iP5fb688a298b8e1d5,Order6,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,70,Female,White/Caucasian,Work part time,Bachelor's degree
+iP5fb688a298b8e1d5,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,70,Female,White/Caucasian,Work part time,Bachelor's degree
+iP602d84d9b0035344,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,48,Male,White/Caucasian,Work part time,Bachelor's degree
+iP602d84d9b0035344,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,48,Male,White/Caucasian,Work part time,Bachelor's degree
+iP602d84d9b0035344,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,48,Male,White/Caucasian,Work part time,Bachelor's degree
+iP6191e7fdc60c595c,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,68,Female,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iP6191e7fdc60c595c,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,68,Female,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iP6191e7fdc60c595c,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,68,Female,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iP629f6e6c36c4a643,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,47,Female,White/Caucasian,Work part time,Master's degree
+iP629f6e6c36c4a643,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,47,Female,White/Caucasian,Work part time,Master's degree
+iP629f6e6c36c4a643,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,47,Female,White/Caucasian,Work part time,Master's degree
+iP6382ece89901792c,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,29,Male,Black/African American,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP6382ece89901792c,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,29,Male,Black/African American,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP6382ece89901792c,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,0,0,Baseline,29,Male,Black/African American,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP63b513362d46506a,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,27,Female,White/Caucasian,Work part time,"Some college credit, no degree"
+iP63b513362d46506a,Order4,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,27,Female,White/Caucasian,Work part time,"Some college credit, no degree"
+iP63b513362d46506a,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,27,Female,White/Caucasian,Work part time,"Some college credit, no degree"
+iP64e41ead68220f5b,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,60,Female,White/Caucasian,Work part time,Master's degree
+iP64e41ead68220f5b,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,60,Female,White/Caucasian,Work part time,Master's degree
+iP64e41ead68220f5b,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,60,Female,White/Caucasian,Work part time,Master's degree
+iP654e2e3c35a2d5cb,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,41,Male,White/Caucasian,Work full time,Master's degree
+iP654e2e3c35a2d5cb,Order6,Republican (Right-aligned),MC 2,NA,Borderline,1,4,Baseline,41,Male,White/Caucasian,Work full time,Master's degree
+iP654e2e3c35a2d5cb,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,41,Male,White/Caucasian,Work full time,Master's degree
+iP67ca4e6e3119db95,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,71,Male,Other race or ethnicity,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iP67ca4e6e3119db95,Order4,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,71,Male,Other race or ethnicity,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iP67ca4e6e3119db95,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,71,Male,Other race or ethnicity,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iP68b93964ad762cea,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,33,Female,White/Caucasian,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP68b93964ad762cea,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,33,Female,White/Caucasian,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP68b93964ad762cea,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,33,Female,White/Caucasian,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP6916d7a0aab17787,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,55,Female,Black/African American,Work full time,Master's degree
+iP6916d7a0aab17787,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,55,Female,Black/African American,Work full time,Master's degree
+iP6916d7a0aab17787,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,55,Female,Black/African American,Work full time,Master's degree
+iP6a266dc31f317259,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,74,Female,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iP6a266dc31f317259,Order3,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,74,Female,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iP6a266dc31f317259,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,74,Female,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iP6aa9f2772fee0cbd,Order1,Democrat (Left-aligned),MC 1,NA,Civil,1,1,Baseline,41,Female,Black/African American,Work full time,Bachelor's degree
+iP6aa9f2772fee0cbd,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,41,Female,Black/African American,Work full time,Bachelor's degree
+iP6aa9f2772fee0cbd,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,41,Female,Black/African American,Work full time,Bachelor's degree
+iP6c056e2c117c9f2b,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,56,Female,Black/African American,Other,"Some college credit, no degree"
+iP6c056e2c117c9f2b,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,56,Female,Black/African American,Other,"Some college credit, no degree"
+iP6c056e2c117c9f2b,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,56,Female,Black/African American,Other,"Some college credit, no degree"
+iP6d9507dcb8b2ec48,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,45,Female,Black/African American,Work full time,"Some college credit, no degree"
+iP6d9507dcb8b2ec48,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,45,Female,Black/African American,Work full time,"Some college credit, no degree"
+iP6d9507dcb8b2ec48,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,45,Female,Black/African American,Work full time,"Some college credit, no degree"
+iP6ee5e8ce41fcc4f2,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,31,Female,White/Caucasian,Work full time,Master's degree
+iP6ee5e8ce41fcc4f2,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,31,Female,White/Caucasian,Work full time,Master's degree
+iP6ee5e8ce41fcc4f2,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,31,Female,White/Caucasian,Work full time,Master's degree
+iP71b6684ab84ab32e,Order5,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,71,Male,White/Caucasian,Retired,Associate degree
+iP71b6684ab84ab32e,Order5,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,71,Male,White/Caucasian,Retired,Associate degree
+iP71b6684ab84ab32e,Order5,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,71,Male,White/Caucasian,Retired,Associate degree
+iP73f4a518d0688af3,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,39,Male,White/Caucasian,Work full time,Bachelor's degree
+iP73f4a518d0688af3,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,39,Male,White/Caucasian,Work full time,Bachelor's degree
+iP73f4a518d0688af3,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,39,Male,White/Caucasian,Work full time,Bachelor's degree
+iP750faa3541c89758,Order2,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,61,Male,White/Caucasian,Work part time,Bachelor's degree
+iP750faa3541c89758,Order2,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,61,Male,White/Caucasian,Work part time,Bachelor's degree
+iP750faa3541c89758,Order2,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,61,Male,White/Caucasian,Work part time,Bachelor's degree
+iP75424bea30612bc3,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,73,Male,White/Caucasian,Retired,Associate degree
+iP75424bea30612bc3,Order3,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,73,Male,White/Caucasian,Retired,Associate degree
+iP75424bea30612bc3,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,73,Male,White/Caucasian,Retired,Associate degree
+iP7562357eca052e9e,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,45,Female,White/Caucasian,Work part time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP7562357eca052e9e,Order3,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,45,Female,White/Caucasian,Work part time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP7562357eca052e9e,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,45,Female,White/Caucasian,Work part time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP761976ebb9c93def,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,47,Female,White/Caucasian,Work full time,Associate degree
+iP761976ebb9c93def,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,47,Female,White/Caucasian,Work full time,Associate degree
+iP761976ebb9c93def,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,47,Female,White/Caucasian,Work full time,Associate degree
+iP77e24e5c41919010,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,69,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP77e24e5c41919010,Order3,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,69,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP77e24e5c41919010,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,69,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP780d8a702092d0bd,Order2,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,57,Male,White/Caucasian,Other,"High school graduate, diploma or the equivalent (for example: GED)"
+iP780d8a702092d0bd,Order2,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,57,Male,White/Caucasian,Other,"High school graduate, diploma or the equivalent (for example: GED)"
+iP780d8a702092d0bd,Order2,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,57,Male,White/Caucasian,Other,"High school graduate, diploma or the equivalent (for example: GED)"
+iP7874256f2caf2ee3,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,63,Male,White/Caucasian,Work full time,Bachelor's degree
+iP7874256f2caf2ee3,Order3,Republican (Right-aligned),MC 2,NA,Borderline,1,2,Baseline,63,Male,White/Caucasian,Work full time,Bachelor's degree
+iP7874256f2caf2ee3,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,63,Male,White/Caucasian,Work full time,Bachelor's degree
+iP7975ef2bd207ca48,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,21,Female,White/Caucasian,Student,"Some college credit, no degree"
+iP7975ef2bd207ca48,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,21,Female,White/Caucasian,Student,"Some college credit, no degree"
+iP7975ef2bd207ca48,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,1,Baseline,21,Female,White/Caucasian,Student,"Some college credit, no degree"
+iP7b158a94f9b9fb89,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,42,Male,White/Caucasian,Other,Associate degree
+iP7b158a94f9b9fb89,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,42,Male,White/Caucasian,Other,Associate degree
+iP7b158a94f9b9fb89,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,42,Male,White/Caucasian,Other,Associate degree
+iP7bbe0f20ff8959d1,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,45,Female,Asian,Homemaker,Bachelor's degree
+iP7bbe0f20ff8959d1,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,45,Female,Asian,Homemaker,Bachelor's degree
+iP7bbe0f20ff8959d1,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,45,Female,Asian,Homemaker,Bachelor's degree
+iP7dd6431523088a85,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,26,Female,Black/African American,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP7dd6431523088a85,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,26,Female,Black/African American,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP7dd6431523088a85,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,0,0,Baseline,26,Female,Black/African American,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP7e3963dda1fc337a,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,26,Female,White/Caucasian,Unemployed - looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP7e3963dda1fc337a,Order4,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,26,Female,White/Caucasian,Unemployed - looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP7e3963dda1fc337a,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,26,Female,White/Caucasian,Unemployed - looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iP7efc4645726ed764,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,58,Male,White/Caucasian,Unemployed - looking for work,Trade/technical/vocational training
+iP7efc4645726ed764,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,1,2,Baseline,58,Male,White/Caucasian,Unemployed - looking for work,Trade/technical/vocational training
+iP7efc4645726ed764,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,58,Male,White/Caucasian,Unemployed - looking for work,Trade/technical/vocational training
+iP818fba73cfed587e,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,50,Male,Black/African American,Work full time,Associate degree
+iP818fba73cfed587e,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,50,Male,Black/African American,Work full time,Associate degree
+iP818fba73cfed587e,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,50,Male,Black/African American,Work full time,Associate degree
+iP819e6f6072197192,Order6,Democrat (Left-aligned),MC 1,NA,Civil,1,1,Baseline,31,Female,Black/African American,Student,Associate degree
+iP819e6f6072197192,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,1,2,Baseline,31,Female,Black/African American,Student,Associate degree
+iP819e6f6072197192,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,1,Baseline,31,Female,Black/African American,Student,Associate degree
+iP81d329fd9fbabfe3,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,59,Male,White/Caucasian,Work full time,Bachelor's degree
+iP81d329fd9fbabfe3,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,59,Male,White/Caucasian,Work full time,Bachelor's degree
+iP81d329fd9fbabfe3,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,1,Baseline,59,Male,White/Caucasian,Work full time,Bachelor's degree
+iP823d39891349268e,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,35,Male,American Indian or Alaskan native,Work full time,Bachelor's degree
+iP823d39891349268e,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,35,Male,American Indian or Alaskan native,Work full time,Bachelor's degree
+iP823d39891349268e,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,35,Male,American Indian or Alaskan native,Work full time,Bachelor's degree
+iP827bc4b604e7d659,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,40,Female,White/Caucasian,Work full time,Bachelor's degree
+iP827bc4b604e7d659,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,40,Female,White/Caucasian,Work full time,Bachelor's degree
+iP827bc4b604e7d659,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,40,Female,White/Caucasian,Work full time,Bachelor's degree
+iP830458d901d1e107,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,51,Female,White/Caucasian,Homemaker,Bachelor's degree
+iP830458d901d1e107,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,51,Female,White/Caucasian,Homemaker,Bachelor's degree
+iP830458d901d1e107,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,51,Female,White/Caucasian,Homemaker,Bachelor's degree
+iP837d35f5e647e190,Order2,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,28,Female,Asian,Work full time,Master's degree
+iP837d35f5e647e190,Order2,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,28,Female,Asian,Work full time,Master's degree
+iP837d35f5e647e190,Order2,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,28,Female,Asian,Work full time,Master's degree
+iP85000d5879f128db,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,58,Male,White/Caucasian,Work full time,Associate degree
+iP85000d5879f128db,Order3,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,58,Male,White/Caucasian,Work full time,Associate degree
+iP85000d5879f128db,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,58,Male,White/Caucasian,Work full time,Associate degree
+iP874d6501770c6d75,Order4,Republican (Right-aligned),MC 1,NA,Civil,1,1,Baseline,42,Female,White/Caucasian,Work full time,Bachelor's degree
+iP874d6501770c6d75,Order4,Republican (Right-aligned),MC 2,NA,Borderline,1,3,Baseline,42,Female,White/Caucasian,Work full time,Bachelor's degree
+iP874d6501770c6d75,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,42,Female,White/Caucasian,Work full time,Bachelor's degree
+iP87b6fe624ddd106f,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,33,Male,White/Caucasian,Work full time,Bachelor's degree
+iP87b6fe624ddd106f,Order4,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,33,Male,White/Caucasian,Work full time,Bachelor's degree
+iP87b6fe624ddd106f,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,33,Male,White/Caucasian,Work full time,Bachelor's degree
+iP8949740d931af18d,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,69,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP8949740d931af18d,Order4,Republican (Right-aligned),MC 2,NA,Borderline,1,3,Baseline,69,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP8949740d931af18d,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,69,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP89b01064a9072844,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,50,Female,White/Caucasian,Work part time,Bachelor's degree
+iP89b01064a9072844,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,50,Female,White/Caucasian,Work part time,Bachelor's degree
+iP89b01064a9072844,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,50,Female,White/Caucasian,Work part time,Bachelor's degree
+iP8a68c358263a45c7,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,68,Female,White/Caucasian,Work full time,Bachelor's degree
+iP8a68c358263a45c7,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,68,Female,White/Caucasian,Work full time,Bachelor's degree
+iP8a68c358263a45c7,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,68,Female,White/Caucasian,Work full time,Bachelor's degree
+iP8b11fc6c24c35376,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,53,Male,White/Caucasian,Work full time,Bachelor's degree
+iP8b11fc6c24c35376,Order4,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,53,Male,White/Caucasian,Work full time,Bachelor's degree
+iP8b11fc6c24c35376,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,53,Male,White/Caucasian,Work full time,Bachelor's degree
+iP8b9f144402afe0f9,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,37,Male,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP8b9f144402afe0f9,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,37,Male,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP8b9f144402afe0f9,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,0,0,Baseline,37,Male,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iP8c0f226dd0fedb76,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,37,Female,White/Caucasian,Other,Bachelor's degree
+iP8c0f226dd0fedb76,Order4,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,37,Female,White/Caucasian,Other,Bachelor's degree
+iP8c0f226dd0fedb76,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,37,Female,White/Caucasian,Other,Bachelor's degree
+iP8edc06bee7882154,Order6,Democrat (Left-aligned),MC 1,NA,Civil,1,1,Baseline,44,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iP8edc06bee7882154,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,1,2,Baseline,44,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iP8edc06bee7882154,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,44,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iP8f0a26c5803683f3,Order2,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,29,Female,White/Caucasian,Unemployed - not looking for work,"Some college credit, no degree"
+iP8f0a26c5803683f3,Order2,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,29,Female,White/Caucasian,Unemployed - not looking for work,"Some college credit, no degree"
+iP8f0a26c5803683f3,Order2,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,29,Female,White/Caucasian,Unemployed - not looking for work,"Some college credit, no degree"
+iP8f6f0a124b75e103,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,62,Male,White/Caucasian,Other,"Some college credit, no degree"
+iP8f6f0a124b75e103,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,62,Male,White/Caucasian,Other,"Some college credit, no degree"
+iP8f6f0a124b75e103,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,62,Male,White/Caucasian,Other,"Some college credit, no degree"
+iP8ff29b39a13d9e65,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,78,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP8ff29b39a13d9e65,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,78,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP8ff29b39a13d9e65,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,78,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP913145966ec69508,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,50,Male,Asian,Work full time,Bachelor's degree
+iP913145966ec69508,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,50,Male,Asian,Work full time,Bachelor's degree
+iP913145966ec69508,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,0,0,Baseline,50,Male,Asian,Work full time,Bachelor's degree
+iP913b12e6f3e5d4e4,Order2,Republican (Right-aligned),MC 1,NA,Civil,1,1,Baseline,65,Male,White/Caucasian,Work full time,Bachelor's degree
+iP913b12e6f3e5d4e4,Order2,Republican (Right-aligned),MC 2,NA,Borderline,1,3,Baseline,65,Male,White/Caucasian,Work full time,Bachelor's degree
+iP913b12e6f3e5d4e4,Order2,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,65,Male,White/Caucasian,Work full time,Bachelor's degree
+iP9298612dee483eb6,Order2,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,53,Male,Other race or ethnicity,Work full time,"Some college credit, no degree"
+iP9298612dee483eb6,Order2,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,53,Male,Other race or ethnicity,Work full time,"Some college credit, no degree"
+iP9298612dee483eb6,Order2,Democrat (Left-aligned),MC 3,NA,Uncivil,0,0,Baseline,53,Male,Other race or ethnicity,Work full time,"Some college credit, no degree"
+iP9312c8a5f3bbae89,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,49,Female,White/Caucasian,Other,"Some college credit, no degree"
+iP9312c8a5f3bbae89,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,49,Female,White/Caucasian,Other,"Some college credit, no degree"
+iP9312c8a5f3bbae89,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,49,Female,White/Caucasian,Other,"Some college credit, no degree"
+iP9356eed04e4e3f68,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,37,Female,White/Caucasian,Homemaker,Associate degree
+iP9356eed04e4e3f68,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,1,4,Baseline,37,Female,White/Caucasian,Homemaker,Associate degree
+iP9356eed04e4e3f68,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,37,Female,White/Caucasian,Homemaker,Associate degree
+iP94434fa143ade943,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,46,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iP94434fa143ade943,Order4,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,46,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iP94434fa143ade943,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,46,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iP94952f215440422c,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,71,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP94952f215440422c,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,71,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP94952f215440422c,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,71,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP95bed38ae3861a61,Order5,Republican (Right-aligned),MC 1,NA,Civil,1,2,Baseline,62,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP95bed38ae3861a61,Order5,Republican (Right-aligned),MC 2,NA,Borderline,1,3,Baseline,62,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP95bed38ae3861a61,Order5,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,62,Female,White/Caucasian,Retired,"Some college credit, no degree"
+iP9768812aa41ab424,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,67,Male,White/Caucasian,Work full time,Associate degree
+iP9768812aa41ab424,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,67,Male,White/Caucasian,Work full time,Associate degree
+iP9768812aa41ab424,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,0,0,Baseline,67,Male,White/Caucasian,Work full time,Associate degree
+iP980773c4180f9a58,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,42,Male,Black/African American,Work full time,"Some college credit, no degree"
+iP980773c4180f9a58,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,42,Male,Black/African American,Work full time,"Some college credit, no degree"
+iP980773c4180f9a58,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,42,Male,Black/African American,Work full time,"Some college credit, no degree"
+iP9925cfd9a90b0d91,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,47,Male,White/Caucasian,Work full time,Bachelor's degree
+iP9925cfd9a90b0d91,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,47,Male,White/Caucasian,Work full time,Bachelor's degree
+iP9925cfd9a90b0d91,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,0,0,Baseline,47,Male,White/Caucasian,Work full time,Bachelor's degree
+iP9add020e590d69df,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,36,Female,White/Caucasian,Homemaker,Bachelor's degree
+iP9add020e590d69df,Order1,Republican (Right-aligned),MC 2,NA,Borderline,1,2,Baseline,36,Female,White/Caucasian,Homemaker,Bachelor's degree
+iP9add020e590d69df,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,36,Female,White/Caucasian,Homemaker,Bachelor's degree
+iP9e7c094ec95a09bc,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,52,Male,White/Caucasian,Work full time,Doctorate degree
+iP9e7c094ec95a09bc,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,1,2,Baseline,52,Male,White/Caucasian,Work full time,Doctorate degree
+iP9e7c094ec95a09bc,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,52,Male,White/Caucasian,Work full time,Doctorate degree
+iP9faf2070555d7f46,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,28,Male,White/Caucasian,Work full time,Associate degree
+iP9faf2070555d7f46,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,1,2,Baseline,28,Male,White/Caucasian,Work full time,Associate degree
+iP9faf2070555d7f46,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,28,Male,White/Caucasian,Work full time,Associate degree
+iPa1ce28ff7de424a3,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,72,Female,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iPa1ce28ff7de424a3,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,72,Female,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iPa1ce28ff7de424a3,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,72,Female,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iPa200e47cd885be78,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,35,Male,White/Caucasian,Work full time,Bachelor's degree
+iPa200e47cd885be78,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,35,Male,White/Caucasian,Work full time,Bachelor's degree
+iPa200e47cd885be78,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,35,Male,White/Caucasian,Work full time,Bachelor's degree
+iPa3c519ced922ba85,Order5,Republican (Right-aligned),MC 1,NA,Civil,1,1,Baseline,32,Female,White/Caucasian,Work full time,Associate degree
+iPa3c519ced922ba85,Order5,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,32,Female,White/Caucasian,Work full time,Associate degree
+iPa3c519ced922ba85,Order5,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,32,Female,White/Caucasian,Work full time,Associate degree
+iPa3e249d0a738a94f,Order2,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,77,Female,White/Caucasian,Retired,Bachelor's degree
+iPa3e249d0a738a94f,Order2,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,77,Female,White/Caucasian,Retired,Bachelor's degree
+iPa3e249d0a738a94f,Order2,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,77,Female,White/Caucasian,Retired,Bachelor's degree
+iPa4034e09c1d23d51,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,58,Male,White/Caucasian,Work full time,Master's degree
+iPa4034e09c1d23d51,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,58,Male,White/Caucasian,Work full time,Master's degree
+iPa4034e09c1d23d51,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,58,Male,White/Caucasian,Work full time,Master's degree
+iPa6de01fa98eecdab,Order2,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,51,Female,White/Caucasian,Work full time,Associate degree
+iPa6de01fa98eecdab,Order2,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,51,Female,White/Caucasian,Work full time,Associate degree
+iPa6de01fa98eecdab,Order2,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,51,Female,White/Caucasian,Work full time,Associate degree
+iPa7793313ec6ad739,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,36,Female,Other race or ethnicity,Work full time,Bachelor's degree
+iPa7793313ec6ad739,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,36,Female,Other race or ethnicity,Work full time,Bachelor's degree
+iPa7793313ec6ad739,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,36,Female,Other race or ethnicity,Work full time,Bachelor's degree
+iPa9189f5bc72fabfd,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,19,Female,White/Caucasian,Student,"High school graduate, diploma or the equivalent (for example: GED)"
+iPa9189f5bc72fabfd,Order6,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,19,Female,White/Caucasian,Student,"High school graduate, diploma or the equivalent (for example: GED)"
+iPa9189f5bc72fabfd,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,19,Female,White/Caucasian,Student,"High school graduate, diploma or the equivalent (for example: GED)"
+iPa9512533933b4f72,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,21,Male,Black/African American,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPa9512533933b4f72,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,21,Male,Black/African American,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPa9512533933b4f72,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,0,0,Baseline,21,Male,Black/African American,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPabce0abf1c854a1f,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,34,Male,Asian,Work full time,Bachelor's degree
+iPabce0abf1c854a1f,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,34,Male,Asian,Work full time,Bachelor's degree
+iPabce0abf1c854a1f,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,34,Male,Asian,Work full time,Bachelor's degree
+iPabd94e92ef1195f1,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,57,Male,Other race or ethnicity,Work full time,Bachelor's degree
+iPabd94e92ef1195f1,Order1,Republican (Right-aligned),MC 2,NA,Borderline,1,2,Baseline,57,Male,Other race or ethnicity,Work full time,Bachelor's degree
+iPabd94e92ef1195f1,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,57,Male,Other race or ethnicity,Work full time,Bachelor's degree
+iPac4be404c9ab35a5,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,74,Male,White/Caucasian,Work part time,Bachelor's degree
+iPac4be404c9ab35a5,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,74,Male,White/Caucasian,Work part time,Bachelor's degree
+iPac4be404c9ab35a5,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,74,Male,White/Caucasian,Work part time,Bachelor's degree
+iPad3b7c092f3faaf7,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,30,Male,White/Caucasian,Work full time,Master's degree
+iPad3b7c092f3faaf7,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,30,Male,White/Caucasian,Work full time,Master's degree
+iPad3b7c092f3faaf7,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,30,Male,White/Caucasian,Work full time,Master's degree
+iPad933cb4fb32e98f,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,57,Female,White/Caucasian,Other,"Some college credit, no degree"
+iPad933cb4fb32e98f,Order3,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,57,Female,White/Caucasian,Other,"Some college credit, no degree"
+iPad933cb4fb32e98f,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,57,Female,White/Caucasian,Other,"Some college credit, no degree"
+iPaf583512229a6c8a,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,78,Male,White/Caucasian,Retired,Bachelor's degree
+iPaf583512229a6c8a,Order3,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,78,Male,White/Caucasian,Retired,Bachelor's degree
+iPaf583512229a6c8a,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,0,0,Baseline,78,Male,White/Caucasian,Retired,Bachelor's degree
+iPb0053dabd6df406a,Order6,Democrat (Left-aligned),MC 1,NA,Civil,1,1,Baseline,50,Male,Black/African American,Work full time,Master's degree
+iPb0053dabd6df406a,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,1,2,Baseline,50,Male,Black/African American,Work full time,Master's degree
+iPb0053dabd6df406a,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,50,Male,Black/African American,Work full time,Master's degree
+iPb17d4a6a93d5b9ea,Order5,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,52,Female,White/Caucasian,Work full time,Master's degree
+iPb17d4a6a93d5b9ea,Order5,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,52,Female,White/Caucasian,Work full time,Master's degree
+iPb17d4a6a93d5b9ea,Order5,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,52,Female,White/Caucasian,Work full time,Master's degree
+iPb1b20aac1f88953c,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,50,Non-binary,White/Caucasian,Work full time,Master's degree
+iPb1b20aac1f88953c,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,50,Non-binary,White/Caucasian,Work full time,Master's degree
+iPb1b20aac1f88953c,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,50,Non-binary,White/Caucasian,Work full time,Master's degree
+iPb25b7a11233a0ee2,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,34,Male,White/Caucasian,Work full time,Doctorate degree
+iPb25b7a11233a0ee2,Order1,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,34,Male,White/Caucasian,Work full time,Doctorate degree
+iPb25b7a11233a0ee2,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,34,Male,White/Caucasian,Work full time,Doctorate degree
+iPb3895b7def90f5c2,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,41,Female,White/Caucasian,Work part time,Associate degree
+iPb3895b7def90f5c2,Order4,Republican (Right-aligned),MC 2,NA,Borderline,1,2,Baseline,41,Female,White/Caucasian,Work part time,Associate degree
+iPb3895b7def90f5c2,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,41,Female,White/Caucasian,Work part time,Associate degree
+iPb4d18ece48f15c2c,Order2,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,24,Female,White/Caucasian,Work part time,Master's degree
+iPb4d18ece48f15c2c,Order2,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,24,Female,White/Caucasian,Work part time,Master's degree
+iPb4d18ece48f15c2c,Order2,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,24,Female,White/Caucasian,Work part time,Master's degree
+iPb5c5f35be3f03915,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,33,Male,Prefer not to answer,Unemployed - looking for work,Master's degree
+iPb5c5f35be3f03915,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,33,Male,Prefer not to answer,Unemployed - looking for work,Master's degree
+iPb5c5f35be3f03915,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,1,Baseline,33,Male,Prefer not to answer,Unemployed - looking for work,Master's degree
+iPb8a64d9f94807262,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,65,Female,White/Caucasian,Retired,Master's degree
+iPb8a64d9f94807262,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,65,Female,White/Caucasian,Retired,Master's degree
+iPb8a64d9f94807262,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,65,Female,White/Caucasian,Retired,Master's degree
+iPba14d36448383e04,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,34,Male,White/Caucasian,Work full time,Master's degree
+iPba14d36448383e04,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,34,Male,White/Caucasian,Work full time,Master's degree
+iPba14d36448383e04,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,34,Male,White/Caucasian,Work full time,Master's degree
+iPbb9ecf0f3b060b7d,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,37,Female,White/Caucasian,Work full time,Bachelor's degree
+iPbb9ecf0f3b060b7d,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,37,Female,White/Caucasian,Work full time,Bachelor's degree
+iPbb9ecf0f3b060b7d,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,37,Female,White/Caucasian,Work full time,Bachelor's degree
+iPbd74a5c6db92cd59,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,46,Male,White/Caucasian,Work full time,"Some college credit, no degree"
+iPbd74a5c6db92cd59,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,46,Male,White/Caucasian,Work full time,"Some college credit, no degree"
+iPbd74a5c6db92cd59,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,0,0,Baseline,46,Male,White/Caucasian,Work full time,"Some college credit, no degree"
+iPbe62842c0b7232f1,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,50,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iPbe62842c0b7232f1,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,50,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iPbe62842c0b7232f1,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,1,Baseline,50,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iPc0b2f9a6f92e18a0,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,52,Male,Black/African American,Work full time,Associate degree
+iPc0b2f9a6f92e18a0,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,52,Male,Black/African American,Work full time,Associate degree
+iPc0b2f9a6f92e18a0,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,52,Male,Black/African American,Work full time,Associate degree
+iPc13ba703e2b24610,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,75,Male,White/Caucasian,Retired,Bachelor's degree
+iPc13ba703e2b24610,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,75,Male,White/Caucasian,Retired,Bachelor's degree
+iPc13ba703e2b24610,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,75,Male,White/Caucasian,Retired,Bachelor's degree
+iPc14c8d5fd26fb8c3,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,60,Female,White/Caucasian,Work part time,Professional degree
+iPc14c8d5fd26fb8c3,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,60,Female,White/Caucasian,Work part time,Professional degree
+iPc14c8d5fd26fb8c3,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,60,Female,White/Caucasian,Work part time,Professional degree
+iPc20c8df38cd6d3d4,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,29,Female,Asian,Work full time,Bachelor's degree
+iPc20c8df38cd6d3d4,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,29,Female,Asian,Work full time,Bachelor's degree
+iPc20c8df38cd6d3d4,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,29,Female,Asian,Work full time,Bachelor's degree
+iPc38fcd1f073cde0c,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,40,Female,White/Caucasian,Work full time,Bachelor's degree
+iPc38fcd1f073cde0c,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,40,Female,White/Caucasian,Work full time,Bachelor's degree
+iPc38fcd1f073cde0c,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,40,Female,White/Caucasian,Work full time,Bachelor's degree
+iPc6bb019ae80327dd,Order3,Republican (Right-aligned),MC 1,NA,Civil,1,1,Baseline,56,Female,Other race or ethnicity,Work part time,Bachelor's degree
+iPc6bb019ae80327dd,Order3,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,56,Female,Other race or ethnicity,Work part time,Bachelor's degree
+iPc6bb019ae80327dd,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,56,Female,Other race or ethnicity,Work part time,Bachelor's degree
+iPc7953aa49673fad7,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,27,Female,Black/African American,Other,"High school graduate, diploma or the equivalent (for example: GED)"
+iPc7953aa49673fad7,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,27,Female,Black/African American,Other,"High school graduate, diploma or the equivalent (for example: GED)"
+iPc7953aa49673fad7,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,27,Female,Black/African American,Other,"High school graduate, diploma or the equivalent (for example: GED)"
+iPca19adb3fb90a4b9,Order4,Republican (Right-aligned),MC 1,NA,Civil,1,2,Baseline,63,Female,White/Caucasian,Retired,Master's degree
+iPca19adb3fb90a4b9,Order4,Republican (Right-aligned),MC 2,NA,Borderline,1,2,Baseline,63,Female,White/Caucasian,Retired,Master's degree
+iPca19adb3fb90a4b9,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,63,Female,White/Caucasian,Retired,Master's degree
+iPcc0fd2bb8a1e8345,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,24,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPcc0fd2bb8a1e8345,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,24,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPcc0fd2bb8a1e8345,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,24,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPcca162f161aca040,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,53,Male,White/Caucasian,Retired,Bachelor's degree
+iPcca162f161aca040,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,53,Male,White/Caucasian,Retired,Bachelor's degree
+iPcca162f161aca040,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,53,Male,White/Caucasian,Retired,Bachelor's degree
+iPcd62c2917978ccd4,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,35,Male,White/Caucasian,Work full time,Master's degree
+iPcd62c2917978ccd4,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,35,Male,White/Caucasian,Work full time,Master's degree
+iPcd62c2917978ccd4,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,35,Male,White/Caucasian,Work full time,Master's degree
+iPcd97a2c6aff4900c,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,70,Female,White/Caucasian,Retired,Bachelor's degree
+iPcd97a2c6aff4900c,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,70,Female,White/Caucasian,Retired,Bachelor's degree
+iPcd97a2c6aff4900c,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,70,Female,White/Caucasian,Retired,Bachelor's degree
+iPcda4dc6baf37aa45,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,47,Male,White/Caucasian,Retired,"Some college credit, no degree"
+iPcda4dc6baf37aa45,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,47,Male,White/Caucasian,Retired,"Some college credit, no degree"
+iPcda4dc6baf37aa45,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,47,Male,White/Caucasian,Retired,"Some college credit, no degree"
+iPcdc00ae66061e10d,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,55,Female,White/Caucasian,Homemaker,"High school graduate, diploma or the equivalent (for example: GED)"
+iPcdc00ae66061e10d,Order4,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,55,Female,White/Caucasian,Homemaker,"High school graduate, diploma or the equivalent (for example: GED)"
+iPcdc00ae66061e10d,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,55,Female,White/Caucasian,Homemaker,"High school graduate, diploma or the equivalent (for example: GED)"
+iPce5b4a70a05111a5,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,78,Female,White/Caucasian,Retired,Bachelor's degree
+iPce5b4a70a05111a5,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,1,2,Baseline,78,Female,White/Caucasian,Retired,Bachelor's degree
+iPce5b4a70a05111a5,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,78,Female,White/Caucasian,Retired,Bachelor's degree
+iPce840b219e7e12c4,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,74,Female,Other race or ethnicity,Retired,Master's degree
+iPce840b219e7e12c4,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,74,Female,Other race or ethnicity,Retired,Master's degree
+iPce840b219e7e12c4,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,74,Female,Other race or ethnicity,Retired,Master's degree
+iPd04b94e6705a0ff5,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,43,Male,Black/African American,Work full time,"Some college credit, no degree"
+iPd04b94e6705a0ff5,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,43,Male,Black/African American,Work full time,"Some college credit, no degree"
+iPd04b94e6705a0ff5,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,43,Male,Black/African American,Work full time,"Some college credit, no degree"
+iPd054c8164660403c,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,39,Female,Asian,Work part time,Master's degree
+iPd054c8164660403c,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,39,Female,Asian,Work part time,Master's degree
+iPd054c8164660403c,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,39,Female,Asian,Work part time,Master's degree
+iPd0bdccf1b955b578,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,33,Female,Asian,Work full time,Bachelor's degree
+iPd0bdccf1b955b578,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,1,2,Baseline,33,Female,Asian,Work full time,Bachelor's degree
+iPd0bdccf1b955b578,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,33,Female,Asian,Work full time,Bachelor's degree
+iPd14b5a63dc2fb185,Order3,Democrat (Left-aligned),MC 1,NA,Civil,1,1,Baseline,36,Female,Asian,Homemaker,Associate degree
+iPd14b5a63dc2fb185,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,36,Female,Asian,Homemaker,Associate degree
+iPd14b5a63dc2fb185,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,36,Female,Asian,Homemaker,Associate degree
+iPd2224d4e1396c28c,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,25,Male,Other race or ethnicity,Work full time,Bachelor's degree
+iPd2224d4e1396c28c,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,25,Male,Other race or ethnicity,Work full time,Bachelor's degree
+iPd2224d4e1396c28c,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,25,Male,Other race or ethnicity,Work full time,Bachelor's degree
+iPd2379f70d039b2e7,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,28,Female,Black/African American,Work part time,Bachelor's degree
+iPd2379f70d039b2e7,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,28,Female,Black/African American,Work part time,Bachelor's degree
+iPd2379f70d039b2e7,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,28,Female,Black/African American,Work part time,Bachelor's degree
+iPd52152bae6c5be35,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,50,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iPd52152bae6c5be35,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,50,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iPd52152bae6c5be35,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,50,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iPd612da7fd620e194,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,43,Female,White/Caucasian,Work full time,Master's degree
+iPd612da7fd620e194,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,43,Female,White/Caucasian,Work full time,Master's degree
+iPd612da7fd620e194,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,43,Female,White/Caucasian,Work full time,Master's degree
+iPd7513df6c6092d49,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,26,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iPd7513df6c6092d49,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,26,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iPd7513df6c6092d49,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,26,Female,White/Caucasian,Work full time,"Some college credit, no degree"
+iPd796e64f28151183,Order5,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,53,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPd796e64f28151183,Order5,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,53,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPd796e64f28151183,Order5,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,53,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPd7c3c30910e18a23,Order5,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,62,Female,White/Caucasian,Homemaker,"High school graduate, diploma or the equivalent (for example: GED)"
+iPd7c3c30910e18a23,Order5,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,62,Female,White/Caucasian,Homemaker,"High school graduate, diploma or the equivalent (for example: GED)"
+iPd7c3c30910e18a23,Order5,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,62,Female,White/Caucasian,Homemaker,"High school graduate, diploma or the equivalent (for example: GED)"
+iPd89982fe956df763,Order1,Republican (Right-aligned),MC 1,NA,Civil,1,1,Baseline,32,Male,White/Caucasian,Work full time,Bachelor's degree
+iPd89982fe956df763,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,32,Male,White/Caucasian,Work full time,Bachelor's degree
+iPd89982fe956df763,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,32,Male,White/Caucasian,Work full time,Bachelor's degree
+iPdabd7d0cb9e9a2c5,Order2,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,40,Male,Black/African American,Unemployed - not looking for work,Trade/technical/vocational training
+iPdabd7d0cb9e9a2c5,Order2,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,40,Male,Black/African American,Unemployed - not looking for work,Trade/technical/vocational training
+iPdabd7d0cb9e9a2c5,Order2,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,40,Male,Black/African American,Unemployed - not looking for work,Trade/technical/vocational training
+iPdd654fed8c807d4f,Order2,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,40,Female,White/Caucasian,Work part time,"Some college credit, no degree"
+iPdd654fed8c807d4f,Order2,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,40,Female,White/Caucasian,Work part time,"Some college credit, no degree"
+iPdd654fed8c807d4f,Order2,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,40,Female,White/Caucasian,Work part time,"Some college credit, no degree"
+iPde51d8cb1317f627,Order4,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,49,Male,White/Caucasian,Work full time,Bachelor's degree
+iPde51d8cb1317f627,Order4,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,49,Male,White/Caucasian,Work full time,Bachelor's degree
+iPde51d8cb1317f627,Order4,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,49,Male,White/Caucasian,Work full time,Bachelor's degree
+iPdf4ceb1c02edb186,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,63,Female,White/Caucasian,Unemployed - not looking for work,Less than high school graduate
+iPdf4ceb1c02edb186,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,1,4,Baseline,63,Female,White/Caucasian,Unemployed - not looking for work,Less than high school graduate
+iPdf4ceb1c02edb186,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,63,Female,White/Caucasian,Unemployed - not looking for work,Less than high school graduate
+iPdf4de123c3de6cea,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,64,Female,White/Caucasian,Retired,Associate degree
+iPdf4de123c3de6cea,Order4,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,64,Female,White/Caucasian,Retired,Associate degree
+iPdf4de123c3de6cea,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,64,Female,White/Caucasian,Retired,Associate degree
+iPdf7d669835064d7b,Order2,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,30,Female,Asian,Work full time,Master's degree
+iPdf7d669835064d7b,Order2,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,30,Female,Asian,Work full time,Master's degree
+iPdf7d669835064d7b,Order2,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,30,Female,Asian,Work full time,Master's degree
+iPe0046154ffa5858b,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,28,Female,White/Caucasian,Student,Bachelor's degree
+iPe0046154ffa5858b,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,28,Female,White/Caucasian,Student,Bachelor's degree
+iPe0046154ffa5858b,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,28,Female,White/Caucasian,Student,Bachelor's degree
+iPe347d681952176be,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,59,Male,White/Caucasian,Work part time,Trade/technical/vocational training
+iPe347d681952176be,Order6,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,59,Male,White/Caucasian,Work part time,Trade/technical/vocational training
+iPe347d681952176be,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,59,Male,White/Caucasian,Work part time,Trade/technical/vocational training
+iPe3553c33753b8502,Order5,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,73,Male,White/Caucasian,Retired,Associate degree
+iPe3553c33753b8502,Order5,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,73,Male,White/Caucasian,Retired,Associate degree
+iPe3553c33753b8502,Order5,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,73,Male,White/Caucasian,Retired,Associate degree
+iPe3c76e5a92dae24a,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,71,Female,White/Caucasian,Retired,Bachelor's degree
+iPe3c76e5a92dae24a,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,71,Female,White/Caucasian,Retired,Bachelor's degree
+iPe3c76e5a92dae24a,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,71,Female,White/Caucasian,Retired,Bachelor's degree
+iPe55519cc9d3ccc32,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,41,Female,White/Caucasian,Work full time,Master's degree
+iPe55519cc9d3ccc32,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,41,Female,White/Caucasian,Work full time,Master's degree
+iPe55519cc9d3ccc32,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,41,Female,White/Caucasian,Work full time,Master's degree
+iPe56eeca44ae08513,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,29,Male,White/Caucasian,Work full time,Associate degree
+iPe56eeca44ae08513,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,29,Male,White/Caucasian,Work full time,Associate degree
+iPe56eeca44ae08513,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,29,Male,White/Caucasian,Work full time,Associate degree
+iPe82637ab10fea413,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,18,Female,White/Caucasian,Student,"Some college credit, no degree"
+iPe82637ab10fea413,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,18,Female,White/Caucasian,Student,"Some college credit, no degree"
+iPe82637ab10fea413,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,18,Female,White/Caucasian,Student,"Some college credit, no degree"
+iPe8ccd7abef7d25f9,Order2,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,69,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPe8ccd7abef7d25f9,Order2,Republican (Right-aligned),MC 2,NA,Borderline,1,2,Baseline,69,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPe8ccd7abef7d25f9,Order2,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,69,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPe8d9f8534f10d372,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,44,Male,Other race or ethnicity,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPe8d9f8534f10d372,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,44,Male,Other race or ethnicity,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPe8d9f8534f10d372,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,44,Male,Other race or ethnicity,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPea0dbbc6d8a2c4ed,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,21,Female,White/Caucasian,Student,"Some college credit, no degree"
+iPea0dbbc6d8a2c4ed,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,21,Female,White/Caucasian,Student,"Some college credit, no degree"
+iPea0dbbc6d8a2c4ed,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,0,0,Baseline,21,Female,White/Caucasian,Student,"Some college credit, no degree"
+iPea8fe2a2c39f2aa9,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,24,Male,White/Caucasian,Unemployed - looking for work,"Some college credit, no degree"
+iPea8fe2a2c39f2aa9,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,24,Male,White/Caucasian,Unemployed - looking for work,"Some college credit, no degree"
+iPea8fe2a2c39f2aa9,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,24,Male,White/Caucasian,Unemployed - looking for work,"Some college credit, no degree"
+iPecd5e7b33927e0ef,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,21,Female,White/Caucasian,Student,"Some college credit, no degree"
+iPecd5e7b33927e0ef,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,21,Female,White/Caucasian,Student,"Some college credit, no degree"
+iPecd5e7b33927e0ef,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,21,Female,White/Caucasian,Student,"Some college credit, no degree"
+iPed2f0437165a01a8,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,81,Male,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iPed2f0437165a01a8,Order1,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,81,Male,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iPed2f0437165a01a8,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,81,Male,White/Caucasian,Retired,"High school graduate, diploma or the equivalent (for example: GED)"
+iPee278eb3cb0ce861,Order3,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,48,Female,White/Caucasian,Work full time,Master's degree
+iPee278eb3cb0ce861,Order3,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,48,Female,White/Caucasian,Work full time,Master's degree
+iPee278eb3cb0ce861,Order3,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,48,Female,White/Caucasian,Work full time,Master's degree
+iPefa3aa6f668e86b3,Order1,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,60,Female,White/Caucasian,Retired,Bachelor's degree
+iPefa3aa6f668e86b3,Order1,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,60,Female,White/Caucasian,Retired,Bachelor's degree
+iPefa3aa6f668e86b3,Order1,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,60,Female,White/Caucasian,Retired,Bachelor's degree
+iPf012aa3990592523,Order5,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,42,Female,Prefer not to answer,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iPf012aa3990592523,Order5,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,42,Female,Prefer not to answer,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iPf012aa3990592523,Order5,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,42,Female,Prefer not to answer,Unemployed - not looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iPf10a1084eae83746,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,28,Female,White/Caucasian,Work full time,Bachelor's degree
+iPf10a1084eae83746,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,28,Female,White/Caucasian,Work full time,Bachelor's degree
+iPf10a1084eae83746,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,3,Baseline,28,Female,White/Caucasian,Work full time,Bachelor's degree
+iPf1ca3e66271ca499,Order5,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,30,Male,White/Caucasian,Work full time,Bachelor's degree
+iPf1ca3e66271ca499,Order5,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,30,Male,White/Caucasian,Work full time,Bachelor's degree
+iPf1ca3e66271ca499,Order5,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,30,Male,White/Caucasian,Work full time,Bachelor's degree
+iPf3844825cd972345,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,45,Female,Black/African American,Homemaker,Associate degree
+iPf3844825cd972345,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,45,Female,Black/African American,Homemaker,Associate degree
+iPf3844825cd972345,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,45,Female,Black/African American,Homemaker,Associate degree
+iPf394d8eddb859057,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,59,Female,Black/African American,Work full time,Associate degree
+iPf394d8eddb859057,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,1,1,Baseline,59,Female,Black/African American,Work full time,Associate degree
+iPf394d8eddb859057,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,59,Female,Black/African American,Work full time,Associate degree
+iPf566662513532710,Order4,Republican (Right-aligned),MC 1,NA,Civil,1,1,Baseline,56,Male,White/Caucasian,Work full time,Bachelor's degree
+iPf566662513532710,Order4,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,56,Male,White/Caucasian,Work full time,Bachelor's degree
+iPf566662513532710,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,56,Male,White/Caucasian,Work full time,Bachelor's degree
+iPfa1d4c43973ad789,Order6,Democrat (Left-aligned),MC 1,NA,Civil,1,4,Baseline,21,Female,Black/African American,Unemployed - looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iPfa1d4c43973ad789,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,1,4,Baseline,21,Female,Black/African American,Unemployed - looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iPfa1d4c43973ad789,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,21,Female,Black/African American,Unemployed - looking for work,"High school graduate, diploma or the equivalent (for example: GED)"
+iPfabf86bbabcbed72,Order1,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,63,Male,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPfabf86bbabcbed72,Order1,Republican (Right-aligned),MC 2,NA,Borderline,1,2,Baseline,63,Male,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPfabf86bbabcbed72,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,4,Baseline,63,Male,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPfb429090cf657bc2,Order3,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,68,Male,Black/African American,Retired,Associate degree
+iPfb429090cf657bc2,Order3,Democrat (Left-aligned),MC 2,NA,Borderline,0,0,Baseline,68,Male,Black/African American,Retired,Associate degree
+iPfb429090cf657bc2,Order3,Democrat (Left-aligned),MC 3,NA,Uncivil,1,2,Baseline,68,Male,Black/African American,Retired,Associate degree
+iPfbb24b1c4329f678,Order1,Republican (Right-aligned),MC 1,NA,Civil,1,1,Baseline,33,Male,White/Caucasian,Work full time,Professional degree
+iPfbb24b1c4329f678,Order1,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,33,Male,White/Caucasian,Work full time,Professional degree
+iPfbb24b1c4329f678,Order1,Republican (Right-aligned),MC 3,NA,Uncivil,1,1,Baseline,33,Male,White/Caucasian,Work full time,Professional degree
+iPfc26e6b96cb5db0e,Order6,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,74,Male,White/Caucasian,Retired,Master's degree
+iPfc26e6b96cb5db0e,Order6,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,74,Male,White/Caucasian,Retired,Master's degree
+iPfc26e6b96cb5db0e,Order6,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,74,Male,White/Caucasian,Retired,Master's degree
+iPfcdd854cb5831587,Order6,Democrat (Left-aligned),MC 1,NA,Civil,0,0,Baseline,53,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPfcdd854cb5831587,Order6,Democrat (Left-aligned),MC 2,NA,Borderline,1,4,Baseline,53,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPfcdd854cb5831587,Order6,Democrat (Left-aligned),MC 3,NA,Uncivil,1,4,Baseline,53,Female,White/Caucasian,Work full time,"High school graduate, diploma or the equivalent (for example: GED)"
+iPfdad04bc10eea418,Order4,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,24,Male,White/Caucasian,Work full time,Bachelor's degree
+iPfdad04bc10eea418,Order4,Republican (Right-aligned),MC 2,NA,Borderline,0,0,Baseline,24,Male,White/Caucasian,Work full time,Bachelor's degree
+iPfdad04bc10eea418,Order4,Republican (Right-aligned),MC 3,NA,Uncivil,1,3,Baseline,24,Male,White/Caucasian,Work full time,Bachelor's degree
+iPfe5965caa8e19490,Order5,Republican (Right-aligned),MC 1,NA,Civil,0,0,Baseline,33,Female,White/Caucasian,Work full time,Bachelor's degree
+iPfe5965caa8e19490,Order5,Republican (Right-aligned),MC 2,NA,Borderline,1,1,Baseline,33,Female,White/Caucasian,Work full time,Bachelor's degree
+iPfe5965caa8e19490,Order5,Republican (Right-aligned),MC 3,NA,Uncivil,1,2,Baseline,33,Female,White/Caucasian,Work full time,Bachelor's degree

@@ -7,27 +7,25 @@ library(tidyverse)
 library(rstatix)
 library(emmeans)
 library(effectsize)
-library(ggpubr)     
-library(patchwork)  
+library(ggpubr)
+library(patchwork)
 
 ## LOAD DATA
 df_long <- readRDS("Input data_long/Moderation_Data_Long_Format.rds")
 
-# Separate datasets for manipulation checks and political conditions
-df_manip <- df_long %>% filter(ContentType == "ManipCheck")
+# Political conditions only
 df_political <- df_long %>% filter(ContentType == "Political")
 
 # Create Democrat and Republican subsets
 df_dem <- df_political %>% filter(PoliticalLeaning == "Democrat (Left-aligned)")
 df_rep <- df_political %>% filter(PoliticalLeaning == "Republican (Right-aligned)")
 
-# Sample sizes 
+# Sample sizes
 cat("=== SAMPLE SIZES ===\n")
 cat("Democrats:", n_distinct(df_dem$ParticipantID), "participants\n")
 cat("Republicans:", n_distinct(df_rep$ParticipantID), "participants\n\n")
 
 cat("=== DATA SUMMARY ===\n")
-cat("Manipulation checks:", nrow(df_manip), "rows (3 per participant)\n")
 cat("Political content:", nrow(df_political), "rows (6 per participant)\n")
 cat("Unique participants:", n_distinct(df_long$ParticipantID), "\n\n")
 
@@ -82,7 +80,7 @@ desc_dem_vr <- desc_with_ci_2(
 )
 
 cat("\n--- Violation Recognition Descriptives ---\n")
-print(desc_dem_vr)  
+print(desc_dem_vr)
 
 # Enforcement Severity ANOVA
 cat("\n--- ANOVA: Enforcement Severity ---\n")
@@ -251,7 +249,7 @@ p_dem_vr <- desc_dem_vr %>%
   ggplot(aes(x = Civility, y = Mean, color = Alignment, group = Alignment)) +
   geom_line(position = pd, linewidth = 1) +
   geom_point(position = pd, size = 3) +
-  geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper), 
+  geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper),
                 position = pd, width = 0.1) +
   scale_color_manual(values = c("Aligned" = "#2E7D32", "Opposed" = "#C62828")) +
   labs(
@@ -267,7 +265,7 @@ p_dem_es <- desc_dem_es %>%
   ggplot(aes(x = Civility, y = Mean, color = Alignment, group = Alignment)) +
   geom_line(position = pd, linewidth = 1) +
   geom_point(position = pd, size = 3) +
-  geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper), 
+  geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper),
                 position = pd, width = 0.1) +
   scale_color_manual(values = c("Aligned" = "#2E7D32", "Opposed" = "#C62828")) +
   labs(
@@ -283,7 +281,7 @@ p_rep_vr <- desc_rep_vr %>%
   ggplot(aes(x = Civility, y = Mean, color = Alignment, group = Alignment)) +
   geom_line(position = pd, linewidth = 1) +
   geom_point(position = pd, size = 3) +
-  geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper), 
+  geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper),
                 position = pd, width = 0.1) +
   scale_color_manual(values = c("Aligned" = "#2E7D32", "Opposed" = "#C62828")) +
   labs(
@@ -299,7 +297,7 @@ p_rep_es <- desc_rep_es %>%
   ggplot(aes(x = Civility, y = Mean, color = Alignment, group = Alignment)) +
   geom_line(position = pd, linewidth = 1) +
   geom_point(position = pd, size = 3) +
-  geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper), 
+  geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper),
                 position = pd, width = 0.1) +
   scale_color_manual(values = c("Aligned" = "#2E7D32", "Opposed" = "#C62828")) +
   labs(

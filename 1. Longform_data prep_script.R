@@ -136,11 +136,11 @@ df_political %>%
   print(n = 6)
 
 
-## Produce pivoted rows for manipulation checks
+## Produce pivoted rows for non-political baseline
 
 #Pivot violation recognition
 
-df_viol_manip <- df_wide %>%
+df_viol_baseline <- df_wide %>%
   select(
     RESPONDENT_ID,
     `Randomization Group`,
@@ -163,7 +163,7 @@ df_viol_manip <- df_wide %>%
 
 #Pivot enforcement severity
 
-df_sev_manip <- df_wide %>%
+df_sev_baseline <- df_wide %>%
   select(
     RESPONDENT_ID,
     `Severity Scale (MC 1)`,
@@ -181,20 +181,20 @@ df_sev_manip <- df_wide %>%
   ) %>%
   mutate(Condition = str_extract(Condition, "MC \\d"))
 
-# Joint VR and ES for manip checks
-df_manip <- df_viol_manip %>%
-  left_join(df_sev_manip, by = c("RESPONDENT_ID", "Condition"))
+# Joint VR and ES for non-political conditions
+df_baseline <- df_viol_baseline %>%
+  left_join(df_sev_baseline, by = c("RESPONDENT_ID", "Condition"))
 
 # Create civility variable and rename
-df_manip <- df_manip %>%
+df_baseline <- df_baseline %>%
   mutate(
     Civility = case_when(
       Condition == "MC 1" ~ "Civil",
       Condition == "MC 2" ~ "Borderline",
       Condition == "MC 3" ~ "Uncivil"
     ),
-    Alignment = NA_character_,  # No alignment for manipulation checks
-    ContentType = "ManipCheck"
+    Alignment = NA_character_,  # No alignment for non-political conditions
+    ContentType = "Baseline"
   ) %>%
   rename(
     ParticipantID = RESPONDENT_ID,
@@ -210,8 +210,8 @@ df_manip <- df_manip %>%
   )
 
 #Check data
-df_manip %>% count(ParticipantID) %>% summary()  # Should be 3 per participant
-df_manip %>% count(Condition, Civility)
+df_baseline %>% count(ParticipantID) %>% summary()  # Should be 3 per participant
+df_baseline %>% count(Condition, Civility)
 
 ## Produce pivoted rows for fillers
 
@@ -287,7 +287,7 @@ df_filler %>% count(Condition, Civility)
 
 ## Combine all datasets
 
-df_long <- bind_rows(df_political, df_manip, df_filler) %>%
+df_long <- bind_rows(df_political, df_baseline, df_filler) %>%
   arrange(ParticipantID, ContentType, Condition) %>%
 
 #Reorder columns
@@ -342,9 +342,10 @@ df_long %>%
 cat("✅ Saved: Moderation_Data_Political_Only.csv\n")
 
 df_long %>%
-  filter(ContentType == "ManipCheck") %>%
-  write_csv("Input data_long/Moderation_Data_ManipCheck.csv")
-cat("✅ Saved: Moderation_Data_ManipCheck.csv\n")
+  filter(ContentType == "Baseline") %>%
+  write_csv("Input data_long/Moderation_Data_Baseline.csv")
+
+cat("✅ Saved: Moderation_Data_Baseline.csv\n")
 
 saveRDS(df_long, "Input data_long/Moderation_Data_Long_Format.rds")
 cat("✅ Saved: Moderation_Data_Long_Format.rds\n")

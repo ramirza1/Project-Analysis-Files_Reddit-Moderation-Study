@@ -28,7 +28,7 @@ print(names(df_political))
 
 # IMPORTANT: rename below if your column is named differently.
 # Assuming the column is called "Order"
-ORDER_COL <- "Order"  
+ORDER_COL <- "Order"
 
 if (!ORDER_COL %in% names(df_political)) {
   stop(paste("Column", ORDER_COL, "not found. Edit ORDER_COL to match your data."))
@@ -65,9 +65,6 @@ desc_by_order <- function(df, dv) {
 
 desc_order_vr <- desc_by_order(df_political, ViolationRecognition)
 desc_order_es <- desc_by_order(df_political, EnforcementSeverity)
-
-desc_order_es <- desc_order_es %>%
-  mutate(Order = gsub("Order", "Order ", Order))
 
 cat("\n--- Violation Recognition by Order x Condition ---\n")
 print(desc_order_vr, n = 36)
@@ -142,7 +139,7 @@ p_order_vr <- ggplot(desc_order_vr,
   geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper),
                 position = pd, width = 0.15) +
   scale_color_manual(values = c("Aligned" = COLOR_ALIGNED,
-                                 "Opposed" = COLOR_OPPOSED)) +
+                                "Opposed" = COLOR_OPPOSED)) +
   scale_y_continuous(limits = c(0, 1), labels = scales::percent) +
   facet_wrap(~ .data[[ORDER_COL]], nrow = 2,
              labeller = labeller(.default = function(x) gsub("Order", "Order ", x))) +
@@ -161,7 +158,7 @@ p_order_es <- ggplot(desc_order_es,
   geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper),
                 position = pd, width = 0.15) +
   scale_color_manual(values = c("Aligned" = COLOR_ALIGNED,
-                                 "Opposed" = COLOR_OPPOSED)) +
+                                "Opposed" = COLOR_OPPOSED)) +
   scale_y_continuous(limits = c(0, 3.5), breaks = seq(0, 3, 0.5)) +
   facet_wrap(~ .data[[ORDER_COL]], nrow = 2,
              labeller = labeller(.default = function(x) gsub("Order", "Order ", x))) +
@@ -214,7 +211,7 @@ cat("\n========================================\n")
 cat("INTERPRETATION GUIDE\n")
 cat("========================================\n")
 cat("If main effects of Civility and Alignment hold across orders\n")
-cat("(no significant 3-way interactions involving Order_f),\n")
+cat("(no significant interactions involving Order_f),\n")
 cat("the partial counterbalancing approach is supported.\n\n")
 cat("Look for:\n")
 cat("  - Order_f main effect: is there a baseline shift across orders?\n")

@@ -1,13 +1,13 @@
 # ==================================================
 # POLITICAL vs NON-POLITICAL COMPARISON ANALYSIS
-# 
+#
 # Tests whether political content is moderated more
-# harshly than non-political content at equivalent 
+# harshly than non-political content at equivalent
 # levels of incivility.
 #
 # Constructs participant-level aligned-opposed averages
-# for political content, then compares to non-political
-# baseline (manipulation check) memes within-subjects.
+# for political content, then compares to the non-political
+# baseline memes within-subjects.
 # ==================================================
 
 ## LOAD LIBRARIES
@@ -37,7 +37,7 @@ df_political_avg <- df_long %>%
   mutate(ContentType = "Political")
 
 df_nonpolitical <- df_long %>%
-  filter(ContentType == "ManipCheck") %>%
+  filter(ContentType == "Baseline") %>%
   select(ParticipantID, Civility, ViolationRecognition, EnforcementSeverity) %>%
   mutate(ContentType = "Non-political")
 

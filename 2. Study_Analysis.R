@@ -7,12 +7,12 @@ library(effectsize)
 
 df_long <- readRDS("Input data_long/Moderation_Data_Long_Format.rds")
 
-# Separate datasets for manipulation checks and political conditions
-df_manip <- df_long %>% filter(ContentType == "ManipCheck")
+# Separate datasets for non-political and political conditions
+df_baseline <- df_long %>% filter(ContentType == "Baseline")
 df_political <- df_long %>% filter(ContentType == "Political")
 
 cat("=== DATA SUMMARY ===\n")
-cat("Manipulation checks:", nrow(df_manip), "rows (3 per participant)\n")
+cat("Non-political baseline:", nrow(df_baseline), "rows (3 per participant)\n")
 cat("Political content:", nrow(df_political), "rows (6 per participant)\n")
 cat("Unique participants:", n_distinct(df_long$ParticipantID), "\n\n")
 
@@ -60,67 +60,67 @@ desc_with_ci_2 <- function(df, dv, group_var1, group_var2) {
     )
 }
 
-## Manipulation Checks - Civility Effect
+## Non-Political Baseline - Civility Effect
 
-# Violation Recognition on MC
+# Violation Recognition on Non-political Baseline
 cat("--- H1a: Violation Recognition ---\n")
-anova_h1a_mc <- df_manip %>%
+anova_h1a_base <- df_baseline %>%
   anova_test(
     dv = ViolationRecognition,
     wid = ParticipantID,
     within = Civility,
     effect.size = "pes"
   )
-print(anova_h1a_mc)
+print(anova_h1a_base)
 
-# Post-hoc pairwise comparisons on MC VR (KEEP IN RESERVE)
-#posthoc_h1a_mc <- df_manip %>%
+# Post-hoc pairwise comparisons on non-political baseline VR (KEEP IN RESERVE)
+#posthoc_h1a_base <- df_baseline %>%
  # pairwise_t_test(
   #  ViolationRecognition ~ Civility,
    # paired = TRUE,
     #p.adjust.method = "bonferroni"
   #)
-#print(posthoc_h1a_mc)
+#print(posthoc_h1a_base)
 
 
-# Descriptive statistics on MC ES
-desc_h1a_mc <- desc_with_ci(
-  df = df_manip,
+# Descriptive statistics on non-political baseline ES
+desc_h1a_base <- desc_with_ci(
+  df = df_baseline,
   dv = ViolationRecognition,
   group_var = Civility
 )
 
-print(desc_h1a_mc)
+print(desc_h1a_base)
 
 
-# Enforcement Severity on MC
+# Enforcement Severity on Non-political Baseline
 cat("\n--- H1b: Enforcement Severity ---\n")
-anova_h1b_mc <- df_manip %>%
+anova_h1b_base <- df_baseline %>%
   anova_test(
     dv = EnforcementSeverity,
     wid = ParticipantID,
     within = Civility,
     effect.size = "pes"
   )
-print(anova_h1b_mc)
+print(anova_h1b_base)
 
-# Post-hoc pairwise comparisons on MC ES
-posthoc_h1b_mc <- df_manip %>%
+# Post-hoc pairwise comparisons on non-political baseline ES
+posthoc_h1b_base <- df_baseline %>%
   pairwise_t_test(
     EnforcementSeverity ~ Civility,
     paired = TRUE,
     p.adjust.method = "bonferroni"
   )
-print(posthoc_h1b_mc)
+print(posthoc_h1b_base)
 
-# Descriptive statistics on MC ES
-desc_h1b_mc <- desc_with_ci(
-  df = df_manip,
+# Descriptive statistics on non-political baseline ES
+desc_h1b_base <- desc_with_ci(
+  df = df_baseline,
   dv = EnforcementSeverity,
   group_var = Civility
 )
 
-print(desc_h1b_mc)
+print(desc_h1b_base)
 
 ## Political Condition ANOVAs
 
@@ -288,18 +288,18 @@ cat("Date:", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "\n")
 cat("Sample size:", n_distinct(df_long$ParticipantID), "participants\n\n")
 
 cat("========================================\n")
-cat("H1: MANIPULATION CHECK - CIVILITY EFFECT\n")
+cat("H1: NON-POLITICAL BASELINE - CIVILITY EFFECT\n")
 cat("========================================\n\n")
 
 cat("--- H1a: Violation Recognition ---\n")
-print(anova_h1a_mc)
+print(anova_h1a_base)
 cat("\nDescriptive Statistics:\n")
-print(desc_h1a_mc)
+print(desc_h1a_base)
 
 cat("\n--- H1b: Enforcement Severity ---\n")
-print(anova_h1b_mc)
+print(anova_h1b_base)
 cat("\nDescriptive Statistics:\n")
-print(desc_h1b_mc)
+print(desc_h1b_base)
 
 cat("\n========================================\n")
 cat("POLITICAL CONTENT: CIVILITY × ALIGNMENT\n")
@@ -342,10 +342,10 @@ library(patchwork)
 library(ggplot2)
 
 # Ensure ordering
-desc_h1a_mc <- desc_h1a_mc %>%
+desc_h1a_base <- desc_h1a_base %>%
   mutate(Civility = factor(Civility, levels = c("Civil", "Borderline", "Uncivil")))
 
-desc_h1b_mc <- desc_h1b_mc %>%
+desc_h1b_base <- desc_h1b_base %>%
   mutate(Civility = factor(Civility, levels = c("Civil", "Borderline", "Uncivil")))
 
 desc_political_vr <- desc_political_vr %>%
@@ -366,9 +366,9 @@ base_theme <- theme_pubr() +
     axis.title  = element_text(face = "bold")
   )
 
-# ---------- Top row: Manipulation checks (bars) ----------
+# ---------- Top row: Non-political Baseline (bars) ----------
 
-p_manip_vr <- desc_h1a_mc %>%
+p_base_vr <- desc_h1a_base %>%
   ggplot(aes(x = Civility, y = Mean, fill = Civility)) +
   geom_col(width = 0.7) +
   geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper), width = 0.15) +
@@ -386,7 +386,7 @@ p_manip_vr <- desc_h1a_mc %>%
   theme(legend.position = "none") +
   ylim(0, 1)
 
-p_manip_es <- desc_h1b_mc %>%
+p_base_es <- desc_h1b_base %>%
   ggplot(aes(x = Civility, y = Mean, fill = Civility)) +
   geom_col(width = 0.7) +
   geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper), width = 0.15) +
@@ -455,7 +455,7 @@ p_es <- desc_political_es %>%
 
 # ---------- Combine: 2 x 2 grid, no global title ----------
 
-combined_plot <- (p_manip_vr | p_manip_es) /
+combined_plot <- (p_base_vr | p_base_es) /
   (p_vr       | p_es)
 
 ggsave(
@@ -497,7 +497,7 @@ format_anova_table <- function(aov_obj, digits = 3) {
 ## ========================================
 
 # Non-political baseline: VR + ES bar charts
-nonpolitical_combined <- (p_manip_vr | p_manip_es)
+nonpolitical_combined <- (p_base_vr | p_base_es)
 
 ggsave(
   "Graph output_results/Moderation_Results_NonPolitical.png",
@@ -525,9 +525,9 @@ ggsave(
 cat("\n✅ Standalone plots saved: Moderation_Results_NonPolitical.png and Moderation_Results_Political.png\n")
 
 
-# Manipulation checks
-tab_H1a_VR <- format_anova_table(anova_h1a_mc)
-tab_H1b_ES <- format_anova_table(anova_h1b_mc)
+# Non-political content
+tab_H1a_VR <- format_anova_table(anova_h1a_base)
+tab_H1b_ES <- format_anova_table(anova_h1b_base)
 
 # Political content
 tab_VR_political <- format_anova_table(anova_political_vr)

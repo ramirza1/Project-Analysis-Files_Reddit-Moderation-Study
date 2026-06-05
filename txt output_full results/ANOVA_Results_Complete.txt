@@ -3,11 +3,11 @@ POLITICAL CONTENT MODERATION STUDY
 ANOVA RESULTS
 ========================================
 
-Date: 2026-06-05 17:00:34 
+Date: 2026-06-05 17:43:58 
 Sample size: 254 participants
 
 ========================================
-H1: MANIPULATION CHECK - CIVILITY EFFECT
+H1: NON-POLITICAL BASELINE - CIVILITY EFFECT
 ========================================
 
 --- H1a: Violation Recognition ---
