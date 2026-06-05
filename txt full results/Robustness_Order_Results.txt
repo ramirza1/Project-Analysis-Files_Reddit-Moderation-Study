@@ -1,0 +1,168 @@
+========================================
+ROBUSTNESS CHECK: ORDER STABILITY
+========================================
+
+Date: 2026-04-29 11:20:50 
+
+--- Sample size by order block ---
+# A tibble: 6 × 2
+  Order      n
+  <fct>  <int>
+1 Order1    47
+2 Order2    27
+3 Order3    40
+4 Order4    50
+5 Order5    31
+6 Order6    59
+
+--- Violation Recognition: condition means by order block ---
+# A tibble: 36 × 9
+   Order  Civility   Alignment     N  Mean    SD     SE CI95_lower CI95_upper
+   <fct>  <fct>      <fct>     <int> <dbl> <dbl>  <dbl>      <dbl>      <dbl>
+ 1 Order1 Borderline Aligned      47 0.596 0.496 0.0724     0.450       0.741
+ 2 Order1 Borderline Opposed      47 0.681 0.471 0.0687     0.543       0.819
+ 3 Order1 Civil      Aligned      47 0.553 0.503 0.0733     0.406       0.701
+ 4 Order1 Civil      Opposed      47 0.553 0.503 0.0733     0.406       0.701
+ 5 Order1 Uncivil    Aligned      47 0.915 0.282 0.0411     0.832       0.998
+ 6 Order1 Uncivil    Opposed      47 0.936 0.247 0.0360     0.864       1.01 
+ 7 Order2 Borderline Aligned      27 0.593 0.501 0.0964     0.395       0.791
+ 8 Order2 Borderline Opposed      27 0.667 0.480 0.0925     0.477       0.857
+ 9 Order2 Civil      Aligned      27 0.593 0.501 0.0964     0.395       0.791
+10 Order2 Civil      Opposed      27 0.519 0.509 0.0980     0.317       0.720
+11 Order2 Uncivil    Aligned      27 0.963 0.192 0.0370     0.887       1.04 
+12 Order2 Uncivil    Opposed      27 1     0     0          1           1    
+13 Order3 Borderline Aligned      40 0.45  0.504 0.0797     0.289       0.611
+14 Order3 Borderline Opposed      40 0.625 0.490 0.0775     0.468       0.782
+15 Order3 Civil      Aligned      40 0.425 0.501 0.0792     0.265       0.585
+16 Order3 Civil      Opposed      40 0.5   0.506 0.0801     0.338       0.662
+17 Order3 Uncivil    Aligned      40 0.875 0.335 0.0530     0.768       0.982
+18 Order3 Uncivil    Opposed      40 0.925 0.267 0.0422     0.840       1.01 
+19 Order4 Borderline Aligned      50 0.6   0.495 0.0700     0.459       0.741
+20 Order4 Borderline Opposed      50 0.66  0.479 0.0677     0.524       0.796
+21 Order4 Civil      Aligned      50 0.38  0.490 0.0693     0.241       0.519
+22 Order4 Civil      Opposed      50 0.52  0.505 0.0714     0.377       0.663
+23 Order4 Uncivil    Aligned      50 0.88  0.328 0.0464     0.787       0.973
+24 Order4 Uncivil    Opposed      50 0.88  0.328 0.0464     0.787       0.973
+25 Order5 Borderline Aligned      31 0.645 0.486 0.0874     0.467       0.824
+26 Order5 Borderline Opposed      31 0.677 0.475 0.0853     0.503       0.852
+27 Order5 Civil      Aligned      31 0.258 0.445 0.0799     0.0949      0.421
+28 Order5 Civil      Opposed      31 0.323 0.475 0.0853     0.148       0.497
+29 Order5 Uncivil    Aligned      31 0.935 0.250 0.0449     0.844       1.03 
+30 Order5 Uncivil    Opposed      31 0.935 0.250 0.0449     0.844       1.03 
+31 Order6 Borderline Aligned      59 0.627 0.488 0.0635     0.500       0.754
+32 Order6 Borderline Opposed      59 0.627 0.488 0.0635     0.500       0.754
+33 Order6 Civil      Aligned      59 0.373 0.488 0.0635     0.246       0.500
+34 Order6 Civil      Opposed      59 0.610 0.492 0.0640     0.482       0.738
+35 Order6 Uncivil    Aligned      59 0.915 0.281 0.0366     0.842       0.988
+36 Order6 Uncivil    Opposed      59 0.881 0.326 0.0425     0.796       0.966
+
+--- Enforcement Severity: condition means by order block ---
+# A tibble: 36 × 9
+   Order   Civility   Alignment     N  Mean    SD    SE CI95_lower CI95_upper
+   <chr>   <fct>      <fct>     <int> <dbl> <dbl> <dbl>      <dbl>      <dbl>
+ 1 Order 1 Borderline Aligned      47 0.957 0.999 0.146      0.664      1.25 
+ 2 Order 1 Borderline Opposed      47 1.28  1.10  0.160      0.954      1.60 
+ 3 Order 1 Civil      Aligned      47 0.957 1.04  0.152      0.652      1.26 
+ 4 Order 1 Civil      Opposed      47 1.06  1.13  0.165      0.732      1.40 
+ 5 Order 1 Uncivil    Aligned      47 2.34  1.26  0.183      1.97       2.71 
+ 6 Order 1 Uncivil    Opposed      47 2.83  1.15  0.167      2.49       3.17 
+ 7 Order 2 Borderline Aligned      27 1.04  1.16  0.223      0.578      1.50 
+ 8 Order 2 Borderline Opposed      27 1.59  1.42  0.274      1.03       2.15 
+ 9 Order 2 Civil      Aligned      27 1.33  1.44  0.277      0.763      1.90 
+10 Order 2 Civil      Opposed      27 1.11  1.28  0.247      0.604      1.62 
+11 Order 2 Uncivil    Aligned      27 2.37  1.15  0.221      1.92       2.82 
+12 Order 2 Uncivil    Opposed      27 3.15  0.864 0.166      2.81       3.49 
+13 Order 3 Borderline Aligned      40 0.925 1.27  0.201      0.519      1.33 
+14 Order 3 Borderline Opposed      40 1.27  1.34  0.212      0.847      1.70 
+15 Order 3 Civil      Aligned      40 0.975 1.42  0.225      0.520      1.43 
+16 Order 3 Civil      Opposed      40 1.25  1.39  0.220      0.805      1.69 
+17 Order 3 Uncivil    Aligned      40 1.85  1.17  0.184      1.48       2.22 
+18 Order 3 Uncivil    Opposed      40 2.55  1.28  0.202      2.14       2.96 
+19 Order 4 Borderline Aligned      50 1.24  1.27  0.180      0.879      1.60 
+20 Order 4 Borderline Opposed      50 1.48  1.39  0.196      1.09       1.87 
+21 Order 4 Civil      Aligned      50 0.68  1.08  0.152      0.374      0.986
+22 Order 4 Civil      Opposed      50 1.06  1.25  0.177      0.704      1.42 
+23 Order 4 Uncivil    Aligned      50 2.34  1.33  0.189      1.96       2.72 
+24 Order 4 Uncivil    Opposed      50 2.36  1.29  0.182      1.99       2.73 
+25 Order 5 Borderline Aligned      31 1     0.931 0.167      0.659      1.34 
+26 Order 5 Borderline Opposed      31 1.35  1.23  0.220      0.905      1.80 
+27 Order 5 Civil      Aligned      31 0.516 0.996 0.179      0.151      0.881
+28 Order 5 Civil      Opposed      31 0.839 1.39  0.250      0.328      1.35 
+29 Order 5 Uncivil    Aligned      31 2.42  1.15  0.206      2.00       2.84 
+30 Order 5 Uncivil    Opposed      31 2.42  1.12  0.201      2.01       2.83 
+31 Order 6 Borderline Aligned      59 1.24  1.30  0.170      0.897      1.58 
+32 Order 6 Borderline Opposed      59 1.34  1.29  0.169      1.00       1.68 
+33 Order 6 Civil      Aligned      59 0.661 1.08  0.140      0.380      0.942
+34 Order 6 Civil      Opposed      59 1.19  1.21  0.158      0.871      1.50 
+35 Order 6 Uncivil    Aligned      59 2.42  1.22  0.159      2.11       2.74 
+36 Order 6 Uncivil    Opposed      59 2.56  1.36  0.176      2.21       2.91 
+
+--- ANOVA: VR with Order as between factor ---
+ANOVA Table (type III tests)
+
+$ANOVA
+                      Effect DFn DFd       F        p p<.05   pes
+1                    Order_f   5 248   0.616 6.88e-01       0.012
+2                   Civility   2 496 171.684 2.18e-57     * 0.409
+3                  Alignment   1 248   7.779 6.00e-03     * 0.030
+4           Order_f:Civility  10 496   1.902 4.30e-02     * 0.037
+5          Order_f:Alignment   5 248   0.432 8.26e-01       0.009
+6         Civility:Alignment   2 496   1.328 2.66e-01       0.005
+7 Order_f:Civility:Alignment  10 496   1.401 1.76e-01       0.027
+
+$`Mauchly's Test for Sphericity`
+                      Effect     W        p p<.05
+1                   Civility 0.983 0.127000      
+2           Order_f:Civility 0.983 0.127000      
+3         Civility:Alignment 0.937 0.000314     *
+4 Order_f:Civility:Alignment 0.937 0.000314     *
+
+$`Sphericity Corrections`
+                      Effect   GGe       DF[GG]    p[GG] p[GG]<.05   HFe       DF[HF]    p[HF] p[HF]<.05
+1                   Civility 0.984 1.97, 487.91 1.69e-56         * 0.991 1.98, 491.77 6.35e-57         *
+2           Order_f:Civility 0.984 9.84, 487.91 4.40e-02         * 0.991 9.91, 491.77 4.30e-02         *
+3         Civility:Alignment 0.941 1.88, 466.51 2.65e-01           0.947 1.89, 469.95 2.65e-01          
+4 Order_f:Civility:Alignment 0.941 9.41, 466.51 1.81e-01           0.947 9.47, 469.95 1.81e-01          
+
+
+--- ANOVA: ES with Order as between factor ---
+ANOVA Table (type III tests)
+
+$ANOVA
+                      Effect DFn DFd       F        p p<.05   pes
+1                    Order_f   5 248   0.546 7.42e-01       0.011
+2                   Civility   2 496 291.017 2.44e-84     * 0.540
+3                  Alignment   1 248  30.982 6.75e-08     * 0.111
+4           Order_f:Civility  10 496   1.702 7.70e-02       0.033
+5          Order_f:Alignment   5 248   0.461 8.05e-01       0.009
+6         Civility:Alignment   2 496   0.686 5.04e-01       0.003
+7 Order_f:Civility:Alignment  10 496   2.495 6.00e-03     * 0.048
+
+$`Mauchly's Test for Sphericity`
+                      Effect     W        p p<.05
+1                   Civility 0.879 1.21e-07     *
+2           Order_f:Civility 0.879 1.21e-07     *
+3         Civility:Alignment 0.997 6.70e-01      
+4 Order_f:Civility:Alignment 0.997 6.70e-01      
+
+$`Sphericity Corrections`
+                      Effect   GGe       DF[GG]    p[GG] p[GG]<.05   HFe       DF[HF]    p[HF] p[HF]<.05
+1                   Civility 0.892 1.78, 442.46 1.43e-75         * 0.898  1.8, 445.45 4.64e-76         *
+2           Order_f:Civility 0.892 8.92, 442.46 8.70e-02           0.898 8.98, 445.45 8.60e-02          
+3         Civility:Alignment 0.997  1.99, 494.4 5.03e-01           1.005  2.01, 498.4 5.04e-01          
+4 Order_f:Civility:Alignment 0.997  9.97, 494.4 6.00e-03         * 1.005 10.05, 498.4 6.00e-03         *
+
+
+========================================
+INTERPRETATION GUIDE
+========================================
+If main effects of Civility and Alignment hold across orders
+(no significant 3-way interactions involving Order_f),
+the partial counterbalancing approach is supported.
+
+Look for:
+  - Order_f main effect: is there a baseline shift across orders?
+  - Order_f:Civility: do civility effects vary across orders?
+  - Order_f:Alignment: do alignment effects vary across orders?
+  - Order_f:Civility:Alignment: does the interaction vary?
+Non-significant interactions support stability.

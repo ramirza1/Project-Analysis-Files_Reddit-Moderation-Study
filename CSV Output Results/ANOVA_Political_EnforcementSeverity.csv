@@ -1,0 +1,4 @@
+Effect,df1,df2,F,p,p<.05,pes
+Civility,2,506,305.116,0,*,0.547
+Alignment,1,253,31.987,0,*,0.112
+Civility:Alignment,2,506,0.09,0.914,,0

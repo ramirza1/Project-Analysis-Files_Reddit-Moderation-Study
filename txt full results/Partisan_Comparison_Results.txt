@@ -1,0 +1,155 @@
+========================================
+PARTISAN COMPARISON ANALYSIS
+Political Content Moderation
+========================================
+
+Date: 2025-12-19 20:47:33 
+
+========================================
+DEMOCRATS (N =  139 )
+========================================
+
+--- Descriptive Statistics: Violation Recognition ---
+# A tibble: 6 × 12
+  Civility Alignment     N  Mean    SD     SE  t_95  t_99 CI95_lower CI95_upper
+  <chr>    <chr>     <int> <dbl> <dbl>  <dbl> <dbl> <dbl>      <dbl>      <dbl>
+1 Civil    Aligned     139 0.353 0.479 0.0407  1.98  2.61      0.272      0.433
+2 Civil    Opposed     139 0.504 0.502 0.0426  1.98  2.61      0.419      0.588
+3 Borderl… Aligned     139 0.540 0.500 0.0424  1.98  2.61      0.456      0.623
+4 Borderl… Opposed     139 0.604 0.491 0.0416  1.98  2.61      0.522      0.687
+5 Uncivil  Aligned     139 0.906 0.292 0.0248  1.98  2.61      0.857      0.955
+6 Uncivil  Opposed     139 0.928 0.259 0.0220  1.98  2.61      0.885      0.972
+# ℹ 2 more variables: CI99_lower <dbl>, CI99_upper <dbl>
+
+--- Descriptive Statistics: Enforcement Severity ---
+# A tibble: 6 × 12
+  Civility Alignment     N  Mean    SD     SE  t_95  t_99 CI95_lower CI95_upper
+  <chr>    <chr>     <int> <dbl> <dbl>  <dbl> <dbl> <dbl>      <dbl>      <dbl>
+1 Civil    Aligned     139 0.712  1.14 0.0970  1.98  2.61      0.520      0.904
+2 Civil    Opposed     139 1.02   1.21 0.102   1.98  2.61      0.819      1.22 
+3 Borderl… Aligned     139 0.964  1.11 0.0938  1.98  2.61      0.779      1.15 
+4 Borderl… Opposed     139 1.19   1.21 0.102   1.98  2.61      0.985      1.39 
+5 Uncivil  Aligned     139 2.23   1.21 0.103   1.98  2.61      2.03       2.43 
+6 Uncivil  Opposed     139 2.60   1.21 0.103   1.98  2.61      2.39       2.80 
+# ℹ 2 more variables: CI99_lower <dbl>, CI99_upper <dbl>
+
+--- ANOVA: Violation Recognition ---
+ANOVA Table (type III tests)
+
+$ANOVA
+              Effect DFn DFd       F        p p<.05   pes
+1           Civility   2 276 110.599 5.30e-36     * 0.445
+2          Alignment   1 138  12.695 5.04e-04     * 0.084
+3 Civility:Alignment   2 276   3.159 4.40e-02     * 0.022
+
+$`Mauchly's Test for Sphericity`
+              Effect     W        p p<.05
+1           Civility 0.961 0.067000      
+2 Civility:Alignment 0.902 0.000851     *
+
+$`Sphericity Corrections`
+              Effect   GGe       DF[GG]    p[GG] p[GG]<.05   HFe       DF[HF]
+1           Civility 0.963 1.93, 265.74 9.11e-35         * 0.976 1.95, 269.43
+2 Civility:Alignment 0.911 1.82, 251.35 4.90e-02         * 0.922 1.84, 254.53
+     p[HF] p[HF]<.05
+1 3.28e-35         *
+2 4.80e-02         *
+
+
+--- ANOVA: Enforcement Severity ---
+ANOVA Table (type III tests)
+
+$ANOVA
+              Effect DFn DFd       F        p p<.05   pes
+1           Civility   2 276 185.100 1.03e-51     * 0.573
+2          Alignment   1 138  22.528 5.12e-06     * 0.140
+3 Civility:Alignment   2 276   0.571 5.66e-01       0.004
+
+$`Mauchly's Test for Sphericity`
+              Effect     W       p p<.05
+1           Civility 0.857 2.6e-05     *
+2 Civility:Alignment 0.996 7.6e-01      
+
+$`Sphericity Corrections`
+              Effect   GGe       DF[GG]    p[GG] p[GG]<.05   HFe       DF[HF]
+1           Civility 0.875 1.75, 241.51 1.31e-45         * 0.885 1.77, 244.36
+2 Civility:Alignment 0.996  1.99, 274.9 5.65e-01           1.011 2.02, 278.92
+     p[HF] p[HF]<.05
+1 4.12e-46         *
+2 5.66e-01          
+
+
+
+========================================
+REPUBLICANS (N =  115 )
+========================================
+
+--- Descriptive Statistics: Violation Recognition ---
+# A tibble: 6 × 12
+  Civility Alignment     N  Mean    SD     SE  t_95  t_99 CI95_lower CI95_upper
+  <chr>    <chr>     <int> <dbl> <dbl>  <dbl> <dbl> <dbl>      <dbl>      <dbl>
+1 Civil    Aligned     115 0.513 0.502 0.0468  1.98  2.62      0.420      0.606
+2 Civil    Opposed     115 0.539 0.501 0.0467  1.98  2.62      0.447      0.632
+3 Borderl… Aligned     115 0.643 0.481 0.0449  1.98  2.62      0.555      0.732
+4 Borderl… Opposed     115 0.713 0.454 0.0424  1.98  2.62      0.629      0.797
+5 Uncivil  Aligned     115 0.913 0.283 0.0264  1.98  2.62      0.861      0.965
+6 Uncivil  Opposed     115 0.904 0.295 0.0275  1.98  2.62      0.850      0.959
+# ℹ 2 more variables: CI99_lower <dbl>, CI99_upper <dbl>
+
+--- Descriptive Statistics: Enforcement Severity ---
+# A tibble: 6 × 12
+  Civility  Alignment     N  Mean    SD    SE  t_95  t_99 CI95_lower CI95_upper
+  <chr>     <chr>     <int> <dbl> <dbl> <dbl> <dbl> <dbl>      <dbl>      <dbl>
+1 Civil     Aligned     115 0.957  1.21 0.113  1.98  2.62      0.733       1.18
+2 Civil     Opposed     115 1.19   1.32 0.123  1.98  2.62      0.948       1.43
+3 Borderli… Aligned     115 1.23   1.25 0.117  1.98  2.62      1.00        1.47
+4 Borderli… Opposed     115 1.6    1.34 0.125  1.98  2.62      1.35        1.85
+5 Uncivil   Aligned     115 2.37   1.25 0.117  1.98  2.62      2.14        2.61
+6 Uncivil   Opposed     115 2.63   1.26 0.117  1.98  2.62      2.40        2.87
+# ℹ 2 more variables: CI99_lower <dbl>, CI99_upper <dbl>
+
+--- ANOVA: Violation Recognition ---
+ANOVA Table (type III tests)
+
+$ANOVA
+              Effect DFn DFd      F        p p<.05   pes
+1           Civility   2 228 64.299 7.18e-23     * 0.361
+2          Alignment   1 114  0.980 3.24e-01       0.009
+3 Civility:Alignment   2 228  0.724 4.86e-01       0.006
+
+$`Mauchly's Test for Sphericity`
+              Effect     W     p p<.05
+1           Civility 0.990 0.569      
+2 Civility:Alignment 0.954 0.069      
+
+$`Sphericity Corrections`
+              Effect   GGe       DF[GG]    p[GG] p[GG]<.05   HFe       DF[HF]
+1           Civility 0.990 1.98, 225.76 1.14e-22         * 1.008 2.02, 229.73
+2 Civility:Alignment 0.956 1.91, 217.93 4.80e-01           0.972 1.94, 221.56
+     p[HF] p[HF]<.05
+1 7.18e-23         *
+2 4.82e-01          
+
+
+--- ANOVA: Enforcement Severity ---
+ANOVA Table (type III tests)
+
+$ANOVA
+              Effect DFn DFd       F        p p<.05   pes
+1           Civility   2 228 122.771 6.51e-37     * 0.519
+2          Alignment   1 114  11.119 1.00e-03     * 0.089
+3 Civility:Alignment   2 228   0.343 7.10e-01       0.003
+
+$`Mauchly's Test for Sphericity`
+              Effect     W     p p<.05
+1           Civility 0.923 0.011     *
+2 Civility:Alignment 0.984 0.412      
+
+$`Sphericity Corrections`
+              Effect   GGe       DF[GG]    p[GG] p[GG]<.05   HFe       DF[HF]
+1           Civility 0.928 1.86, 211.61 1.86e-34         * 0.943 1.89, 214.97
+2 Civility:Alignment 0.985 1.97, 224.51 7.07e-01           1.002    2, 228.42
+     p[HF] p[HF]<.05
+1 5.83e-35         *
+2 7.10e-01          
+

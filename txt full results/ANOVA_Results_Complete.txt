@@ -1,0 +1,187 @@
+========================================
+POLITICAL CONTENT MODERATION STUDY
+ANOVA RESULTS
+========================================
+
+Date: 2026-04-28 19:28:25 
+Sample size: 254 participants
+
+========================================
+H1: MANIPULATION CHECK - CIVILITY EFFECT
+========================================
+
+--- H1a: Violation Recognition ---
+ANOVA Table (type III tests)
+
+$ANOVA
+    Effect DFn DFd       F         p p<.05   pes
+1 Civility   2 506 452.781 1.89e-113     * 0.642
+
+$`Mauchly's Test for Sphericity`
+    Effect     W        p p<.05
+1 Civility 0.903 2.51e-06     *
+
+$`Sphericity Corrections`
+    Effect   GGe       DF[GG]     p[GG] p[GG]<.05   HFe       DF[HF]    p[HF] p[HF]<.05
+1 Civility 0.911 1.82, 461.14 1.13e-103         * 0.918 1.84, 464.31 2.3e-104         *
+
+
+Descriptive Statistics:
+# A tibble: 3 × 11
+  Civility       N   Mean    SD     SE  t_95  t_99 CI95_lower CI95_upper CI99_lower CI99_upper
+  <chr>      <int>  <dbl> <dbl>  <dbl> <dbl> <dbl>      <dbl>      <dbl>      <dbl>      <dbl>
+1 Civil        254 0.0866 0.282 0.0177  1.97  2.60     0.0518      0.121     0.0407      0.133
+2 Borderline   254 0.335  0.473 0.0297  1.97  2.60     0.276       0.393     0.258       0.412
+3 Uncivil      254 0.917  0.276 0.0173  1.97  2.60     0.883       0.951     0.872       0.962
+
+--- H1b: Enforcement Severity ---
+ANOVA Table (type III tests)
+
+$ANOVA
+    Effect DFn DFd      F         p p<.05   pes
+1 Civility   2 506 612.56 7.13e-136     * 0.708
+
+$`Mauchly's Test for Sphericity`
+    Effect     W        p p<.05
+1 Civility 0.742 4.52e-17     *
+
+$`Sphericity Corrections`
+    Effect   GGe       DF[GG]    p[GG] p[GG]<.05   HFe      DF[HF]     p[HF] p[HF]<.05
+1 Civility 0.795 1.59, 402.16 1.2e-108         * 0.799 1.6, 404.29 3.31e-109         *
+
+
+Descriptive Statistics:
+# A tibble: 3 × 11
+  Civility       N  Mean    SD     SE  t_95  t_99 CI95_lower CI95_upper CI99_lower CI99_upper
+  <chr>      <int> <dbl> <dbl>  <dbl> <dbl> <dbl>      <dbl>      <dbl>      <dbl>      <dbl>
+1 Civil        254 0.118 0.438 0.0275  1.97  2.60     0.0640      0.172     0.0468      0.189
+2 Borderline   254 0.520 0.892 0.0560  1.97  2.60     0.409       0.630     0.374       0.665
+3 Uncivil      254 2.54  1.25  0.0784  1.97  2.60     2.38        2.69      2.34        2.74 
+
+========================================
+POLITICAL CONTENT: CIVILITY × ALIGNMENT
+========================================
+
+--- Violation Recognition ---
+ANOVA Table (type III tests)
+
+$ANOVA
+              Effect DFn DFd       F        p p<.05   pes
+1           Civility   2 506 172.309 8.46e-58     * 0.405
+2          Alignment   1 253   9.811 2.00e-03     * 0.037
+3 Civility:Alignment   2 506   2.309 1.00e-01       0.009
+
+$`Mauchly's Test for Sphericity`
+              Effect     W        p p<.05
+1           Civility 0.988 2.26e-01      
+2 Civility:Alignment 0.929 9.94e-05     *
+
+$`Sphericity Corrections`
+              Effect   GGe       DF[GG]    p[GG] p[GG]<.05   HFe       DF[HF]    p[HF] p[HF]<.05
+1           Civility 0.988 1.98, 500.14 3.65e-57         * 0.996 1.99, 504.05 1.37e-57         *
+2 Civility:Alignment 0.934 1.87, 472.66 1.04e-01           0.941 1.88, 476.04 1.04e-01          
+
+
+Descriptive Statistics:
+# A tibble: 6 × 12
+  Civility   Alignment     N  Mean    SD     SE  t_95  t_99 CI95_lower CI95_upper CI99_lower CI99_upper
+  <chr>      <chr>     <int> <dbl> <dbl>  <dbl> <dbl> <dbl>      <dbl>      <dbl>      <dbl>      <dbl>
+1 Civil      Aligned     254 0.425 0.495 0.0311  1.97  2.60      0.364      0.486      0.345      0.506
+2 Civil      Opposed     254 0.520 0.501 0.0314  1.97  2.60      0.458      0.582      0.438      0.601
+3 Borderline Aligned     254 0.587 0.493 0.0310  1.97  2.60      0.526      0.648      0.506      0.667
+4 Borderline Opposed     254 0.654 0.477 0.0299  1.97  2.60      0.595      0.712      0.576      0.731
+5 Uncivil    Aligned     254 0.909 0.288 0.0180  1.97  2.60      0.874      0.945      0.863      0.956
+6 Uncivil    Opposed     254 0.917 0.276 0.0173  1.97  2.60      0.883      0.951      0.872      0.962
+
+--- Enforcement Severity ---
+ANOVA Table (type III tests)
+
+$ANOVA
+              Effect DFn DFd       F        p p<.05      pes
+1           Civility   2 506 305.116 1.17e-87     * 0.547000
+2          Alignment   1 253  31.987 4.18e-08     * 0.112000
+3 Civility:Alignment   2 506   0.090 9.14e-01       0.000354
+
+$`Mauchly's Test for Sphericity`
+              Effect     W        p p<.05
+1           Civility 0.889 3.74e-07     *
+2 Civility:Alignment 0.993 3.96e-01      
+
+$`Sphericity Corrections`
+              Effect   GGe       DF[GG]    p[GG] p[GG]<.05   HFe       DF[HF]    p[HF] p[HF]<.05
+1           Civility 0.900  1.8, 455.52 3.19e-79         * 0.906 1.81, 458.58 9.80e-80         *
+2 Civility:Alignment 0.993 1.99, 502.32 9.13e-01           1.001    2, 506.28 9.14e-01          
+
+
+Descriptive Statistics:
+# A tibble: 6 × 12
+  Civility   Alignment     N  Mean    SD     SE  t_95  t_99 CI95_lower CI95_upper CI99_lower CI99_upper
+  <chr>      <chr>     <int> <dbl> <dbl>  <dbl> <dbl> <dbl>      <dbl>      <dbl>      <dbl>      <dbl>
+1 Civil      Aligned     254 0.823  1.18 0.0739  1.97  2.60      0.677      0.968      0.631       1.01
+2 Civil      Opposed     254 1.10   1.26 0.0789  1.97  2.60      0.943      1.25       0.894       1.30
+3 Borderline Aligned     254 1.09   1.18 0.0740  1.97  2.60      0.941      1.23       0.895       1.28
+4 Borderline Opposed     254 1.37   1.28 0.0806  1.97  2.60      1.22       1.53       1.16        1.58
+5 Uncivil    Aligned     254 2.30   1.23 0.0772  1.97  2.60      2.14       2.45       2.09        2.50
+6 Uncivil    Opposed     254 2.61   1.23 0.0773  1.97  2.60      2.46       2.77       2.41        2.81
+
+========================================
+H4: BORDERLINE-SPECIFIC CONTRASTS
+========================================
+
+--- H4a: Violation Recognition ---
+Borderline vs Civil:
+
+	One Sample t-test
+
+data:  contrast_h4a_1$Borderline_vs_Civil
+t = -0.59729, df = 253, p-value = 0.5508
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ -0.11842638  0.06330827
+sample estimates:
+  mean of x 
+-0.02755906 
+
+
+Borderline vs Uncivil:
+
+	One Sample t-test
+
+data:  contrast_h4a_2$Borderline_vs_Uncivil
+t = 1.5948, df = 253, p-value = 0.112
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ -0.01386987  0.13198010
+sample estimates:
+ mean of x 
+0.05905512 
+
+
+--- H4b: Enforcement Severity ---
+Borderline vs Civil:
+
+	One Sample t-test
+
+data:  contrast_h4b_1$Borderline_vs_Civil
+t = 0.1144, df = 253, p-value = 0.909
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ -0.1915124  0.2151345
+sample estimates:
+ mean of x 
+0.01181102 
+
+
+Borderline vs Uncivil:
+
+	One Sample t-test
+
+data:  contrast_h4b_2$Borderline_vs_Uncivil
+t = -0.30357, df = 253, p-value = 0.7617
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ -0.2358238  0.1728317
+sample estimates:
+  mean of x 
+-0.03149606 
+
