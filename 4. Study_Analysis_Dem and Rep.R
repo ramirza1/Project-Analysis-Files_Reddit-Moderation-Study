@@ -11,7 +11,7 @@ library(ggpubr)
 library(patchwork)  
 
 ## LOAD DATA
-df_long <- readRDS("Moderation_Data_Long_Format.rds")
+df_long <- readRDS("Input data_long/Moderation_Data_Long_Format.rds")
 
 # Separate datasets for manipulation checks and political conditions
 df_manip <- df_long %>% filter(ContentType == "ManipCheck")
@@ -162,7 +162,7 @@ print(desc_rep_es)
 ## SAVE RESULTS TO FILE
 ## ========================================
 
-sink("Partisan_Comparison_Results.txt")
+sink("txt output_full results/Partisan_Comparison_Results.txt")
 
 cat("========================================\n")
 cat("PARTISAN COMPARISON ANALYSIS\n")
@@ -315,7 +315,7 @@ combined_partisan <- (p_dem_vr | p_rep_vr) / (p_dem_es | p_rep_es)
 
 # Save
 ggsave(
-  "Partisan_Comparison_Plots.png",
+  "Graph output_results/Partisan_Comparison_Plots.png",
   combined_partisan,
   width = 12,
   height = 10,
@@ -325,13 +325,49 @@ ggsave(
 
 cat("\n✅ Plots saved to: Partisan_Comparison_Plots.png\n")
 
+
+## ========================================
+## STANDALONE GRAPHS: split by party (VR + ES per party)
+## Combined file above is retained
+## ========================================
+
+# Democrats: VR + ES (shared legend)
+democrats_combined <- (p_dem_vr | p_dem_es) +
+  plot_layout(guides = "collect") &
+  theme(legend.position = "top")
+
+ggsave(
+  "Graph output_results/Partisan_Democrats.png",
+  democrats_combined,
+  width  = 12,
+  height = 5,
+  dpi    = 300,
+  bg     = "white"
+)
+
+# Republicans: VR + ES (shared legend)
+republicans_combined <- (p_rep_vr | p_rep_es) +
+  plot_layout(guides = "collect") &
+  theme(legend.position = "top")
+
+ggsave(
+  "Graph output_results/Partisan_Republicans.png",
+  republicans_combined,
+  width  = 12,
+  height = 5,
+  dpi    = 300,
+  bg     = "white"
+)
+
+cat("\n✅ Standalone plots saved: Partisan_Democrats.png and Partisan_Republicans.png\n")
+
 ## ========================================
 ## EXPORT TABLES TO CSV
 ## ========================================
 
-write_csv(desc_dem_vr, "Democrats_ViolationRecognition_Descriptives.csv")
-write_csv(desc_dem_es, "Democrats_EnforcementSeverity_Descriptives.csv")
-write_csv(desc_rep_vr, "Republicans_ViolationRecognition_Descriptives.csv")
-write_csv(desc_rep_es, "Republicans_EnforcementSeverity_Descriptives.csv")
+write_csv(desc_dem_vr, "csv descriptive_results/Democrats_ViolationRecognition_Descriptives.csv")
+write_csv(desc_dem_es, "csv descriptive_results/Democrats_EnforcementSeverity_Descriptives.csv")
+write_csv(desc_rep_vr, "csv descriptive_results/Republicans_ViolationRecognition_Descriptives.csv")
+write_csv(desc_rep_es, "csv descriptive_results/Republicans_EnforcementSeverity_Descriptives.csv")
 
 cat("\n✅ CSV tables exported\n")

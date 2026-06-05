@@ -17,7 +17,7 @@ library(effectsize)
 library(ggpubr)
 
 ## LOAD DATA
-df_long <- readRDS("Moderation_Data_Long_Format.rds")
+df_long <- readRDS("Input data_long/Moderation_Data_Long_Format.rds")
 
 cat("=== DATA SUMMARY ===\n")
 cat("Total rows:", nrow(df_long), "\n")
@@ -138,7 +138,7 @@ print(simple_es)
 ## SAVE RESULTS TO FILE
 ## ========================================
 
-sink("Political_vs_NonPolitical_Results.txt")
+sink("txt output_full results/Political_vs_NonPolitical_Results.txt")
 
 cat("========================================\n")
 cat("POLITICAL vs NON-POLITICAL COMPARISON\n")
@@ -254,7 +254,7 @@ combined_compare <- (p_vr_compare | p_es_compare) +
   theme(legend.position = "top")
 
 ggsave(
-  "Political_vs_NonPolitical_Combined.png",
+  "Graph output_results/Political_vs_NonPolitical_Combined.png",
   combined_compare,
   width  = 12,
   height = 5,
@@ -264,9 +264,112 @@ ggsave(
 
 cat("\nChart saved to: Political_vs_NonPolitical_Combined.png\n")
 
+
+## ========================================
+## STANDALONE CHARTS: VR and ES with difference annotations
+## ========================================
+
+# Helper: compute per-civility diff and annotation positions
+make_annot_df <- function(desc_df) {
+  np_df <- desc_df %>%
+    filter(ContentType == "Non-political") %>%
+    select(Civility, Mean_NP = Mean, Upper_NP = CI95_upper)
+  p_df  <- desc_df %>%
+    filter(ContentType == "Political") %>%
+    select(Civility, Mean_P = Mean, Upper_P = CI95_upper)
+  np_df %>%
+    left_join(p_df, by = "Civility") %>%
+    mutate(
+      diff      = Mean_P - Mean_NP,
+      max_upper = pmax(Upper_NP, Upper_P),
+      x_num     = as.numeric(Civility)
+    )
+}
+
+# VR annotation frame
+# threshold: |diff| <= 0.03 (i.e. ~3pp) treated as "no gap"
+annot_vr <- make_annot_df(desc_compare_vr) %>%
+  mutate(
+    label       = case_when(
+      diff >  0.03 ~ paste0("+", round(diff * 100), "pp"),
+      diff < -0.03 ~ paste0(round(diff * 100), "pp"),
+      TRUE         ~ "no gap"
+    ),
+    label_color = if_else(abs(diff) > 0.03, "#CC2200", "#888888"),
+    x_pos       = x_num + if_else(abs(diff) <= 0.03, 0.18, 0),  # nudge "no gap" right
+    y_pos       = max_upper + 0.05
+  )
+
+# ES annotation frame
+# threshold: |diff| <= 0.10 treated as "no gap"
+annot_es <- make_annot_df(desc_compare_es) %>%
+  mutate(
+    label       = case_when(
+      diff >  0.10 ~ paste0("+", sprintf("%.2f", diff)),
+      diff < -0.10 ~ sprintf("%.2f", diff),
+      TRUE         ~ "no gap"
+    ),
+    label_color = if_else(abs(diff) > 0.10, "#CC2200", "#888888"),
+    x_pos       = x_num + if_else(abs(diff) <= 0.10, 0.18, 0),
+    y_pos       = max_upper + 0.10
+  )
+
+# Standalone Violation Recognition chart
+p_vr_standalone <- p_vr_compare +
+  labs(
+    title = "Political content is judged more harshly than non-political\ncontent at the same level of incivility",
+    y     = "Violation recognition rate"
+  ) +
+  theme(plot.title = element_text(face = "bold", size = 12)) +
+  geom_text(
+    data        = annot_vr,
+    aes(x = x_pos, y = y_pos, label = label, color = label_color),
+    inherit.aes = FALSE,
+    size        = 4,
+    fontface    = "bold"
+  ) +
+  scale_color_identity()
+
+# Standalone Enforcement Severity chart
+p_es_standalone <- p_es_compare +
+  labs(
+    title = "Same pattern holds for enforcement severity",
+    y     = "Enforcement severity (0-4)"
+  ) +
+  theme(plot.title = element_text(face = "bold", size = 12)) +
+  geom_text(
+    data        = annot_es,
+    aes(x = x_pos, y = y_pos, label = label, color = label_color),
+    inherit.aes = FALSE,
+    size        = 4,
+    fontface    = "bold"
+  ) +
+  scale_color_identity()
+
+ggsave(
+  "Graph output_results/Political_vs_NonPolitical_VR.png",
+  p_vr_standalone,
+  width  = 7,
+  height = 5,
+  dpi    = 300,
+  bg     = "white"
+)
+
+ggsave(
+  "Graph output_results/Political_vs_NonPolitical_ES.png",
+  p_es_standalone,
+  width  = 7,
+  height = 5,
+  dpi    = 300,
+  bg     = "white"
+)
+
+cat("\nStandalone charts saved: Political_vs_NonPolitical_VR.png and Political_vs_NonPolitical_ES.png\n")
+
+
 ## ========================================
 ## EXPORT TABLES
 ## ========================================
-write_csv(desc_compare_vr, "Political_vs_NonPolitical_VR_Descriptives.csv")
-write_csv(desc_compare_es, "Political_vs_NonPolitical_ES_Descriptives.csv")
+write_csv(desc_compare_vr, "csv descriptive_results/Political_vs_NonPolitical_VR_Descriptives.csv")
+write_csv(desc_compare_es, "csv descriptive_results/Political_vs_NonPolitical_ES_Descriptives.csv")
 cat("\nCSV tables exported\n")

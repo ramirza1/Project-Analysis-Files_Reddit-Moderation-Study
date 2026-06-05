@@ -18,7 +18,7 @@ library(ggpubr)
 library(patchwork)
 
 ## LOAD DATA (if not already in environment)
-df_long <- readRDS("Moderation_Data_Long_Format.rds")
+df_long <- readRDS("Input data_long/Moderation_Data_Long_Format.rds")
 df_political <- df_long %>% filter(ContentType == "Political")
 
 # Confirm Order column exists - adapt name if different in your data
@@ -172,9 +172,9 @@ p_order_es <- ggplot(desc_order_es,
   ) +
   base_theme_clean
 
-ggsave("Robustness_Order_VR.png", p_order_vr,
+ggsave("Graph output_results/Robustness_Order_VR.png", p_order_vr,
        width = 12, height = 7, dpi = 300, bg = "white")
-ggsave("Robustness_Order_ES.png", p_order_es,
+ggsave("Graph output_results/Robustness_Order_ES.png", p_order_es,
        width = 12, height = 7, dpi = 300, bg = "white")
 
 cat("\nFacet plots saved:\n")
@@ -185,7 +185,7 @@ cat("  Robustness_Order_ES.png\n")
 ## SAVE RESULTS
 ## ========================================
 
-sink("Robustness_Order_Results.txt")
+sink("txt output_full results/Robustness_Order_Results.txt")
 
 cat("========================================\n")
 cat("ROBUSTNESS CHECK: ORDER STABILITY\n")
@@ -228,7 +228,7 @@ sink()
 cat("\nResults saved to: Robustness_Order_Results.txt\n")
 
 ## Export descriptives
-write_csv(desc_order_vr, "Robustness_Order_VR_Descriptives.csv")
-write_csv(desc_order_es, "Robustness_Order_ES_Descriptives.csv")
+write_csv(desc_order_vr, "csv descriptive_results/Robustness_Order_VR_Descriptives.csv")
+write_csv(desc_order_es, "csv descriptive_results/Robustness_Order_ES_Descriptives.csv")
 
 cat("CSV tables exported.\n")

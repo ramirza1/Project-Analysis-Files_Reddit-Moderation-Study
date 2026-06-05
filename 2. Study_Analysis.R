@@ -5,7 +5,7 @@ library(rstatix)
 library(emmeans)
 library(effectsize)
 
-df_long <- readRDS("Moderation_Data_Long_Format.rds")
+df_long <- readRDS("Input data_long/Moderation_Data_Long_Format.rds")
 
 # Separate datasets for manipulation checks and political conditions
 df_manip <- df_long %>% filter(ContentType == "ManipCheck")
@@ -277,7 +277,7 @@ alignment_gaps_es %>%
 
 ## Save results to file
 
-sink("ANOVA_Results_Complete.txt")
+sink("txt output_full results/ANOVA_Results_Complete.txt")
 
 cat("========================================\n")
 cat("POLITICAL CONTENT MODERATION STUDY\n")
@@ -459,7 +459,7 @@ combined_plot <- (p_manip_vr | p_manip_es) /
   (p_vr       | p_es)
 
 ggsave(
-  "Moderation_Results_Combined.png",
+  "Graph output_results/Moderation_Results_Combined.png",
   combined_plot,
   width = 12,
   height = 10,
@@ -491,6 +491,40 @@ format_anova_table <- function(aov_obj, digits = 3) {
     )
 }
 
+## ========================================
+## STANDALONE GRAPHS: split by content type (VR + ES side by side)
+## Matches slide layout; combined file above is retained
+## ========================================
+
+# Non-political baseline: VR + ES bar charts
+nonpolitical_combined <- (p_manip_vr | p_manip_es)
+
+ggsave(
+  "Graph output_results/Moderation_Results_NonPolitical.png",
+  nonpolitical_combined,
+  width  = 12,
+  height = 5,
+  dpi    = 300,
+  bg     = "white"
+)
+
+# Political content: VR + ES line charts (shared legend)
+political_combined <- (p_vr | p_es) +
+  plot_layout(guides = "collect") &
+  theme(legend.position = "top")
+
+ggsave(
+  "Graph output_results/Moderation_Results_Political.png",
+  political_combined,
+  width  = 12,
+  height = 5,
+  dpi    = 300,
+  bg     = "white"
+)
+
+cat("\n✅ Standalone plots saved: Moderation_Results_NonPolitical.png and Moderation_Results_Political.png\n")
+
+
 # Manipulation checks
 tab_H1a_VR <- format_anova_table(anova_h1a_mc)
 tab_H1b_ES <- format_anova_table(anova_h1b_mc)
@@ -504,10 +538,10 @@ tab_H1a_VR
 tab_VR_political
 
 # Export to CSV
-write_csv(tab_H1a_VR, "ANOVA_H1a_ViolationRecognition.csv")
-write_csv(tab_H1b_ES, "ANOVA_H1b_EnforcementSeverity.csv")
-write_csv(tab_VR_political, "ANOVA_Political_ViolationRecognition.csv")
-write_csv(tab_ES_political, "ANOVA_Political_EnforcementSeverity.csv")
+write_csv(tab_H1a_VR, "csv output_results/ANOVA_H1a_ViolationRecognition.csv")
+write_csv(tab_H1b_ES, "csv output_results/ANOVA_H1b_EnforcementSeverity.csv")
+write_csv(tab_VR_political, "csv output_results/ANOVA_Political_ViolationRecognition.csv")
+write_csv(tab_ES_political, "csv output_results/ANOVA_Political_EnforcementSeverity.csv")
 
 # Export to word
 library(knitr)
