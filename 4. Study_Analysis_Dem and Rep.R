@@ -313,7 +313,7 @@ combined_partisan <- (p_dem_vr | p_rep_vr) / (p_dem_es | p_rep_es)
 
 # Save
 ggsave(
-  "Graph output_results/Partisan_Comparison_Plots.png",
+  "Graph_output_results/Partisan_Comparison_Plots.png",
   combined_partisan,
   width = 12,
   height = 10,
@@ -335,7 +335,7 @@ democrats_combined <- (p_dem_vr | p_dem_es) +
   theme(legend.position = "top")
 
 ggsave(
-  "Graph output_results/Partisan_Democrats.png",
+  "Graph_output_results/Partisan_Democrats.png",
   democrats_combined,
   width  = 12,
   height = 5,
@@ -349,7 +349,7 @@ republicans_combined <- (p_rep_vr | p_rep_es) +
   theme(legend.position = "top")
 
 ggsave(
-  "Graph output_results/Partisan_Republicans.png",
+  "Graph_output_results/Partisan_Republicans.png",
   republicans_combined,
   width  = 12,
   height = 5,

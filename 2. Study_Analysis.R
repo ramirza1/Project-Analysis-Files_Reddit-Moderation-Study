@@ -459,7 +459,7 @@ combined_plot <- (p_base_vr | p_base_es) /
   (p_vr       | p_es)
 
 ggsave(
-  "Graph output_results/Moderation_Results_Combined.png",
+  "Graph_output_results/Moderation_Results_Combined.png",
   combined_plot,
   width = 12,
   height = 10,
@@ -500,7 +500,7 @@ format_anova_table <- function(aov_obj, digits = 3) {
 nonpolitical_combined <- (p_base_vr | p_base_es)
 
 ggsave(
-  "Graph output_results/Moderation_Results_NonPolitical.png",
+  "Graph_output_results/Moderation_Results_NonPolitical.png",
   nonpolitical_combined,
   width  = 12,
   height = 5,
@@ -514,7 +514,7 @@ political_combined <- (p_vr | p_es) +
   theme(legend.position = "top")
 
 ggsave(
-  "Graph output_results/Moderation_Results_Political.png",
+  "Graph_output_results/Moderation_Results_Political.png",
   political_combined,
   width  = 12,
   height = 5,

@@ -254,7 +254,7 @@ combined_compare <- (p_vr_compare | p_es_compare) +
   theme(legend.position = "top")
 
 ggsave(
-  "Graph output_results/Political_vs_NonPolitical_Combined.png",
+  "Graph_output_results/Political_vs_NonPolitical_Combined.png",
   combined_compare,
   width  = 12,
   height = 5,
@@ -347,7 +347,7 @@ p_es_standalone <- p_es_compare +
   scale_color_identity()
 
 ggsave(
-  "Graph output_results/Political_vs_NonPolitical_VR.png",
+  "Graph_output_results/Political_vs_NonPolitical_VR.png",
   p_vr_standalone,
   width  = 7,
   height = 5,
@@ -356,7 +356,7 @@ ggsave(
 )
 
 ggsave(
-  "Graph output_results/Political_vs_NonPolitical_ES.png",
+  "Graph_output_results/Political_vs_NonPolitical_ES.png",
   p_es_standalone,
   width  = 7,
   height = 5,
