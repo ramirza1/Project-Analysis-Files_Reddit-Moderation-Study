@@ -2,7 +2,7 @@
 library(tidyverse)
 
 # Read dataset
-df_wide <- read_csv ("Input data_wide/Prepped data_Wide_Format.csv")
+df_wide <- read_csv ("Input_data_wide/Prepped data_Wide_Format.csv")
 dim(df_wide)
 names(df_wide)
 
@@ -333,19 +333,19 @@ df_long %>%
 
 ## Save data
 
-write_csv(df_long, "Input data_long/Moderation_Data_Long_Format.csv")
+write_csv(df_long, "Input_data_long/Moderation_Data_Long_Format.csv")
 cat("✅ Saved: Moderation_Data_Long_Format.csv\n")
 
 df_long %>%
   filter(ContentType == "Political") %>%
-  write_csv("Input data_long/Moderation_Data_Political_Only.csv")
+  write_csv("Input_data_long/Moderation_Data_Political_Only.csv")
 cat("✅ Saved: Moderation_Data_Political_Only.csv\n")
 
 df_long %>%
   filter(ContentType == "Baseline") %>%
-  write_csv("Input data_long/Moderation_Data_Baseline.csv")
+  write_csv("Input_data_long/Moderation_Data_Baseline.csv")
 
 cat("✅ Saved: Moderation_Data_Baseline.csv\n")
 
-saveRDS(df_long, "Input data_long/Moderation_Data_Long_Format.rds")
+saveRDS(df_long, "Input_data_long/Moderation_Data_Long_Format.rds")
 cat("✅ Saved: Moderation_Data_Long_Format.rds\n")

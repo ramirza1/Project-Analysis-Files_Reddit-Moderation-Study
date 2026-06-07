@@ -17,7 +17,7 @@ library(effectsize)
 library(ggpubr)
 
 ## LOAD DATA
-df_long <- readRDS("Input data_long/Moderation_Data_Long_Format.rds")
+df_long <- readRDS("Input_data_long/Moderation_Data_Long_Format.rds")
 
 cat("=== DATA SUMMARY ===\n")
 cat("Total rows:", nrow(df_long), "\n")
@@ -138,7 +138,7 @@ print(simple_es)
 ## SAVE RESULTS TO FILE
 ## ========================================
 
-sink("txt output_full results/Political_vs_NonPolitical_Results.txt")
+sink("txt_output_full_results/Political_vs_NonPolitical_Results.txt")
 
 cat("========================================\n")
 cat("POLITICAL vs NON-POLITICAL COMPARISON\n")
@@ -370,6 +370,12 @@ cat("\nStandalone charts saved: Political_vs_NonPolitical_VR.png and Political_v
 ## ========================================
 ## EXPORT TABLES
 ## ========================================
-write_csv(desc_compare_vr, "csv descriptive_results/Political_vs_NonPolitical_VR_Descriptives.csv")
-write_csv(desc_compare_es, "csv descriptive_results/Political_vs_NonPolitical_ES_Descriptives.csv")
+write_csv(desc_compare_vr, "csv_descriptive_results/Political_vs_NonPolitical_VR_Descriptives.csv") #Descriptive results, violation recognition, political vs non-political
+write_csv(desc_compare_es, "csv_descriptive_results/Political_vs_NonPolitical_ES_Descriptives.csv") #Descriptive results, enforcement severity, political vs non-political
+
+write_csv(get_anova_table(anova_compare_vr, correction="auto"), "csv_output_results/ANOVA_GG_CompareVR.csv") #ANOVA violation recognition, political vs non-political
+write_csv(get_anova_table(anova_compare_es, correction="auto"), "csv_output_results/ANOVA_GG_CompareES.csv") #ANOVA enforcement severity, political vs non-political
+
+write_csv(simple_vr, "csv_output_results/SimpleEffects_CompareVR.csv") #Simple effects violation recognition, political vs non-political
+write_csv(simple_es, "csv_output_results/SimpleEffects_CompareES.csv") #Simple effects enforcement severity, political vs non-political
 cat("\nCSV tables exported\n")

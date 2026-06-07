@@ -5,7 +5,7 @@ library(rstatix)
 library(emmeans)
 library(effectsize)
 
-df_long <- readRDS("Input data_long/Moderation_Data_Long_Format.rds")
+df_long <- readRDS("Input_data_long/Moderation_Data_Long_Format.rds")
 
 # Separate datasets for non-political and political conditions
 df_baseline <- df_long %>% filter(ContentType == "Baseline")
@@ -277,7 +277,7 @@ alignment_gaps_es %>%
 
 ## Save results to file
 
-sink("txt output_full results/ANOVA_Results_Complete.txt")
+sink("txt_output_full_results/ANOVA_Results_Complete.txt")
 
 cat("========================================\n")
 cat("POLITICAL CONTENT MODERATION STUDY\n")
@@ -538,11 +538,22 @@ tab_H1a_VR
 tab_VR_political
 
 # Export to CSV
-write_csv(tab_H1a_VR, "csv output_results/ANOVA_H1a_ViolationRecognition.csv")
-write_csv(tab_H1b_ES, "csv output_results/ANOVA_H1b_EnforcementSeverity.csv")
-write_csv(tab_VR_political, "csv output_results/ANOVA_Political_ViolationRecognition.csv")
-write_csv(tab_ES_political, "csv output_results/ANOVA_Political_EnforcementSeverity.csv")
+write_csv(tab_H1a_VR, "csv_output_results/ANOVA_H1a_ViolationRecognition.csv") #ANOVA violation recognition, non-political condition - spot check
+write_csv(tab_H1b_ES, "csv_output_results/ANOVA_H1b_EnforcementSeverity.csv") #ANOVA enforcement severity, non-political condition - spot check
+write_csv(tab_VR_political, "csv_output_results/ANOVA_Political_ViolationRecognition.csv") #ANOVA violation recognition, political condition - spot check
+write_csv(tab_ES_political, "csv_output_results/ANOVA_Political_EnforcementSeverity.csv") #ANOVA enforcement severity, political condition - spot check
+
+write_csv(get_anova_table(anova_h1a_base,     correction="GG"), "csv_output_results/ANOVA_GG_BaseVR.csv") #ANOVA violation recognition, non-political condition
+write_csv(get_anova_table(anova_h1b_base,     correction="GG"), "csv_output_results/ANOVA_GG_BaseES.csv") #ANOVA enforcement severity, non-political condition
+write_csv(get_anova_table(anova_political_vr, correction="GG"), "csv_output_results/ANOVA_GG_PolVR.csv") #ANOVA violation recognition, political condition
+write_csv(get_anova_table(anova_political_es, correction="GG"), "csv_output_results/ANOVA_GG_PolES.csv") #ANOVA enforcement severity, political condition
+
+write_csv(desc_h1a_base,    "csv_descriptive_results/Desc_BaseVR.csv") #Descriptive results, violation recognition, non-political condition
+write_csv(desc_h1b_base,    "csv_descriptive_results/Desc_BaseES.csv") #Descriptive results, enforcement severity, non-political condition
+write_csv(desc_political_vr,"csv_descriptive_results/Desc_PolVR.csv") #Descriptive results, violation recognition, political condition
+write_csv(desc_political_es,"csv_descriptive_results/Desc_PolES.csv") #Descriptive results, enforcement severity, political condition
 
 # Export to word
 library(knitr)
 kable(tab_VR_political, caption = "ANOVA for Political Violation Recognition")
+

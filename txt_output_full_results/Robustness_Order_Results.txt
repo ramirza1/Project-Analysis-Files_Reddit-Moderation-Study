@@ -2,7 +2,7 @@
 ROBUSTNESS CHECK: ORDER STABILITY
 ========================================
 
-Date: 2026-06-05 17:44:56 
+Date: 2026-06-07 19:51:40 
 
 --- Sample size by order block ---
 # A tibble: 6 × 2

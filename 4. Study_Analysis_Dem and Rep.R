@@ -11,7 +11,7 @@ library(ggpubr)
 library(patchwork)
 
 ## LOAD DATA
-df_long <- readRDS("Input data_long/Moderation_Data_Long_Format.rds")
+df_long <- readRDS("Input_data_long/Moderation_Data_Long_Format.rds")
 
 # Political conditions only
 df_political <- df_long %>% filter(ContentType == "Political")
@@ -160,7 +160,7 @@ print(desc_rep_es)
 ## SAVE RESULTS TO FILE
 ## ========================================
 
-sink("txt output_full results/Partisan_Comparison_Results.txt")
+sink("txt_output_full_results/Partisan_Comparison_Results.txt")
 
 cat("========================================\n")
 cat("PARTISAN COMPARISON ANALYSIS\n")
@@ -363,9 +363,14 @@ cat("\n✅ Standalone plots saved: Partisan_Democrats.png and Partisan_Republica
 ## EXPORT TABLES TO CSV
 ## ========================================
 
-write_csv(desc_dem_vr, "csv descriptive_results/Democrats_ViolationRecognition_Descriptives.csv")
-write_csv(desc_dem_es, "csv descriptive_results/Democrats_EnforcementSeverity_Descriptives.csv")
-write_csv(desc_rep_vr, "csv descriptive_results/Republicans_ViolationRecognition_Descriptives.csv")
-write_csv(desc_rep_es, "csv descriptive_results/Republicans_EnforcementSeverity_Descriptives.csv")
+write_csv(desc_dem_vr, "csv_descriptive_results/Democrats_ViolationRecognition_Descriptives.csv") #Descriptive results, violation recognition, Democrats
+write_csv(desc_dem_es, "csv_descriptive_results/Democrats_EnforcementSeverity_Descriptives.csv") #Descriptive results, enforcement severity, Democrats
+write_csv(desc_rep_vr, "csv_descriptive_results/Republicans_ViolationRecognition_Descriptives.csv") #Descriptive results, violation recognition, Republican
+write_csv(desc_rep_es, "csv_descriptive_results/Republicans_EnforcementSeverity_Descriptives.csv") #Descriptive results, enforcement severity, Republican
+ 
+write_csv(get_anova_table(anova_dem_vr, correction="GG"), "csv_output_results/ANOVA_GG_DemVR.csv") #ANOVA, violation recognition, Democrats
+write_csv(get_anova_table(anova_dem_es, correction="GG"), "csv_output_results/ANOVA_GG_DemES.csv") #ANOVA, enforcement severity, Democrats
+write_csv(get_anova_table(anova_rep_vr, correction="GG"), "csv_output_results/ANOVA_GG_RepVR.csv") #ANOVA, violation recognition, Republican
+write_csv(get_anova_table(anova_rep_es, correction="GG"), "csv_output_results/ANOVA_GG_RepES.csv") #ANOVA, enforcement severity, Republican
 
 cat("\n✅ CSV tables exported\n")

@@ -1,0 +1,4 @@
+Civility,.y.,group1,group2,n1,n2,statistic,df,p,p.adj,p.adj.signif
+Civil,ViolationRecognition,Non-political,Political,254,254,-14.969648656227617,253,1.03e-36,1.03e-36,****
+Borderline,ViolationRecognition,Non-political,Political,254,254,-8.707237241970889,253,4.1e-16,4.1e-16,****
+Uncivil,ViolationRecognition,Non-political,Political,254,254,0.26213099047065697,253,0.793,0.793,ns

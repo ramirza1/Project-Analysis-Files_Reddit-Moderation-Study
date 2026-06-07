@@ -18,7 +18,7 @@ library(ggpubr)
 library(patchwork)
 
 ## LOAD DATA (if not already in environment)
-df_long <- readRDS("Input data_long/Moderation_Data_Long_Format.rds")
+df_long <- readRDS("Input_data_long/Moderation_Data_Long_Format.rds")
 df_political <- df_long %>% filter(ContentType == "Political")
 
 # Confirm Order column exists - adapt name if different in your data
@@ -182,7 +182,7 @@ cat("  Robustness_Order_ES.png\n")
 ## SAVE RESULTS
 ## ========================================
 
-sink("txt output_full results/Robustness_Order_Results.txt")
+sink("txt_output_full_results/Robustness_Order_Results.txt")
 
 cat("========================================\n")
 cat("ROBUSTNESS CHECK: ORDER STABILITY\n")
@@ -225,7 +225,11 @@ sink()
 cat("\nResults saved to: Robustness_Order_Results.txt\n")
 
 ## Export descriptives
-write_csv(desc_order_vr, "csv descriptive_results/Robustness_Order_VR_Descriptives.csv")
-write_csv(desc_order_es, "csv descriptive_results/Robustness_Order_ES_Descriptives.csv")
+write_csv(desc_order_vr, "csv_descriptive_results/Robustness_Order_VR_Descriptives.csv") #Descriptive results, order robustness, violation recognition
+write_csv(desc_order_es, "csv_descriptive_results/Robustness_Order_ES_Descriptives.csv") #Descriptive results, order robustness, enforcement severity
+
+write_csv(get_anova_table(anova_order_vr, correction="auto"), "csv_output_results/ANOVA_GG_OrderVR.csv") #ANOVA, order robustness, violation recognition
+write_csv(get_anova_table(anova_order_es, correction="auto"), "csv_output_results/ANOVA_GG_OrderES.csv") #ANOVA, order robustness, enforcement severity
+
 
 cat("CSV tables exported.\n")

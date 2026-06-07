@@ -1,0 +1,4 @@
+Effect,DFn,DFd,F,p,p<.05,pes
+Civility,1.98,225.76,64.299,1.14e-22,*,0.361
+Alignment,1,114,0.98,0.324,,0.009
+Civility:Alignment,1.91,217.93,0.724,0.48,,0.006
