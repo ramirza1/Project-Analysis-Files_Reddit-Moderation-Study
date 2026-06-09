@@ -1,8 +1,5 @@
-========================================
 ROBUSTNESS CHECK: ORDER STABILITY
-========================================
-
-Date: 2026-06-07 19:51:40 
+Date: 2026-06-09 22:19:57 
 
 --- Sample size by order block ---
 # A tibble: 6 × 2
@@ -152,17 +149,3 @@ $`Sphericity Corrections`
 3         Civility:Alignment 0.997  1.99, 494.4 5.03e-01           1.005  2.01, 498.4 5.04e-01          
 4 Order_f:Civility:Alignment 0.997  9.97, 494.4 6.00e-03         * 1.005 10.05, 498.4 6.00e-03         *
 
-
-========================================
-INTERPRETATION GUIDE
-========================================
-If main effects of Civility and Alignment hold across orders
-(no significant interactions involving Order_f),
-the partial counterbalancing approach is supported.
-
-Look for:
-  - Order_f main effect: is there a baseline shift across orders?
-  - Order_f:Civility: do civility effects vary across orders?
-  - Order_f:Alignment: do alignment effects vary across orders?
-  - Order_f:Civility:Alignment: does the interaction vary?
-Non-significant interactions support stability.

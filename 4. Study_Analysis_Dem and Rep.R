@@ -1,11 +1,9 @@
-# ==================================================
-# PARTISAN COMPARISON ANALYSIS
-# ==================================================
+
+## PARTISAN COMPARISON ANALYSIS - EXPLORATORY
 
 ## LOAD LIBRARIES
 library(tidyverse)
 library(rstatix)
-library(emmeans)
 library(effectsize)
 library(ggpubr)
 library(patchwork)
@@ -52,13 +50,11 @@ desc_with_ci_2 <- function(df, dv, group_var1, group_var2) {
     )
 }
 
-## ========================================
-## DEMOCRATS ANALYSIS
-## ========================================
 
-cat("\n========================================\n")
+## DEMOCRATS ANALYSIS
+
+
 cat("DEMOCRATS (N = ", n_distinct(df_dem$ParticipantID), ")\n")
-cat("========================================\n\n")
 
 # Violation recognition ANOVA
 cat("--- ANOVA: Violation Recognition ---\n")
@@ -104,13 +100,10 @@ desc_dem_es <- desc_with_ci_2(
 cat("\n--- Enforcement Severity Descriptives ---\n")
 print(desc_dem_es)
 
-## ========================================
-## REPUBLICANS ANALYSIS
-## ========================================
 
-cat("\n========================================\n")
+## REPUBLICANS ANALYSIS
+
 cat("REPUBLICANS (N = ", n_distinct(df_rep$ParticipantID), ")\n")
-cat("========================================\n\n")
 
 # Violation Recognition ANOVA
 cat("--- ANOVA: Violation Recognition ---\n")
@@ -156,22 +149,18 @@ desc_rep_es <- desc_with_ci_2(
 cat("\n--- Enforcement Severity Descriptives ---\n")
 print(desc_rep_es)
 
-## ========================================
 ## SAVE RESULTS TO FILE
-## ========================================
 
 sink("txt_output_full_results/Partisan_Comparison_Results.txt")
 
-cat("========================================\n")
+
 cat("PARTISAN COMPARISON ANALYSIS\n")
 cat("Political Content Moderation\n")
-cat("========================================\n\n")
-
 cat("Date:", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "\n\n")
 
-cat("========================================\n")
+
 cat("DEMOCRATS (N = ", n_distinct(df_dem$ParticipantID), ")\n")
-cat("========================================\n\n")
+
 
 cat("--- Descriptive Statistics: Violation Recognition ---\n")
 print(desc_dem_vr)
@@ -185,9 +174,9 @@ print(anova_dem_vr)
 cat("\n--- ANOVA: Enforcement Severity ---\n")
 print(anova_dem_es)
 
-cat("\n\n========================================\n")
+
 cat("REPUBLICANS (N = ", n_distinct(df_rep$ParticipantID), ")\n")
-cat("========================================\n\n")
+
 
 cat("--- Descriptive Statistics: Violation Recognition ---\n")
 print(desc_rep_vr)
@@ -203,11 +192,10 @@ print(anova_rep_es)
 
 sink()
 
-cat("\n✅ Results saved to: Partisan_Comparison_Results.txt\n")
+cat("\nResults saved to: Partisan_Comparison_Results.txt\n")
 
-## ========================================
+
 ## CREATE PLOTS
-## ========================================
 
 # Ensure proper factor ordering
 desc_dem_vr <- desc_dem_vr %>%
@@ -274,7 +262,7 @@ p_dem_es <- desc_dem_es %>%
     y = "Enforcement Severity (0–4)"
   ) +
   base_theme +
-  scale_y_continuous(limits = c(0, 3), breaks = seq(0, 3, 0.5))
+  scale_y_continuous(limits = c(0, 4), breaks = seq(0, 4, 0.5))
 
 # Republicans - Violation Recognition
 p_rep_vr <- desc_rep_vr %>%
@@ -306,7 +294,7 @@ p_rep_es <- desc_rep_es %>%
     y = "Enforcement Severity (0–4)"
   ) +
   base_theme +
-  scale_y_continuous(limits = c(0, 3), breaks = seq(0, 3, 0.5))
+  scale_y_continuous(limits = c(0, 4), breaks = seq(0, 4, 0.5))
 
 # Combine plots: 2x2 grid
 combined_partisan <- (p_dem_vr | p_rep_vr) / (p_dem_es | p_rep_es)
@@ -321,13 +309,12 @@ ggsave(
   bg = "white"
 )
 
-cat("\n✅ Plots saved to: Partisan_Comparison_Plots.png\n")
+cat("\n Plots saved to: Partisan_Comparison_Plots.png\n")
 
 
-## ========================================
 ## STANDALONE GRAPHS: split by party (VR + ES per party)
 ## Combined file above is retained
-## ========================================
+
 
 # Democrats: VR + ES (shared legend)
 democrats_combined <- (p_dem_vr | p_dem_es) +
@@ -357,11 +344,11 @@ ggsave(
   bg     = "white"
 )
 
-cat("\n✅ Standalone plots saved: Partisan_Democrats.png and Partisan_Republicans.png\n")
+cat("\n Standalone plots saved: Partisan_Democrats.png and Partisan_Republicans.png\n")
 
-## ========================================
+
 ## EXPORT TABLES TO CSV
-## ========================================
+
 
 write_csv(desc_dem_vr, "csv_descriptive_results/Democrats_ViolationRecognition_Descriptives.csv") #Descriptive results, violation recognition, Democrats
 write_csv(desc_dem_es, "csv_descriptive_results/Democrats_EnforcementSeverity_Descriptives.csv") #Descriptive results, enforcement severity, Democrats
@@ -373,4 +360,4 @@ write_csv(get_anova_table(anova_dem_es, correction="GG"), "csv_output_results/AN
 write_csv(get_anova_table(anova_rep_vr, correction="GG"), "csv_output_results/ANOVA_GG_RepVR.csv") #ANOVA, violation recognition, Republican
 write_csv(get_anova_table(anova_rep_es, correction="GG"), "csv_output_results/ANOVA_GG_RepES.csv") #ANOVA, enforcement severity, Republican
 
-cat("\n✅ CSV tables exported\n")
+cat("\nCSV tables exported\n")

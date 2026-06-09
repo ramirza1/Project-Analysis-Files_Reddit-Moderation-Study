@@ -1,15 +1,8 @@
-========================================
-POLITICAL CONTENT MODERATION STUDY
-ANOVA RESULTS
-========================================
-
-Date: 2026-06-07 19:34:59 
+--POLITICAL CONTENT MODERATION STUDY: ANOVA RESULTS--
+Date: 2026-06-09 22:19:11 
 Sample size: 254 participants
 
-========================================
-H1: NON-POLITICAL BASELINE - CIVILITY EFFECT
-========================================
-
+--NON-POLITICAL BASELINE - CIVILITY EFFECT--
 --- H1a: Violation Recognition ---
 ANOVA Table (type III tests)
 
@@ -57,11 +50,7 @@ Descriptive Statistics:
 1 Civil        254 0.118 0.438 0.0275  1.97  2.60     0.0640      0.172     0.0468      0.189
 2 Borderline   254 0.520 0.892 0.0560  1.97  2.60     0.409       0.630     0.374       0.665
 3 Uncivil      254 2.54  1.25  0.0784  1.97  2.60     2.38        2.69      2.34        2.74 
-
-========================================
-POLITICAL CONTENT: CIVILITY × ALIGNMENT
-========================================
-
+--POLITICAL CONTENT: CIVILITY x ALIGNMENT--
 --- Violation Recognition ---
 ANOVA Table (type III tests)
 
@@ -93,7 +82,7 @@ Descriptive Statistics:
 5 Uncivil    Aligned     254 0.909 0.288 0.0180  1.97  2.60      0.874      0.945      0.863      0.956
 6 Uncivil    Opposed     254 0.917 0.276 0.0173  1.97  2.60      0.883      0.951      0.872      0.962
 
---- Enforcement Severity ---
+---Enforcement Severity---
 ANOVA Table (type III tests)
 
 $ANOVA
@@ -123,65 +112,3 @@ Descriptive Statistics:
 4 Borderline Opposed     254 1.37   1.28 0.0806  1.97  2.60      1.22       1.53       1.16        1.58
 5 Uncivil    Aligned     254 2.30   1.23 0.0772  1.97  2.60      2.14       2.45       2.09        2.50
 6 Uncivil    Opposed     254 2.61   1.23 0.0773  1.97  2.60      2.46       2.77       2.41        2.81
-
-========================================
-H4: BORDERLINE-SPECIFIC CONTRASTS
-========================================
-
---- H4a: Violation Recognition ---
-Borderline vs Civil:
-
-	One Sample t-test
-
-data:  contrast_h4a_1$Borderline_vs_Civil
-t = -0.59729, df = 253, p-value = 0.5508
-alternative hypothesis: true mean is not equal to 0
-95 percent confidence interval:
- -0.11842638  0.06330827
-sample estimates:
-  mean of x 
--0.02755906 
-
-
-Borderline vs Uncivil:
-
-	One Sample t-test
-
-data:  contrast_h4a_2$Borderline_vs_Uncivil
-t = 1.5948, df = 253, p-value = 0.112
-alternative hypothesis: true mean is not equal to 0
-95 percent confidence interval:
- -0.01386987  0.13198010
-sample estimates:
- mean of x 
-0.05905512 
-
-
---- H4b: Enforcement Severity ---
-Borderline vs Civil:
-
-	One Sample t-test
-
-data:  contrast_h4b_1$Borderline_vs_Civil
-t = 0.1144, df = 253, p-value = 0.909
-alternative hypothesis: true mean is not equal to 0
-95 percent confidence interval:
- -0.1915124  0.2151345
-sample estimates:
- mean of x 
-0.01181102 
-
-
-Borderline vs Uncivil:
-
-	One Sample t-test
-
-data:  contrast_h4b_2$Borderline_vs_Uncivil
-t = -0.30357, df = 253, p-value = 0.7617
-alternative hypothesis: true mean is not equal to 0
-95 percent confidence interval:
- -0.2358238  0.1728317
-sample estimates:
-  mean of x 
--0.03149606 
-

@@ -21,18 +21,9 @@ library(patchwork)
 df_long <- readRDS("Input_data_long/Moderation_Data_Long_Format.rds")
 df_political <- df_long %>% filter(ContentType == "Political")
 
-# Confirm Order column exists - adapt name if different in your data
-# Common names: Order, OrderBlock, Block, RandomOrder, Counterbalance
-cat("Columns available:\n")
-print(names(df_political))
 
-# IMPORTANT: rename below if your column is named differently.
-# Assuming the column is called "Order"
+#Rename order column
 ORDER_COL <- "Order"
-
-if (!ORDER_COL %in% names(df_political)) {
-  stop(paste("Column", ORDER_COL, "not found. Edit ORDER_COL to match your data."))
-}
 
 cat("\nN per order block:\n")
 df_political %>%
@@ -40,9 +31,9 @@ df_political %>%
   count(.data[[ORDER_COL]]) %>%
   print()
 
-## ========================================
+
 ## DESCRIPTIVES BY ORDER BLOCK x CONDITION
-## ========================================
+
 
 # Helper - mean + 95% CI by 3 grouping vars
 desc_by_order <- function(df, dv) {
@@ -72,19 +63,18 @@ print(desc_order_vr, n = 36)
 cat("\n--- Enforcement Severity by Order x Condition ---\n")
 print(desc_order_es, n = 36)
 
-## ========================================
+
 ## ANOVA: Order as between-subjects factor
-## Tests whether order block significantly moderates the
-## main effects of civility and alignment.
-## ========================================
+## Tests whether order block significantly moderates the main effects of civility and alignment.
+
 
 # Convert order to factor
 df_political <- df_political %>%
   mutate(Order_f = factor(.data[[ORDER_COL]]))
 
-cat("\n========================================\n")
+
 cat("ANOVA: VR with Order as between-subjects factor\n")
-cat("========================================\n")
+
 anova_order_vr <- df_political %>%
   anova_test(
     dv          = ViolationRecognition,
@@ -95,9 +85,9 @@ anova_order_vr <- df_political %>%
   )
 print(anova_order_vr)
 
-cat("\n========================================\n")
+
 cat("ANOVA: ES with Order as between-subjects factor\n")
-cat("========================================\n")
+
 anova_order_es <- df_political %>%
   anova_test(
     dv          = EnforcementSeverity,
@@ -108,9 +98,40 @@ anova_order_es <- df_political %>%
   )
 print(anova_order_es)
 
-## ========================================
+## SAVE RESULTS TO FILE
+
+sink("txt_output_full_results/Robustness_Order_Results.txt")
+
+
+cat("ROBUSTNESS CHECK: ORDER STABILITY\n")
+cat("Date:", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "\n\n")
+
+cat("--- Sample size by order block ---\n")
+df_political %>%
+  distinct(ParticipantID, .data[[ORDER_COL]]) %>%
+  count(.data[[ORDER_COL]]) %>%
+  print()
+
+cat("\n--- Violation Recognition: condition means by order block ---\n")
+print(desc_order_vr, n = 36)
+
+cat("\n--- Enforcement Severity: condition means by order block ---\n")
+print(desc_order_es, n = 36)
+
+cat("\n--- ANOVA: VR with Order as between factor ---\n")
+print(anova_order_vr)
+
+cat("\n--- ANOVA: ES with Order as between factor ---\n")
+print(anova_order_es)
+
+sink()
+
+cat("\nResults saved to: Robustness_Order_Results.txt\n")
+
+
+
 ## VISUAL CHECK: Condition means across orders
-## ========================================
+
 
 # Color scheme matching existing scripts
 COLOR_ALIGNED <- "#2E7D32"
@@ -159,7 +180,7 @@ p_order_es <- ggplot(desc_order_es,
                 position = pd, width = 0.15) +
   scale_color_manual(values = c("Aligned" = COLOR_ALIGNED,
                                 "Opposed" = COLOR_OPPOSED)) +
-  scale_y_continuous(limits = c(0, 3.5), breaks = seq(0, 3, 0.5)) +
+  scale_y_continuous(limits = c(0, 4), breaks = seq(0, 4, 0.5)) +
   facet_wrap(~ .data[[ORDER_COL]], nrow = 2,
              labeller = labeller(.default = function(x) gsub("Order", "Order ", x))) +
   labs(
@@ -178,58 +199,14 @@ cat("\nFacet plots saved:\n")
 cat("  Robustness_Order_VR.png\n")
 cat("  Robustness_Order_ES.png\n")
 
-## ========================================
+
 ## SAVE RESULTS
-## ========================================
 
-sink("txt_output_full_results/Robustness_Order_Results.txt")
-
-cat("========================================\n")
-cat("ROBUSTNESS CHECK: ORDER STABILITY\n")
-cat("========================================\n\n")
-cat("Date:", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "\n\n")
-
-cat("--- Sample size by order block ---\n")
-df_political %>%
-  distinct(ParticipantID, .data[[ORDER_COL]]) %>%
-  count(.data[[ORDER_COL]]) %>%
-  print()
-
-cat("\n--- Violation Recognition: condition means by order block ---\n")
-print(desc_order_vr, n = 36)
-
-cat("\n--- Enforcement Severity: condition means by order block ---\n")
-print(desc_order_es, n = 36)
-
-cat("\n--- ANOVA: VR with Order as between factor ---\n")
-print(anova_order_vr)
-
-cat("\n--- ANOVA: ES with Order as between factor ---\n")
-print(anova_order_es)
-
-cat("\n========================================\n")
-cat("INTERPRETATION GUIDE\n")
-cat("========================================\n")
-cat("If main effects of Civility and Alignment hold across orders\n")
-cat("(no significant interactions involving Order_f),\n")
-cat("the partial counterbalancing approach is supported.\n\n")
-cat("Look for:\n")
-cat("  - Order_f main effect: is there a baseline shift across orders?\n")
-cat("  - Order_f:Civility: do civility effects vary across orders?\n")
-cat("  - Order_f:Alignment: do alignment effects vary across orders?\n")
-cat("  - Order_f:Civility:Alignment: does the interaction vary?\n")
-cat("Non-significant interactions support stability.\n")
-
-sink()
-
-cat("\nResults saved to: Robustness_Order_Results.txt\n")
-
-## Export descriptives
 write_csv(desc_order_vr, "csv_descriptive_results/Robustness_Order_VR_Descriptives.csv") #Descriptive results, order robustness, violation recognition
 write_csv(desc_order_es, "csv_descriptive_results/Robustness_Order_ES_Descriptives.csv") #Descriptive results, order robustness, enforcement severity
 
-write_csv(get_anova_table(anova_order_vr, correction="auto"), "csv_output_results/ANOVA_GG_OrderVR.csv") #ANOVA, order robustness, violation recognition
-write_csv(get_anova_table(anova_order_es, correction="auto"), "csv_output_results/ANOVA_GG_OrderES.csv") #ANOVA, order robustness, enforcement severity
+write_csv(get_anova_table(anova_order_vr, correction="GG"), "csv_output_results/ANOVA_GG_OrderVR.csv") #ANOVA, order robustness, violation recognition
+write_csv(get_anova_table(anova_order_es, correction="GG"), "csv_output_results/ANOVA_GG_OrderES.csv") #ANOVA, order robustness, enforcement severity
 
 
 cat("CSV tables exported.\n")

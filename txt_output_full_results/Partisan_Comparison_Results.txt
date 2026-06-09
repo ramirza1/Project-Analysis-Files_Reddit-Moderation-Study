@@ -1,14 +1,8 @@
-========================================
 PARTISAN COMPARISON ANALYSIS
 Political Content Moderation
-========================================
+Date: 2026-06-09 22:19:46 
 
-Date: 2026-06-07 19:41:59 
-
-========================================
 DEMOCRATS (N =  139 )
-========================================
-
 --- Descriptive Statistics: Violation Recognition ---
 # A tibble: 6 × 12
   Civility   Alignment     N  Mean    SD     SE  t_95  t_99 CI95_lower CI95_upper CI99_lower CI99_upper
@@ -70,12 +64,7 @@ $`Sphericity Corrections`
 1           Civility 0.875 1.75, 241.51 1.31e-45         * 0.885 1.77, 244.36 4.12e-46         *
 2 Civility:Alignment 0.996  1.99, 274.9 5.65e-01           1.011 2.02, 278.92 5.66e-01          
 
-
-
-========================================
 REPUBLICANS (N =  115 )
-========================================
-
 --- Descriptive Statistics: Violation Recognition ---
 # A tibble: 6 × 12
   Civility   Alignment     N  Mean    SD     SE  t_95  t_99 CI95_lower CI95_upper CI99_lower CI99_upper

@@ -1,11 +1,8 @@
-========================================
 POLITICAL vs NON-POLITICAL COMPARISON
-========================================
-
-Date: 2026-06-07 19:51:16 
+Date: 2026-06-09 22:19:36 
 N participants: 254 
 
---- Descriptives: Violation Recognition ---
+--Descriptives: Violation Recognition--
 # A tibble: 6 × 9
   Civility   ContentType       N   Mean    SD     SE  t_95 CI95_lower CI95_upper
   <fct>      <fct>         <int>  <dbl> <dbl>  <dbl> <dbl>      <dbl>      <dbl>
@@ -16,7 +13,7 @@ N participants: 254
 5 Uncivil    Non-political   254 0.917  0.276 0.0173  1.97     0.883       0.951
 6 Uncivil    Political       254 0.913  0.240 0.0151  1.97     0.884       0.943
 
---- Descriptives: Enforcement Severity ---
+--Descriptives: Enforcement Severity--
 # A tibble: 6 × 9
   Civility   ContentType       N  Mean    SD     SE  t_95 CI95_lower CI95_upper
   <fct>      <fct>         <int> <dbl> <dbl>  <dbl> <dbl>      <dbl>      <dbl>
@@ -27,7 +24,7 @@ N participants: 254
 5 Uncivil    Non-political   254 2.54  1.25  0.0784  1.97     2.38        2.69 
 6 Uncivil    Political       254 2.45  1.07  0.0671  1.97     2.32        2.59 
 
---- ANOVA: Violation Recognition ---
+--ANOVA: Violation Recognition--
 ANOVA Table (type III tests)
 
 $ANOVA
@@ -47,7 +44,7 @@ $`Sphericity Corrections`
 2 Civility:ContentType 0.949  1.9, 480.25  6.73e-29         * 0.956 1.91, 483.78  4.32e-29         *
 
 
---- ANOVA: Enforcement Severity ---
+--ANOVA: Enforcement Severity--
 ANOVA Table (type III tests)
 
 $ANOVA
@@ -67,7 +64,7 @@ $`Sphericity Corrections`
 2 Civility:ContentType 0.931 1.86, 471.04  7.36e-27         * 0.938 1.88, 474.39  4.96e-27         *
 
 
---- Simple Effects: Violation Recognition ---
+--Simple Effects: Violation Recognition--
 # A tibble: 3 × 11
   Civility   .y.                  group1        group2       n1    n2 statistic    df        p    p.adj p.adj.signif
 * <fct>      <chr>                <chr>         <chr>     <int> <int>     <dbl> <dbl>    <dbl>    <dbl> <chr>       
@@ -75,7 +72,7 @@ $`Sphericity Corrections`
 2 Borderline ViolationRecognition Non-political Political   254   254    -8.71    253 4.1 e-16 4.1 e-16 ****        
 3 Uncivil    ViolationRecognition Non-political Political   254   254     0.262   253 7.93e- 1 7.93e- 1 ns          
 
---- Simple Effects: Enforcement Severity ---
+--Simple Effects: Enforcement Severity--
 # A tibble: 3 × 11
   Civility   .y.                 group1        group2       n1    n2 statistic    df        p    p.adj p.adj.signif
 * <fct>      <chr>               <chr>         <chr>     <int> <int>     <dbl> <dbl>    <dbl>    <dbl> <chr>       

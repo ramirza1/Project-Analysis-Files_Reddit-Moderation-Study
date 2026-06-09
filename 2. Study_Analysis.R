@@ -1,9 +1,12 @@
-## LOAD DATA
-
+## LOAD LIBRARIES
 library(tidyverse)
 library(rstatix)
-library(emmeans)
 library(effectsize)
+library(ggpubr)
+library(patchwork)
+library(ggplot2)
+
+## LOAD DATA
 
 df_long <- readRDS("Input_data_long/Moderation_Data_Long_Format.rds")
 
@@ -63,7 +66,7 @@ desc_with_ci_2 <- function(df, dv, group_var1, group_var2) {
 ## Non-Political Baseline - Civility Effect
 
 # Violation Recognition on Non-political Baseline
-cat("--- H1a: Violation Recognition ---\n")
+cat("--H1a: Violation Recognition--\n")
 anova_h1a_base <- df_baseline %>%
   anova_test(
     dv = ViolationRecognition,
@@ -83,7 +86,7 @@ print(anova_h1a_base)
 #print(posthoc_h1a_base)
 
 
-# Descriptive statistics on non-political baseline ES
+# Descriptive statistics on non-political baseline VR
 desc_h1a_base <- desc_with_ci(
   df = df_baseline,
   dv = ViolationRecognition,
@@ -94,7 +97,7 @@ print(desc_h1a_base)
 
 
 # Enforcement Severity on Non-political Baseline
-cat("\n--- H1b: Enforcement Severity ---\n")
+cat("\n--H1b: Enforcement Severity--\n")
 anova_h1b_base <- df_baseline %>%
   anova_test(
     dv = EnforcementSeverity,
@@ -104,14 +107,14 @@ anova_h1b_base <- df_baseline %>%
   )
 print(anova_h1b_base)
 
-# Post-hoc pairwise comparisons on non-political baseline ES
-posthoc_h1b_base <- df_baseline %>%
-  pairwise_t_test(
-    EnforcementSeverity ~ Civility,
-    paired = TRUE,
-    p.adjust.method = "bonferroni"
-  )
-print(posthoc_h1b_base)
+# Post-hoc pairwise comparisons on non-political baseline ES (KEEP IN RESERVE)
+#posthoc_h1b_base <- df_baseline %>%
+ # pairwise_t_test(
+  #  EnforcementSeverity ~ Civility,
+   # paired = TRUE,
+  #  p.adjust.method = "bonferroni"
+#  )
+#print(posthoc_h1b_base)
 
 # Descriptive statistics on non-political baseline ES
 desc_h1b_base <- desc_with_ci(
@@ -125,7 +128,7 @@ print(desc_h1b_base)
 ## Political Condition ANOVAs
 
 # Violation recognition ANOVAs (H1a, H2a, H3a)
-cat("--- DV: Violation Recognition ---\n")
+cat("--DV: Violation Recognition--\n")
 anova_political_vr <- df_political %>%
   anova_test(
     dv = ViolationRecognition,
@@ -146,7 +149,7 @@ desc_political_vr <- desc_with_ci_2(
 print(desc_political_vr)
 
 # Enforcement Severity ANOVAS (H1b, H2b, H3b)
-cat("\n--- DV: Enforcement Severity ---\n")
+cat("\n--DV: Enforcement Severity--\n")
 anova_political_es <- df_political %>%
   anova_test(
     dv = EnforcementSeverity,
@@ -167,130 +170,121 @@ print(desc_political_es)
 
 
 # Pairwise comparisons (KEEP IN RESERVE)
-#cat("--- Violation Recognition: Alignment effect by Civility ---\n")
+#cat("--Violation Recognition: Alignment effect by Civility--\n")
 #simple_vr <- df_political %>%
- # group_by(Civility) %>%
-  #pairwise_t_test(
-   # ViolationRecognition ~ Alignment,
-    #paired = TRUE,
-    #p.adjust.method = "bonferroni")
+# group_by(Civility) %>%
+#pairwise_t_test(
+# ViolationRecognition ~ Alignment,
+#paired = TRUE,
+#p.adjust.method = "bonferroni") #Bonferroni not strictly needed as we just compare aligned vs opposed
 #print(simple_vr)
 
-#cat("\n--- Enforcement Severity: Alignment effect by Civility ---\n")
+#cat("\n--Enforcement Severity: Alignment effect by Civility--\n")
 #simple_es <- df_political %>%
- # group_by(Civility) %>%
+# group_by(Civility) %>%
 #  pairwise_t_test(
- #   EnforcementSeverity ~ Alignment,
-  #  paired = TRUE,
-   # p.adjust.method = "bonferroni")
+#   EnforcementSeverity ~ Alignment,
+#  paired = TRUE,
+# p.adjust.method = "bonferroni") #Bonferroni not strictly needed as we just compare aligned vs opposed
 #print(simple_es)
 
-## Planned contrasts - borderline-speciifc alignment effects
+## Planned contrasts - borderline-specific alignment effects (KEEP IN RESERVE)
 
 # Calculate alignment gaps (Opposed vs aligned) for each civility level
-alignment_gaps_vr <- df_political %>%
-  select(ParticipantID, Civility, Alignment, ViolationRecognition) %>%
-  pivot_wider(
-    names_from = Alignment,
-    values_from = ViolationRecognition
-  ) %>%
-  mutate(AlignmentGap = Opposed - Aligned)
+# alignment_gaps_vr <- df_political %>%
+#  select(ParticipantID, Civility, Alignment, ViolationRecognition) %>%
+#  pivot_wider(
+#    names_from = Alignment,
+#    values_from = ViolationRecognition
+#  ) %>%
+#  mutate(AlignmentGap = Opposed - Aligned)
 
-alignment_gaps_es <- df_political %>%
-  select(ParticipantID, Civility, Alignment, EnforcementSeverity) %>%
-  pivot_wider(
-    names_from = Alignment,
-    values_from = EnforcementSeverity
-  ) %>%
-  mutate(AlignmentGap = Opposed - Aligned)
+# alignment_gaps_es <- df_political %>%
+#  select(ParticipantID, Civility, Alignment, EnforcementSeverity) %>%
+#  pivot_wider(
+#    names_from = Alignment,
+#    values_from = EnforcementSeverity
+#  ) %>%
+#  mutate(AlignmentGap = Opposed - Aligned)
 
-# H4a: Violation Recognition - test if borderline gap exceeds civil gap
-cat("--- H4a: Violation Recognition ---\n")
-cat("Testing if Borderline gap > Civil gap\n")
-contrast_h4a_1 <- alignment_gaps_vr %>%
-  select(ParticipantID, Civility, AlignmentGap) %>%
-  pivot_wider(names_from = Civility, values_from = AlignmentGap) %>%
-  mutate(Borderline_vs_Civil = Borderline - Civil)
+# Violation Recognition - borderline gap contrasts
+# cat("Testing if Borderline gap > Civil gap (VR)\n")
+# contrast_vr_1 <- alignment_gaps_vr %>%
+#  select(ParticipantID, Civility, AlignmentGap) %>%
+#  pivot_wider(names_from = Civility, values_from = AlignmentGap) %>%
+#  mutate(Borderline_vs_Civil = Borderline - Civil)
 
-t_test_h4a_1 <- t.test(contrast_h4a_1$Borderline_vs_Civil, mu = 0)
-print(t_test_h4a_1)
-cat("Mean difference (Borderline gap - Civil gap):", mean(contrast_h4a_1$Borderline_vs_Civil, na.rm = TRUE), "\n")
-cat("Cohen's d:", cohens_d(contrast_h4a_1$Borderline_vs_Civil, mu = 0)$Cohens_d, "\n\n")
+# t_test_vr_1 <- t.test(contrast_vr_1$Borderline_vs_Civil, mu = 0)
+# print(t_test_vr_1)
+# cat("Mean difference (Borderline gap - Civil gap):", mean(contrast_vr_1$Borderline_vs_Civil, na.rm = TRUE), "\n")
+# cat("Cohen's d:", cohens_d(contrast_vr_1$Borderline_vs_Civil, mu = 0)$Cohens_d, "\n\n")
 
-cat("Testing if Borderline gap > Uncivil gap\n")
-contrast_h4a_2 <- alignment_gaps_vr %>%
-  select(ParticipantID, Civility, AlignmentGap) %>%
-  pivot_wider(names_from = Civility, values_from = AlignmentGap) %>%
-  mutate(Borderline_vs_Uncivil = Borderline - Uncivil)
+# cat("Testing if Borderline gap > Uncivil gap (VR)\n")
+# contrast_vr_2 <- alignment_gaps_vr %>%
+#  select(ParticipantID, Civility, AlignmentGap) %>%
+#  pivot_wider(names_from = Civility, values_from = AlignmentGap) %>%
+#  mutate(Borderline_vs_Uncivil = Borderline - Uncivil)
 
-t_test_h4a_2 <- t.test(contrast_h4a_2$Borderline_vs_Uncivil, mu = 0, paired = FALSE)
-print(t_test_h4a_2)
-cat("Mean difference (Borderline gap - Uncivil gap):", mean(contrast_h4a_2$Borderline_vs_Uncivil, na.rm = TRUE), "\n")
-cat("Cohen's d:", cohens_d(contrast_h4a_2$Borderline_vs_Uncivil, mu = 0)$Cohens_d, "\n\n")
+# t_test_vr_2 <- t.test(contrast_vr_2$Borderline_vs_Uncivil, mu = 0, paired = FALSE)
+# print(t_test_vr_2)
+# cat("Mean difference (Borderline gap - Uncivil gap):", mean(contrast_vr_2$Borderline_vs_Uncivil, na.rm = TRUE), "\n")
+# cat("Cohen's d:", cohens_d(contrast_vr_2$Borderline_vs_Uncivil, mu = 0)$Cohens_d, "\n\n")
 
-# Summary of alignment gaps (Borderline, VR)
-cat("Summary of alignment gaps (Opposed - Aligned):\n")
-alignment_gaps_vr %>%
-  group_by(Civility) %>%
-  summarise(
-    Mean_Gap = mean(AlignmentGap, na.rm = TRUE),
-    SD_Gap = sd(AlignmentGap, na.rm = TRUE),
-    SE_Gap = SD_Gap / sqrt(n())
-  ) %>%
-  print()
+# Summary of alignment gaps by civility (VR)
+# cat("Summary of alignment gaps (Opposed - Aligned, VR):\n")
+# alignment_gaps_vr %>%
+#  group_by(Civility) %>%
+#  summarise(
+#    Mean_Gap = mean(AlignmentGap, na.rm = TRUE),
+#    SD_Gap = sd(AlignmentGap, na.rm = TRUE),
+#    SE_Gap = SD_Gap / sqrt(n())
+#  ) %>%
+#  print()
 
-# H4b: Enforcement Severity - test if borderline gap exceeds civil gap
-cat("\n--- H4b: Enforcement Severity ---\n")
-cat("Testing if Borderline gap > Civil gap\n")
-contrast_h4b_1 <- alignment_gaps_es %>%
-  select(ParticipantID, Civility, AlignmentGap) %>%
-  pivot_wider(names_from = Civility, values_from = AlignmentGap) %>%
-  mutate(Borderline_vs_Civil = Borderline - Civil)
+# Enforcement Severity - borderline gap contrasts
+# cat("Testing if Borderline gap > Civil gap (ES)\n")
+# contrast_es_1 <- alignment_gaps_es %>%
+#  select(ParticipantID, Civility, AlignmentGap) %>%
+#  pivot_wider(names_from = Civility, values_from = AlignmentGap) %>%
+#  mutate(Borderline_vs_Civil = Borderline - Civil)
 
-t_test_h4b_1 <- t.test(contrast_h4b_1$Borderline_vs_Civil, mu = 0, paired = FALSE)
-print(t_test_h4b_1)
-cat("Mean difference (Borderline gap - Civil gap):", mean(contrast_h4b_1$Borderline_vs_Civil, na.rm = TRUE), "\n")
-cat("Cohen's d:", cohens_d(contrast_h4b_1$Borderline_vs_Civil, mu = 0)$Cohens_d, "\n\n")
+# t_test_es_1 <- t.test(contrast_es_1$Borderline_vs_Civil, mu = 0, paired = FALSE)
+# print(t_test_es_1)
+# cat("Mean difference (Borderline gap - Civil gap):", mean(contrast_es_1$Borderline_vs_Civil, na.rm = TRUE), "\n")
+# cat("Cohen's d:", cohens_d(contrast_es_1$Borderline_vs_Civil, mu = 0)$Cohens_d, "\n\n")
 
-cat("Testing if Borderline gap > Uncivil gap\n")
-contrast_h4b_2 <- alignment_gaps_es %>%
-  select(ParticipantID, Civility, AlignmentGap) %>%
-  pivot_wider(names_from = Civility, values_from = AlignmentGap) %>%
-  mutate(Borderline_vs_Uncivil = Borderline - Uncivil)
+# cat("Testing if Borderline gap > Uncivil gap (ES)\n")
+# contrast_es_2 <- alignment_gaps_es %>%
+#  select(ParticipantID, Civility, AlignmentGap) %>%
+#  pivot_wider(names_from = Civility, values_from = AlignmentGap) %>%
+#  mutate(Borderline_vs_Uncivil = Borderline - Uncivil)
 
-t_test_h4b_2 <- t.test(contrast_h4b_2$Borderline_vs_Uncivil, mu = 0, paired = FALSE)
-print(t_test_h4b_2)
-cat("Mean difference (Borderline gap - Uncivil gap):", mean(contrast_h4b_2$Borderline_vs_Uncivil, na.rm = TRUE), "\n")
-cat("Cohen's d:", cohens_d(contrast_h4b_2$Borderline_vs_Uncivil, mu = 0)$Cohens_d, "\n\n")
+# t_test_es_2 <- t.test(contrast_es_2$Borderline_vs_Uncivil, mu = 0, paired = FALSE)
+# print(t_test_es_2)
+# cat("Mean difference (Borderline gap - Uncivil gap):", mean(contrast_es_2$Borderline_vs_Uncivil, na.rm = TRUE), "\n")
+# cat("Cohen's d:", cohens_d(contrast_es_2$Borderline_vs_Uncivil, mu = 0)$Cohens_d, "\n\n")
 
-# Summary of alignment gaps (ES - borderline)
-cat("Summary of alignment gaps (Opposed - Aligned):\n")
-alignment_gaps_es %>%
-  group_by(Civility) %>%
-  summarise(
-    Mean_Gap = mean(AlignmentGap, na.rm = TRUE),
-    SD_Gap = sd(AlignmentGap, na.rm = TRUE),
-    SE_Gap = SD_Gap / sqrt(n())
-  ) %>%
-  print()
+# Summary of alignment gaps by civility (ES)
+# cat("Summary of alignment gaps (Opposed - Aligned, ES):\n")
+# alignment_gaps_es %>%
+#  group_by(Civility) %>%
+#  summarise(
+#    Mean_Gap = mean(AlignmentGap, na.rm = TRUE),
+#    SD_Gap = sd(AlignmentGap, na.rm = TRUE),
+#    SE_Gap = SD_Gap / sqrt(n())
+#  ) %>%
+#  print()
 
 
 ## Save results to file
 
 sink("txt_output_full_results/ANOVA_Results_Complete.txt")
 
-cat("========================================\n")
-cat("POLITICAL CONTENT MODERATION STUDY\n")
-cat("ANOVA RESULTS\n")
-cat("========================================\n\n")
-
+cat("--POLITICAL CONTENT MODERATION STUDY: ANOVA RESULTS--\n")
 cat("Date:", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "\n")
 cat("Sample size:", n_distinct(df_long$ParticipantID), "participants\n\n")
 
-cat("========================================\n")
-cat("H1: NON-POLITICAL BASELINE - CIVILITY EFFECT\n")
-cat("========================================\n\n")
-
+cat("--NON-POLITICAL BASELINE - CIVILITY EFFECT--\n")
 cat("--- H1a: Violation Recognition ---\n")
 print(anova_h1a_base)
 cat("\nDescriptive Statistics:\n")
@@ -301,45 +295,36 @@ print(anova_h1b_base)
 cat("\nDescriptive Statistics:\n")
 print(desc_h1b_base)
 
-cat("\n========================================\n")
-cat("POLITICAL CONTENT: CIVILITY × ALIGNMENT\n")
-cat("========================================\n\n")
-
+cat("--POLITICAL CONTENT: CIVILITY x ALIGNMENT--\n")
 cat("--- Violation Recognition ---\n")
 print(anova_political_vr)
 cat("\nDescriptive Statistics:\n")
 print(desc_political_vr)
 
-cat("\n--- Enforcement Severity ---\n")
+cat("\n---Enforcement Severity---\n")
 print(anova_political_es)
 cat("\nDescriptive Statistics:\n")
 print(desc_political_es)
 
-cat("\n========================================\n")
-cat("H4: BORDERLINE-SPECIFIC CONTRASTS\n")
-cat("========================================\n\n")
+# cat("-- Borderline-specific alignment gap contrasts --\n") #KEEP IN RESERVE
+# cat("--- Violation Recognition ---\n")
+# cat("Borderline vs Civil:\n")
+# print(t_test_vr_1)
+# cat("\nBorderline vs Uncivil:\n")
+# print(t_test_vr_2)
 
-cat("--- H4a: Violation Recognition ---\n")
-cat("Borderline vs Civil:\n")
-print(t_test_h4a_1)
-cat("\nBorderline vs Uncivil:\n")
-print(t_test_h4a_2)
-
-cat("\n--- H4b: Enforcement Severity ---\n")
-cat("Borderline vs Civil:\n")
-print(t_test_h4b_1)
-cat("\nBorderline vs Uncivil:\n")
-print(t_test_h4b_2)
+# cat("\n--- Enforcement Severity ---\n")
+# cat("Borderline vs Civil:\n")
+# print(t_test_es_1)
+# cat("\nBorderline vs Uncivil:\n")
+# print(t_test_es_2)
 
 sink()
 
-cat("\n✅ Results saved to: ANOVA_Results_Complete.txt\n")
+cat("\n Results saved to: ANOVA_Results_Complete.txt")
+
 
 ## Plot results
-
-library(ggpubr)
-library(patchwork)
-library(ggplot2)
 
 # Ensure ordering
 desc_h1a_base <- desc_h1a_base %>%
@@ -360,13 +345,15 @@ desc_political_es <- desc_political_es %>%
     Alignment = factor(Alignment, levels = c("Aligned", "Opposed"))
   )
 
+# Set theme for non-political baseline charts
+
 base_theme <- theme_pubr() +
   theme(
     plot.title  = element_text(face = "bold"),
     axis.title  = element_text(face = "bold")
   )
 
-# ---------- Top row: Non-political Baseline (bars) ----------
+# Top row: Non-political Baseline (bars)
 
 p_base_vr <- desc_h1a_base %>%
   ggplot(aes(x = Civility, y = Mean, fill = Civility)) +
@@ -402,7 +389,9 @@ p_base_es <- desc_h1b_base %>%
   ) +
   base_theme +
   theme(legend.position = "none") +
-  scale_y_continuous(limits = c(0, 3), breaks = seq(0, 3, 0.5))
+  scale_y_continuous(limits = c(0, 4), breaks = seq(0, 4, 0.5))
+
+# Set theme for political condition charts
 
 # position dodge for aligned vs opposed
 pd <- position_dodge(width = 0.25)
@@ -413,7 +402,7 @@ base_theme <- theme_pubr() +
     axis.title = element_text(face = "bold")
   )
 
-# --- bottom left: Political Content – Violation Recognition ---
+# Political Content – Violation Recognition 
 p_vr <- desc_political_vr %>%
   ggplot(aes(x = Civility, y = Mean,
              color = Alignment, group = Alignment)) +
@@ -433,7 +422,7 @@ p_vr <- desc_political_vr %>%
   theme(legend.position = "top") +
   ylim(0, 1)
 
-# --- bottom right: Political Content – Enforcement Severity ---
+# Political Content – Enforcement Severity
 p_es <- desc_political_es %>%
   ggplot(aes(x = Civility, y = Mean,
              color = Alignment, group = Alignment)) +
@@ -451,7 +440,7 @@ p_es <- desc_political_es %>%
   ) +
   base_theme +
   theme(legend.position = "top") +
-  scale_y_continuous(limits = c(0, 3), breaks = seq(0, 3, 0.5))
+  scale_y_continuous(limits = c(0, 4), breaks = seq(0, 4, 0.5))
 
 # ---------- Combine: 2 x 2 grid, no global title ----------
 
@@ -467,34 +456,11 @@ ggsave(
   bg = "white"
 )
 
-cat("\n✅ Plots saved to: Moderation_Results_Combined.png\n")
+cat ("\n Plots saved to: Moderation_Results_Combined.png\n")
 
-
-## Table plots
-
-library(dplyr)
-library(readr)
-
-format_anova_table <- function(aov_obj, digits = 3) {
-  aov_obj$ANOVA %>%
-    mutate(
-      across(c(DFn, DFd), round, 0),
-      across(c(F, p, pes), ~ round(., digits))
-    ) %>%
-    rename(
-      Effect = Effect,
-      df1   = DFn,
-      df2   = DFd,
-      F     = F,
-      p     = p,
-      pes   = pes
-    )
-}
-
-## ========================================
 ## STANDALONE GRAPHS: split by content type (VR + ES side by side)
 ## Matches slide layout; combined file above is retained
-## ========================================
+
 
 # Non-political baseline: VR + ES bar charts
 nonpolitical_combined <- (p_base_vr | p_base_es)
@@ -522,7 +488,29 @@ ggsave(
   bg     = "white"
 )
 
-cat("\n✅ Standalone plots saved: Moderation_Results_NonPolitical.png and Moderation_Results_Political.png\n")
+cat("\n Standalone plots saved: Moderation_Results_NonPolitical.png and Moderation_Results_Political.png\n")
+
+## Table plots
+
+
+# Helper function to clean ANOVA output for reporting:
+# extracts the ANOVA table, rounds key statistics, and renames degrees-of-freedom columns
+
+format_anova_table <- function(aov_obj, digits = 3) {
+  aov_obj$ANOVA %>%
+    mutate(
+      across(c(DFn, DFd), round, 0),
+      across(c(F, p, pes), ~ round(., digits))
+    ) %>%
+    rename(
+      Effect = Effect,
+      df1   = DFn,
+      df2   = DFd,
+      F     = F,
+      p     = p,
+      pes   = pes
+    )
+}
 
 
 # Non-political content
@@ -553,7 +541,4 @@ write_csv(desc_h1b_base,    "csv_descriptive_results/Desc_BaseES.csv") #Descript
 write_csv(desc_political_vr,"csv_descriptive_results/Desc_PolVR.csv") #Descriptive results, violation recognition, political condition
 write_csv(desc_political_es,"csv_descriptive_results/Desc_PolES.csv") #Descriptive results, enforcement severity, political condition
 
-# Export to word
-library(knitr)
-kable(tab_VR_political, caption = "ANOVA for Political Violation Recognition")
 

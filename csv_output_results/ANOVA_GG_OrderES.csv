@@ -4,5 +4,5 @@ Civility,1.78,442.46,291.017,1.43e-75,*,0.54
 Alignment,1,248,30.982,6.75e-8,*,0.111
 Order_f:Civility,8.92,442.46,1.702,0.087,,0.033
 Order_f:Alignment,5,248,0.461,0.805,,0.009
-Civility:Alignment,2,496,0.686,0.504,,0.003
-Order_f:Civility:Alignment,10,496,2.495,0.006,*,0.048
+Civility:Alignment,1.99,494.4,0.686,0.503,,0.003
+Order_f:Civility:Alignment,9.97,494.4,2.495,0.006,*,0.048
