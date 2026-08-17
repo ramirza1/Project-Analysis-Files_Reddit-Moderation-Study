@@ -1,5 +1,5 @@
 ROBUSTNESS CHECK: ORDER STABILITY
-Date: 2026-06-09 22:19:57 
+Date: 2026-08-17 17:53:20 
 
 --- Sample size by order block ---
 # A tibble: 6 × 2
@@ -115,11 +115,16 @@ $`Mauchly's Test for Sphericity`
 4 Order_f:Civility:Alignment 0.937 0.000314     *
 
 $`Sphericity Corrections`
-                      Effect   GGe       DF[GG]    p[GG] p[GG]<.05   HFe       DF[HF]    p[HF] p[HF]<.05
-1                   Civility 0.984 1.97, 487.91 1.69e-56         * 0.991 1.98, 491.77 6.35e-57         *
-2           Order_f:Civility 0.984 9.84, 487.91 4.40e-02         * 0.991 9.91, 491.77 4.30e-02         *
-3         Civility:Alignment 0.941 1.88, 466.51 2.65e-01           0.947 1.89, 469.95 2.65e-01          
-4 Order_f:Civility:Alignment 0.941 9.41, 466.51 1.81e-01           0.947 9.47, 469.95 1.81e-01          
+                      Effect   GGe       DF[GG]    p[GG] p[GG]<.05   HFe       DF[HF]
+1                   Civility 0.984 1.97, 487.91 1.69e-56         * 0.991 1.98, 491.77
+2           Order_f:Civility 0.984 9.84, 487.91 4.40e-02         * 0.991 9.91, 491.77
+3         Civility:Alignment 0.941 1.88, 466.51 2.65e-01           0.947 1.89, 469.95
+4 Order_f:Civility:Alignment 0.941 9.41, 466.51 1.81e-01           0.947 9.47, 469.95
+     p[HF] p[HF]<.05
+1 6.35e-57         *
+2 4.30e-02         *
+3 2.65e-01          
+4 1.81e-01          
 
 
 --- ANOVA: ES with Order as between factor ---
@@ -143,9 +148,14 @@ $`Mauchly's Test for Sphericity`
 4 Order_f:Civility:Alignment 0.997 6.70e-01      
 
 $`Sphericity Corrections`
-                      Effect   GGe       DF[GG]    p[GG] p[GG]<.05   HFe       DF[HF]    p[HF] p[HF]<.05
-1                   Civility 0.892 1.78, 442.46 1.43e-75         * 0.898  1.8, 445.45 4.64e-76         *
-2           Order_f:Civility 0.892 8.92, 442.46 8.70e-02           0.898 8.98, 445.45 8.60e-02          
-3         Civility:Alignment 0.997  1.99, 494.4 5.03e-01           1.005  2.01, 498.4 5.04e-01          
-4 Order_f:Civility:Alignment 0.997  9.97, 494.4 6.00e-03         * 1.005 10.05, 498.4 6.00e-03         *
+                      Effect   GGe       DF[GG]    p[GG] p[GG]<.05   HFe       DF[HF]
+1                   Civility 0.892 1.78, 442.46 1.43e-75         * 0.898  1.8, 445.45
+2           Order_f:Civility 0.892 8.92, 442.46 8.70e-02           0.898 8.98, 445.45
+3         Civility:Alignment 0.997  1.99, 494.4 5.03e-01           1.005  2.01, 498.4
+4 Order_f:Civility:Alignment 0.997  9.97, 494.4 6.00e-03         * 1.005 10.05, 498.4
+     p[HF] p[HF]<.05
+1 4.64e-76         *
+2 8.60e-02          
+3 5.04e-01          
+4 6.00e-03         *
 

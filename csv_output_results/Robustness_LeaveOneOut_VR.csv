@@ -1,0 +1,19 @@
+DV,Dropped,Effect,Statistic,StatType,p
+ViolationRecognition,Drop T1,Civility,168.08116913309084,Chisq,3.1742261623179677e-37
+ViolationRecognition,Drop T2,Civility,157.84006310646618,Chisq,5.314541280895211e-35
+ViolationRecognition,Drop T3,Civility,164.4019338356054,Chisq,1.9978996025361673e-36
+ViolationRecognition,Drop T4,Civility,148.85093323770027,Chisq,4.758066793618276e-33
+ViolationRecognition,Drop T5,Civility,157.04280536191408,Chisq,7.917500589092921e-35
+ViolationRecognition,Drop T6,Civility,150.3029628574416,Chisq,2.302111257849017e-33
+ViolationRecognition,Drop T1,Alignment,4.6128942160044515,Chisq,0.031732433924923774
+ViolationRecognition,Drop T2,Alignment,6.339078696870429,Chisq,0.011810621105888718
+ViolationRecognition,Drop T3,Alignment,8.714358343054915,Chisq,0.003157135196878503
+ViolationRecognition,Drop T4,Alignment,4.499482123767952,Chisq,0.033905120344245955
+ViolationRecognition,Drop T5,Alignment,4.983031041379218,Chisq,0.02559709841301645
+ViolationRecognition,Drop T6,Alignment,3.210350275881279,Chisq,0.07317381677040236
+ViolationRecognition,Drop T1,Civility:Alignment,1.0213385805568096,Chisq,0.6000938074249813
+ViolationRecognition,Drop T2,Civility:Alignment,3.461399272830015,Chisq,0.17716041872030414
+ViolationRecognition,Drop T3,Civility:Alignment,0.9345972320210059,Chisq,0.6266929219278583
+ViolationRecognition,Drop T4,Civility:Alignment,0.9180707205599643,Chisq,0.631892900594564
+ViolationRecognition,Drop T5,Civility:Alignment,0.42758649621718386,Chisq,0.8075153230850955
+ViolationRecognition,Drop T6,Civility:Alignment,2.060846362212538,Chisq,0.35685591393092386

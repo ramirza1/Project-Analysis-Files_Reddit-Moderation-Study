@@ -59,6 +59,48 @@ pull_p_adj <- function(df, civility_level) {
   df$p.adj[df$Civility == civility_level]
 }
 
+
+# Test statistic + p for one effect in one drop.
+# StatType is "F" (ES, linear) or "Chisq" (VR, logistic) -> format accordingly.
+fmt_leave_stat <- function(df, effect, dropped) {
+  row <- df[df$Effect == effect & df$Dropped == dropped, ]
+  if (nrow(row) == 0) stop(paste("Leave-out-analysis row not found:", effect, dropped,
+                                 "| Available effects:", paste(unique(df$Effect), collapse=", "),
+                                 "| drops:", paste(unique(df$Dropped), collapse=", ")))
+  # Enforcement severity = linear mixed model -> F
+  # Violation recognition = logistic mixed model -> chi-square
+  if (grepl("Enforcement", row$DV[1])) {
+    sprintf("$F = %.2f$, %s", row$Statistic, fmt_p(row$p))
+  } else {
+    sprintf("$\\chi^2 = %.2f$, %s", row$Statistic, fmt_p(row$p))
+  }
+}
+
+# p-value only (for compact "significant across all drops" phrasing)
+fmt_leave_p <- function(df, effect, dropped) {
+  row <- df[df$Effect == effect & df$Dropped == dropped, ]
+  fmt_p(row$p)
+}
+
+# Range of p-values for an effect across all six drops -> "all p < X" style.
+leave_p_max <- function(df, effect) {
+  ps <- df$p[df$Effect == effect]
+  max(ps)
+}
+
+# Model-estimated gap + 95% CI for one drop.
+# unit = "es" -> scale points (2 dp); unit = "vr" -> probability as pp (1 dp)
+fmt_leave_gap <- function(df, dropped, unit) {
+  row <- df[df$Dropped == dropped, ]
+  if (nrow(row) == 0) stop(paste("Gap row not found:", dropped))
+  if (unit == "es") {
+    sprintf("%.2f\\,[%.2f,\\,%.2f]", row$Gap, row$CI_low, row$CI_high)
+  } else {
+    sprintf("%.1f\\,pp\\,[%.1f,\\,%.1f]",
+            row$Gap*100, row$CI_low*100, row$CI_high*100)
+  }
+}
+
 # ---- Read CSVs ----
 
 # ANOVA tables (GG-corrected)
@@ -90,6 +132,12 @@ d_dem_vr  <- read_csv(paste0(DESC_DIR, "Democrats_ViolationRecognition_Descripti
 d_dem_es  <- read_csv(paste0(DESC_DIR, "Democrats_EnforcementSeverity_Descriptives.csv"),  show_col_types=FALSE)
 d_rep_vr  <- read_csv(paste0(DESC_DIR, "Republicans_ViolationRecognition_Descriptives.csv"), show_col_types=FALSE)
 d_rep_es  <- read_csv(paste0(DESC_DIR, "Republicans_EnforcementSeverity_Descriptives.csv"),  show_col_types=FALSE)
+
+#Leave-one-out analysis
+leave_es     <- read_csv(paste0(ANOVA_DIR, "Robustness_LeaveOneOut_ES.csv"),     show_col_types=FALSE)
+leave_vr     <- read_csv(paste0(ANOVA_DIR, "Robustness_LeaveOneOut_VR.csv"),     show_col_types=FALSE)
+leave_gap_es <- read_csv(paste0(ANOVA_DIR, "Robustness_LeaveOneOut_Gap_ES.csv"), show_col_types=FALSE)
+leave_gap_vr <- read_csv(paste0(ANOVA_DIR, "Robustness_LeaveOneOut_Gap_VR.csv"), show_col_types=FALSE)
 
 cat("All CSVs loaded\n")
 
@@ -188,6 +236,40 @@ vals$RobVROrderCiv      <- fmt_row(a_ord_vr, "Order_f:Civility")
 vals$RobESOrderMain     <- fmt_row(a_ord_es, "Order_f")
 vals$RobESOrderAlign    <- fmt_row(a_ord_es, "Order_f:Alignment")
 vals$RobESOrderThreeWay <- fmt_row(a_ord_es, "Order_f:Civility:Alignment")
+
+
+# ---- 8. Robustness: leave-one-out analysis ----
+
+drops <- paste0("Drop T", 1:6)
+
+# Per-drop alignment test (ES: F; VR: chi-square)
+for (i in 1:6) {
+  tag <- paste0("T", i)
+  vals[[paste0("LeaveESAlign", tag)]] <- fmt_leave_stat(leave_es, "Alignment", drops[i])
+  vals[[paste0("LeaveVRAlign", tag)]] <- fmt_leave_stat(leave_vr, "Alignment", drops[i])
+}
+
+# Per-drop model-estimated gaps with CIs
+for (i in 1:6) {
+  tag <- paste0("T", i)
+  vals[[paste0("LeaveESGap", tag)]] <- fmt_leave_gap(leave_gap_es, drops[i], "es")
+  vals[[paste0("LeaveVRGap", tag)]] <- fmt_leave_gap(leave_gap_vr, drops[i], "vr")
+}
+
+# Worst-case (largest) p across drops, for summary sentences
+# ES alignment: all highly significant -> report the max p compactly
+vals$LeaveESAlignMaxP <- fmt_p(leave_p_max(leave_es, "Alignment"))
+vals$LeaveVRAlignMaxP <- fmt_p(leave_p_max(leave_vr, "Alignment"))
+
+# Civility across drops (both DVs remain overwhelmingly significant)
+vals$LeaveESCivMaxP <- fmt_p(leave_p_max(leave_es, "Civility"))
+vals$LeaveVRCivMaxP <- fmt_p(leave_p_max(leave_vr, "Civility"))
+
+# Interaction across drops (should remain non-significant): report the MIN p
+# (i.e. the closest any drop came to significance) as the strongest case
+vals$LeaveESIntMinP <- fmt_p(min(leave_es$p[leave_es$Effect == "Civility:Alignment"]))
+vals$LeaveVRIntMinP <- fmt_p(min(leave_vr$p[leave_vr$Effect == "Civility:Alignment"]))
+
 
 # WRITE study_outputs.tex
 

@@ -1,0 +1,19 @@
+DV,Dropped,Effect,Statistic,StatType,p
+EnforcementSeverity,Drop T1,Civility,316.00382594963503,F,9.50176389664693e-108
+EnforcementSeverity,Drop T2,Civility,291.9491348224791,F,3.7697817908144707e-101
+EnforcementSeverity,Drop T3,Civility,338.00060701026825,F,1.31282068854043e-113
+EnforcementSeverity,Drop T4,Civility,232.63674293167247,F,4.162534597294088e-84
+EnforcementSeverity,Drop T5,Civility,291.404120395734,F,4.8172002120676463e-101
+EnforcementSeverity,Drop T6,Civility,255.05485228174115,F,1.0391967131223452e-90
+EnforcementSeverity,Drop T1,Alignment,23.073548586618347,F,1.7901041443991514e-6
+EnforcementSeverity,Drop T2,Alignment,34.27185024770618,F,6.439592021104206e-9
+EnforcementSeverity,Drop T3,Alignment,40.63797370708801,F,2.7582040873212015e-10
+EnforcementSeverity,Drop T4,Alignment,25.38009436557773,F,5.555745101763408e-7
+EnforcementSeverity,Drop T5,Alignment,27.181239134773712,F,2.2372706034008305e-7
+EnforcementSeverity,Drop T6,Alignment,26.935571351406278,F,2.532846967497733e-7
+EnforcementSeverity,Drop T1,Civility:Alignment,0.3215497266857611,F,0.725097274646224
+EnforcementSeverity,Drop T2,Civility:Alignment,0.12293951002507039,F,0.8843301409538423
+EnforcementSeverity,Drop T3,Civility:Alignment,0.6227843769130242,F,0.5366502791029992
+EnforcementSeverity,Drop T4,Civility:Alignment,0.230510738546476,F,0.7941688281777051
+EnforcementSeverity,Drop T5,Civility:Alignment,0.891742684234029,F,0.41025646586629483
+EnforcementSeverity,Drop T6,Civility:Alignment,0.042097549904716,F,0.9587778963640274

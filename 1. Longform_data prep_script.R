@@ -331,6 +331,57 @@ df_long %>%
   print(n = 11)
 
 
+## Tag political rows with meme topics
+# Topic is not in the raw data, bu timplied by the (Order X Alignment X Civility X Party)
+# via the study's counterbalancing. A mapping file in the inputs defines this.
+# Baseline and filler rows have Alignment = NA, so they receive NA topic by design.
+
+# Read the mapping table
+
+topic_map <- read_csv("Input_data_wide/Topic_Mapping.csv", show_col_types = FALSE)
+
+# Adjust dataframe for topic
+df_long <- df_long %>%
+  mutate(
+    PartyKey = case_when(
+      str_detect(PoliticalLeaning, "Democrat")   ~ "Democrat",
+      str_detect(PoliticalLeaning, "Republican") ~ "Republican",
+      TRUE ~ NA_character_
+    ),
+    # join needs plain character keys, not factors
+    Order_chr     = as.character(Order),
+    Alignment_chr = as.character(Alignment),
+    Civility_chr  = as.character(Civility)
+  ) %>%
+  left_join(
+    topic_map %>%
+      rename(Order_chr = Order, Alignment_chr = Alignment, Civility_chr = Civility),
+    by = c("Order_chr", "PartyKey", "Alignment_chr", "Civility_chr")
+  ) %>%
+  select(-PartyKey, -Order_chr, -Alignment_chr, -Civility_chr)
+
+# Integrity checks
+n_pol        <- sum(df_long$ContentType == "Political", na.rm = TRUE)
+n_pol_tagged <- sum(df_long$ContentType == "Political" & !is.na(df_long$Topic))
+cat("\n=== TOPIC TAGGING CHECK ===\n")
+cat("Political rows:", n_pol, "| tagged:", n_pol_tagged, "\n")
+if (n_pol != n_pol_tagged) {
+  warning("Some political rows did not receive a Topic — check Order/Alignment/Civility values against Topic_Mapping.csv")
+}
+
+chk <- df_long %>%
+  filter(ContentType == "Political") %>%
+  group_by(ParticipantID) %>%
+  summarise(n_topics = n_distinct(Topic), n_rows = n(), .groups = "drop") %>%
+  filter(n_topics != 6 | n_rows != 6)
+if (nrow(chk) > 0) {
+  warning("Some participants lack 6 distinct topics across 6 political rows — inspect `chk`")
+  print(chk)
+} else {
+  cat("All participants have 6 distinct topics across 6 political rows.\n")
+}
+
+
 ## Save data
 
 write_csv(df_long, "Input_data_long/Moderation_Data_Long_Format.csv")
@@ -344,7 +395,6 @@ cat("Saved: Moderation_Data_Political_Only.csv\n")
 df_long %>%
   filter(ContentType == "Baseline") %>%
   write_csv("Input_data_long/Moderation_Data_Baseline.csv")
-
 cat("Saved: Moderation_Data_Baseline.csv\n")
 
 saveRDS(df_long, "Input_data_long/Moderation_Data_Long_Format.rds")

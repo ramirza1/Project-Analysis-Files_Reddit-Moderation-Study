@@ -1,0 +1,73 @@
+Order,PartyKey,Alignment,Civility,Topic,TopicLabel
+Order1,Democrat,Aligned,Civil,T1,Mamdani; Pooh
+Order1,Republican,Opposed,Civil,T1,Mamdani; Pooh
+Order1,Democrat,Opposed,Civil,T2,Election sec.; Simpsons
+Order1,Republican,Aligned,Civil,T2,Election sec.; Simpsons
+Order1,Democrat,Aligned,Borderline,T3,Gov. shutdown; Farquaad
+Order1,Republican,Opposed,Borderline,T3,Gov. shutdown; Farquaad
+Order1,Democrat,Opposed,Borderline,T4,Economy; Simpsons
+Order1,Republican,Aligned,Borderline,T4,Economy; Simpsons
+Order1,Democrat,Aligned,Uncivil,T5,Laptop/Epstein; Spongebob
+Order1,Republican,Opposed,Uncivil,T5,Laptop/Epstein; Spongebob
+Order1,Democrat,Opposed,Uncivil,T6,Green energy; Spongebob
+Order1,Republican,Aligned,Uncivil,T6,Green energy; Spongebob
+Order2,Democrat,Opposed,Civil,T3,Gov. shutdown; Farquaad
+Order2,Republican,Aligned,Civil,T3,Gov. shutdown; Farquaad
+Order2,Democrat,Aligned,Borderline,T4,Economy; Simpsons
+Order2,Republican,Opposed,Borderline,T4,Economy; Simpsons
+Order2,Democrat,Opposed,Borderline,T5,Laptop/Epstein; Spongebob
+Order2,Republican,Aligned,Borderline,T5,Laptop/Epstein; Spongebob
+Order2,Democrat,Aligned,Uncivil,T6,Green energy; Spongebob
+Order2,Republican,Opposed,Uncivil,T6,Green energy; Spongebob
+Order2,Democrat,Opposed,Uncivil,T1,Mamdani; Pooh
+Order2,Republican,Aligned,Uncivil,T1,Mamdani; Pooh
+Order2,Democrat,Aligned,Civil,T2,Election sec.; Simpsons
+Order2,Republican,Opposed,Civil,T2,Election sec.; Simpsons
+Order3,Democrat,Aligned,Borderline,T5,Laptop/Epstein; Spongebob
+Order3,Republican,Opposed,Borderline,T5,Laptop/Epstein; Spongebob
+Order3,Democrat,Opposed,Borderline,T6,Green energy; Spongebob
+Order3,Republican,Aligned,Borderline,T6,Green energy; Spongebob
+Order3,Democrat,Aligned,Uncivil,T1,Mamdani; Pooh
+Order3,Republican,Opposed,Uncivil,T1,Mamdani; Pooh
+Order3,Democrat,Opposed,Uncivil,T2,Election sec.; Simpsons
+Order3,Republican,Aligned,Uncivil,T2,Election sec.; Simpsons
+Order3,Democrat,Aligned,Civil,T3,Gov. shutdown; Farquaad
+Order3,Republican,Opposed,Civil,T3,Gov. shutdown; Farquaad
+Order3,Democrat,Opposed,Civil,T4,Economy; Simpsons
+Order3,Republican,Aligned,Civil,T4,Economy; Simpsons
+Order4,Democrat,Opposed,Borderline,T1,Mamdani; Pooh
+Order4,Republican,Aligned,Borderline,T1,Mamdani; Pooh
+Order4,Democrat,Aligned,Uncivil,T2,Election sec.; Simpsons
+Order4,Republican,Opposed,Uncivil,T2,Election sec.; Simpsons
+Order4,Democrat,Opposed,Uncivil,T3,Gov. shutdown; Farquaad
+Order4,Republican,Aligned,Uncivil,T3,Gov. shutdown; Farquaad
+Order4,Democrat,Aligned,Civil,T4,Economy; Simpsons
+Order4,Republican,Opposed,Civil,T4,Economy; Simpsons
+Order4,Democrat,Opposed,Civil,T5,Laptop/Epstein; Spongebob
+Order4,Republican,Aligned,Civil,T5,Laptop/Epstein; Spongebob
+Order4,Democrat,Aligned,Borderline,T6,Green energy; Spongebob
+Order4,Republican,Opposed,Borderline,T6,Green energy; Spongebob
+Order5,Democrat,Aligned,Uncivil,T3,Gov. shutdown; Farquaad
+Order5,Republican,Opposed,Uncivil,T3,Gov. shutdown; Farquaad
+Order5,Democrat,Opposed,Uncivil,T4,Economy; Simpsons
+Order5,Republican,Aligned,Uncivil,T4,Economy; Simpsons
+Order5,Democrat,Aligned,Civil,T5,Laptop/Epstein; Spongebob
+Order5,Republican,Opposed,Civil,T5,Laptop/Epstein; Spongebob
+Order5,Democrat,Opposed,Civil,T6,Green energy; Spongebob
+Order5,Republican,Aligned,Civil,T6,Green energy; Spongebob
+Order5,Democrat,Aligned,Borderline,T1,Mamdani; Pooh
+Order5,Republican,Opposed,Borderline,T1,Mamdani; Pooh
+Order5,Democrat,Opposed,Borderline,T2,Election sec.; Simpsons
+Order5,Republican,Aligned,Borderline,T2,Election sec.; Simpsons
+Order6,Democrat,Opposed,Uncivil,T5,Laptop/Epstein; Spongebob
+Order6,Republican,Aligned,Uncivil,T5,Laptop/Epstein; Spongebob
+Order6,Democrat,Aligned,Civil,T6,Green energy; Spongebob
+Order6,Republican,Opposed,Civil,T6,Green energy; Spongebob
+Order6,Democrat,Opposed,Civil,T1,Mamdani; Pooh
+Order6,Republican,Aligned,Civil,T1,Mamdani; Pooh
+Order6,Democrat,Aligned,Borderline,T2,Election sec.; Simpsons
+Order6,Republican,Opposed,Borderline,T2,Election sec.; Simpsons
+Order6,Democrat,Opposed,Borderline,T3,Gov. shutdown; Farquaad
+Order6,Republican,Aligned,Borderline,T3,Gov. shutdown; Farquaad
+Order6,Democrat,Aligned,Uncivil,T4,Economy; Simpsons
+Order6,Republican,Opposed,Uncivil,T4,Economy; Simpsons
