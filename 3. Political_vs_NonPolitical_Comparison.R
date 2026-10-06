@@ -5,6 +5,10 @@
 #
 # Constructs participant-level aligned-opposed averages for political content, then compares to the non-political
 # baseline memes within-subjects.
+#
+# Also carries out a separate three way comparison between the following conditions:
+# Non-political baseline vs political (aligned) vs political (opposed).
+
 
 ## LOAD LIBRARIES
 library(tidyverse)
@@ -362,6 +366,901 @@ cat("\nStandalone charts saved: Political_vs_NonPolitical_VR.png and Political_v
 
 
 
+# POLITICAL vs NON-POLITICAL COMPARISON ANALYSIS
+#
+# Tests whether political content is moderated more harshly than non-political content at equivalent
+# levels of incivility.
+#
+# Constructs participant-level aligned-opposed averages for political content, then compares to the non-political
+# baseline memes within-subjects.
+#
+# Also carries out a separate three way comparison between the following conditions:
+# Non-political baseline vs political (aligned) vs political (opposed).
+
+
+## LOAD LIBRARIES
+library(tidyverse)
+library(rstatix)
+library(effectsize)
+library(ggpubr)
+library(patchwork)
+
+## LOAD DATA
+df_long <- readRDS("Input_data_long/Moderation_Data_Long_Format.rds")
+
+cat("--DATA SUMMARY--\n")
+cat("Total rows:", nrow(df_long), "\n")
+cat("Unique participants:", n_distinct(df_long$ParticipantID), "\n\n")
+
+
+## CONSTRUCT AVERAGE OUTCOME DATA FOR POLITICAL CONDITIONS vs NON-POLITICAL BASELINE BY PARTICIPANT
+
+df_political_avg <- df_long %>%
+  filter(ContentType == "Political") %>%
+  group_by(ParticipantID, Civility) %>%
+  summarise(
+    ViolationRecognition = mean(ViolationRecognition, na.rm = TRUE),
+    EnforcementSeverity  = mean(EnforcementSeverity, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(ContentType = "Political")
+
+df_nonpolitical <- df_long %>%
+  filter(ContentType == "Baseline") %>%
+  select(ParticipantID, Civility, ViolationRecognition, EnforcementSeverity) %>%
+  mutate(ContentType = "Non-political")
+
+df_compare <- bind_rows(df_political_avg, df_nonpolitical) %>%
+  mutate(
+    Civility    = factor(Civility, levels = c("Civil", "Borderline", "Uncivil")),
+    ContentType = factor(ContentType, levels = c("Non-political", "Political"))
+  )
+
+cat("Combined dataset:", nrow(df_compare), "rows\n")
+cat("Expected:", n_distinct(df_long$ParticipantID) * 6,
+    "(N participants x 3 civility x 2 content types)\n\n")
+
+
+## DESCRIPTIVE STATISTICS
+
+desc_with_ci_2 <- function(df, dv, group_var1, group_var2) {
+  df %>%
+    group_by({{ group_var1 }}, {{ group_var2 }}) %>%
+    summarise(
+      N    = n(),
+      Mean = mean({{ dv }}, na.rm = TRUE),
+      SD   = sd({{ dv }}, na.rm = TRUE),
+      SE   = SD / sqrt(N),
+      t_95 = qt(0.975, df = N - 1),
+      CI95_lower = Mean - t_95 * SE,
+      CI95_upper = Mean + t_95 * SE,
+      .groups = "drop"
+    )
+}
+
+desc_compare_vr <- desc_with_ci_2(df_compare, ViolationRecognition, Civility, ContentType)
+desc_compare_es <- desc_with_ci_2(df_compare, EnforcementSeverity,  Civility, ContentType)
+
+cat("--- Violation Recognition Descriptives ---\n")
+print(desc_compare_vr)
+
+cat("\n--- Enforcement Severity Descriptives ---\n")
+print(desc_compare_es)
+
+
+## 3 x 2 REPEATED-MEASURES ANOVAs
+
+
+
+cat("ANOVA: Violation Recognition\n")
+
+anova_compare_vr <- df_compare %>%
+  anova_test(
+    dv          = ViolationRecognition,
+    wid         = ParticipantID,
+    within      = c(Civility, ContentType),
+    effect.size = "pes"
+  )
+print(anova_compare_vr)
+
+
+cat("ANOVA: Enforcement Severity\n")
+
+anova_compare_es <- df_compare %>%
+  anova_test(
+    dv          = EnforcementSeverity,
+    wid         = ParticipantID,
+    within      = c(Civility, ContentType),
+    effect.size = "pes"
+  )
+print(anova_compare_es)
+
+
+## SIMPLE EFFECTS: Political vs Non-political at each civility level
+
+cat("SIMPLE EFFECTS - Political vs Non-political by Civility\n")
+
+cat("\n--Violation Recognition--\n")
+simple_vr <- df_compare %>%
+  group_by(Civility) %>%
+  pairwise_t_test(
+    ViolationRecognition ~ ContentType,
+    paired          = TRUE,
+    p.adjust.method = "bonferroni" #Bonferroni not strictly needed as we just compare political vs non-political
+  )
+print(simple_vr)
+
+cat("\n--Enforcement Severity--\n")
+simple_es <- df_compare %>%
+  group_by(Civility) %>%
+  pairwise_t_test(
+    EnforcementSeverity ~ ContentType,
+    paired          = TRUE,
+    p.adjust.method = "bonferroni" #Bonferroni not strictly needed as we just compare political vs non-political
+  )
+print(simple_es)
+
+
+## SAVE RESULTS TO FILE
+
+
+sink("txt_output_full_results/Political_vs_NonPolitical_Results.txt")
+
+
+cat("POLITICAL vs NON-POLITICAL COMPARISON\n")
+cat("Date:", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "\n")
+cat("N participants:", n_distinct(df_long$ParticipantID), "\n\n")
+
+cat("--Descriptives: Violation Recognition--\n")
+print(desc_compare_vr)
+cat("\n--Descriptives: Enforcement Severity--\n")
+print(desc_compare_es)
+
+cat("\n--ANOVA: Violation Recognition--\n")
+print(anova_compare_vr)
+cat("\n--ANOVA: Enforcement Severity--\n")
+print(anova_compare_es)
+
+cat("\n--Simple Effects: Violation Recognition--\n")
+print(simple_vr)
+cat("\n--Simple Effects: Enforcement Severity--\n")
+print(simple_es)
+
+sink()
+cat("\nResults saved to: Political_vs_NonPolitical_Results.txt\n")
+
+
+## CHART: Political vs Non-political (side-by-side, VR + ES)
+
+# Ensure ordering
+
+desc_compare_vr <- desc_compare_vr %>%
+  mutate(ContentType = factor(ContentType, levels = c("Non-political", "Political")))
+desc_compare_es <- desc_compare_es %>%
+  mutate(ContentType = factor(ContentType, levels = c("Non-political", "Political")))
+
+# Set colors and base theme
+
+COLOR_NONPOL <- "#6B7280"
+COLOR_POL    <- "#3D5A80"
+
+
+base_theme_clean <- theme_pubr() +
+  theme(
+    axis.title       = element_text(face = "bold", size = 11),
+    axis.text        = element_text(size = 10),
+    legend.title     = element_blank(),
+    legend.position  = "top",
+    legend.text      = element_text(size = 10),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+
+# Panel 1: Violation Recognition
+p_vr_compare <- ggplot(desc_compare_vr,
+                       aes(x = Civility, y = Mean, fill = ContentType)) +
+  geom_col(position = position_dodge(width = 0.75),
+           width = 0.65, color = "white", linewidth = 0.3) +
+  geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper),
+                position = position_dodge(width = 0.75),
+                width = 0.15, linewidth = 0.5, color = "#333") +
+  geom_text(aes(y = CI95_upper, label = sprintf("%.1f%%", Mean * 100)),
+            position = position_dodge(width = 0.75),
+            vjust = -0.5, size = 3.2, color = "#444") +
+  scale_fill_manual(values = c(
+    "Non-political" = COLOR_NONPOL,
+    "Political"     = COLOR_POL
+  ),
+  labels = c("Non-political baseline",
+             "Political content (avg. of aligned + opposed)")) +
+  scale_y_continuous(
+    limits = c(0, 1.10),
+    breaks = c(0, 0.25, 0.5, 0.75, 1.0),
+    labels = c("0%", "25%", "50%", "75%", "100%"),
+    expand = c(0, 0)
+  ) +
+  labs(
+    title = "Political vs. Non-political: Violation Recognition",
+    x = "Civility Level",
+    y = "Violation Recognition Rate"
+  ) +
+  base_theme_clean
+
+# Panel 2: Enforcement Severity
+p_es_compare <- ggplot(desc_compare_es,
+                       aes(x = Civility, y = Mean, fill = ContentType)) +
+  geom_col(position = position_dodge(width = 0.75),
+           width = 0.65, color = "white", linewidth = 0.3) +
+  geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper),
+                position = position_dodge(width = 0.75),
+                width = 0.15, linewidth = 0.5, color = "#333") +
+  geom_text(aes(y = CI95_upper, label = sprintf("%.2f", Mean)),
+            position = position_dodge(width = 0.75),
+            vjust = -0.5, size = 3.2, color = "#444") +
+  scale_fill_manual(values = c(
+    "Non-political" = COLOR_NONPOL,
+    "Political"     = COLOR_POL
+  ),
+  labels = c("Non-political baseline",
+             "Political content (avg. of aligned + opposed)")) +
+  scale_y_continuous(
+    limits = c(0, 4),
+    breaks = seq(0, 4, 0.5),
+    expand = c(0, 0)
+  ) +
+  labs(
+    title = "Political vs. Non-political: Enforcement Severity",
+    x = "Civility Level",
+    y = "Enforcement Severity (0-4)"
+  ) +
+  base_theme_clean
+
+# Combine side-by-side with shared legend
+combined_compare <- (p_vr_compare | p_es_compare) +
+  plot_layout(guides = "collect") &
+  theme(legend.position = "top")
+
+ggsave(
+  "Graph_output_results/Political_vs_NonPolitical_Combined.png",
+  combined_compare,
+  width  = 12,
+  height = 5,
+  dpi    = 300,
+  bg     = "white"
+)
+
+cat("\nChart saved to: Political_vs_NonPolitical_Combined.png\n")
+
+
+
+## STANDALONE CHARTS: VR and ES with difference annotations
+
+# Helper: compute per-civility diff and annotation positions
+make_annot_df <- function(desc_df) {
+  np_df <- desc_df %>%
+    filter(ContentType == "Non-political") %>%
+    select(Civility, Mean_NP = Mean, Upper_NP = CI95_upper)
+  p_df  <- desc_df %>%
+    filter(ContentType == "Political") %>%
+    select(Civility, Mean_P = Mean, Upper_P = CI95_upper)
+  np_df %>%
+    left_join(p_df, by = "Civility") %>%
+    mutate(
+      diff      = Mean_P - Mean_NP,
+      max_upper = pmax(Upper_NP, Upper_P),
+      x_num     = as.numeric(Civility)
+    )
+}
+
+# VR annotation frame
+# threshold: |diff| <= 0.03 (i.e. ~3pp) treated as "no gap"
+annot_vr <- make_annot_df(desc_compare_vr) %>%
+  mutate(
+    label       = case_when(
+      diff >  0.03 ~ paste0("+", round(diff * 100), "pp"),
+      diff < -0.03 ~ paste0(round(diff * 100), "pp"),
+      TRUE         ~ "no gap"
+    ),
+    label_color = if_else(abs(diff) > 0.03, "#CC2200", "#888888"),
+    x_pos       = x_num + if_else(abs(diff) <= 0.03, 0.18, 0),  # nudge "no gap" right
+    y_pos       = max_upper + 0.05
+  )
+
+# ES annotation frame
+# threshold: |diff| <= 0.10 treated as "no gap"
+annot_es <- make_annot_df(desc_compare_es) %>%
+  mutate(
+    label       = case_when(
+      diff >  0.10 ~ paste0("+", sprintf("%.2f", diff)),
+      diff < -0.10 ~ sprintf("%.2f", diff),
+      TRUE         ~ "no gap"
+    ),
+    label_color = if_else(abs(diff) > 0.10, "#CC2200", "#888888"),
+    x_pos       = x_num + if_else(abs(diff) <= 0.10, 0.18, 0),
+    y_pos       = max_upper + 0.10
+  )
+
+# Standalone Violation Recognition chart
+p_vr_standalone <- p_vr_compare +
+  labs(
+    title = "Political content is judged more harshly than non-political\ncontent at the same level of incivility",
+    y     = "Violation recognition rate"
+  ) +
+  theme(plot.title = element_text(face = "bold", size = 12)) +
+  geom_text(
+    data        = annot_vr,
+    aes(x = x_pos, y = y_pos, label = label, color = label_color),
+    inherit.aes = FALSE,
+    size        = 4,
+    fontface    = "bold"
+  ) +
+  scale_color_identity()
+
+# Standalone Enforcement Severity chart
+p_es_standalone <- p_es_compare +
+  labs(
+    title = "Same pattern holds for enforcement severity",
+    y     = "Enforcement severity (0-4)"
+  ) +
+  theme(plot.title = element_text(face = "bold", size = 12)) +
+  geom_text(
+    data        = annot_es,
+    aes(x = x_pos, y = y_pos, label = label, color = label_color),
+    inherit.aes = FALSE,
+    size        = 4,
+    fontface    = "bold"
+  ) +
+  scale_color_identity()
+
+ggsave(
+  "Graph_output_results/Political_vs_NonPolitical_VR.png",
+  p_vr_standalone,
+  width  = 7,
+  height = 5,
+  dpi    = 300,
+  bg     = "white"
+)
+
+ggsave(
+  "Graph_output_results/Political_vs_NonPolitical_ES.png",
+  p_es_standalone,
+  width  = 7,
+  height = 5,
+  dpi    = 300,
+  bg     = "white"
+)
+
+cat("\nStandalone charts saved: Political_vs_NonPolitical_VR.png and Political_vs_NonPolitical_ES.png\n")
+
+
+
+# POLITICAL vs NON-POLITICAL COMPARISON ANALYSIS
+#
+# Tests whether political content is moderated more harshly than non-political content at equivalent
+# levels of incivility.
+#
+# Constructs participant-level aligned-opposed averages for political content, then compares to the non-political
+# baseline memes within-subjects.
+#
+# Also carries out a separate three way comparison between the following conditions:
+# Non-political baseline vs political (aligned) vs political (opposed).
+
+
+## LOAD LIBRARIES
+library(tidyverse)
+library(rstatix)
+library(effectsize)
+library(ggpubr)
+library(patchwork)
+
+## LOAD DATA
+df_long <- readRDS("Input_data_long/Moderation_Data_Long_Format.rds")
+
+cat("--DATA SUMMARY--\n")
+cat("Total rows:", nrow(df_long), "\n")
+cat("Unique participants:", n_distinct(df_long$ParticipantID), "\n\n")
+
+
+## CONSTRUCT AVERAGE OUTCOME DATA FOR POLITICAL CONDITIONS vs NON-POLITICAL BASELINE BY PARTICIPANT
+
+df_political_avg <- df_long %>%
+  filter(ContentType == "Political") %>%
+  group_by(ParticipantID, Civility) %>%
+  summarise(
+    ViolationRecognition = mean(ViolationRecognition, na.rm = TRUE),
+    EnforcementSeverity  = mean(EnforcementSeverity, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(ContentType = "Political")
+
+df_nonpolitical <- df_long %>%
+  filter(ContentType == "Baseline") %>%
+  select(ParticipantID, Civility, ViolationRecognition, EnforcementSeverity) %>%
+  mutate(ContentType = "Non-political")
+
+df_compare <- bind_rows(df_political_avg, df_nonpolitical) %>%
+  mutate(
+    Civility    = factor(Civility, levels = c("Civil", "Borderline", "Uncivil")),
+    ContentType = factor(ContentType, levels = c("Non-political", "Political"))
+  )
+
+cat("Combined dataset:", nrow(df_compare), "rows\n")
+cat("Expected:", n_distinct(df_long$ParticipantID) * 6,
+    "(N participants x 3 civility x 2 content types)\n\n")
+
+
+## DESCRIPTIVE STATISTICS
+
+desc_with_ci_2 <- function(df, dv, group_var1, group_var2) {
+  df %>%
+    group_by({{ group_var1 }}, {{ group_var2 }}) %>%
+    summarise(
+      N    = n(),
+      Mean = mean({{ dv }}, na.rm = TRUE),
+      SD   = sd({{ dv }}, na.rm = TRUE),
+      SE   = SD / sqrt(N),
+      t_95 = qt(0.975, df = N - 1),
+      CI95_lower = Mean - t_95 * SE,
+      CI95_upper = Mean + t_95 * SE,
+      .groups = "drop"
+    )
+}
+
+desc_compare_vr <- desc_with_ci_2(df_compare, ViolationRecognition, Civility, ContentType)
+desc_compare_es <- desc_with_ci_2(df_compare, EnforcementSeverity,  Civility, ContentType)
+
+cat("--- Violation Recognition Descriptives ---\n")
+print(desc_compare_vr)
+
+cat("\n--- Enforcement Severity Descriptives ---\n")
+print(desc_compare_es)
+
+
+## 3 x 2 REPEATED-MEASURES ANOVAs
+
+
+
+cat("ANOVA: Violation Recognition\n")
+
+anova_compare_vr <- df_compare %>%
+  anova_test(
+    dv          = ViolationRecognition,
+    wid         = ParticipantID,
+    within      = c(Civility, ContentType),
+    effect.size = "pes"
+  )
+print(anova_compare_vr)
+
+
+cat("ANOVA: Enforcement Severity\n")
+
+anova_compare_es <- df_compare %>%
+  anova_test(
+    dv          = EnforcementSeverity,
+    wid         = ParticipantID,
+    within      = c(Civility, ContentType),
+    effect.size = "pes"
+  )
+print(anova_compare_es)
+
+
+## SIMPLE EFFECTS: Political vs Non-political at each civility level
+
+cat("SIMPLE EFFECTS - Political vs Non-political by Civility\n")
+
+cat("\n--Violation Recognition--\n")
+simple_vr <- df_compare %>%
+  group_by(Civility) %>%
+  pairwise_t_test(
+    ViolationRecognition ~ ContentType,
+    paired          = TRUE,
+    p.adjust.method = "bonferroni" #Bonferroni not strictly needed as we just compare political vs non-political
+  )
+print(simple_vr)
+
+cat("\n--Enforcement Severity--\n")
+simple_es <- df_compare %>%
+  group_by(Civility) %>%
+  pairwise_t_test(
+    EnforcementSeverity ~ ContentType,
+    paired          = TRUE,
+    p.adjust.method = "bonferroni" #Bonferroni not strictly needed as we just compare political vs non-political
+  )
+print(simple_es)
+
+
+## SAVE RESULTS TO FILE
+
+
+sink("txt_output_full_results/Political_vs_NonPolitical_Results.txt")
+
+
+cat("POLITICAL vs NON-POLITICAL COMPARISON\n")
+cat("Date:", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "\n")
+cat("N participants:", n_distinct(df_long$ParticipantID), "\n\n")
+
+cat("--Descriptives: Violation Recognition--\n")
+print(desc_compare_vr)
+cat("\n--Descriptives: Enforcement Severity--\n")
+print(desc_compare_es)
+
+cat("\n--ANOVA: Violation Recognition--\n")
+print(anova_compare_vr)
+cat("\n--ANOVA: Enforcement Severity--\n")
+print(anova_compare_es)
+
+cat("\n--Simple Effects: Violation Recognition--\n")
+print(simple_vr)
+cat("\n--Simple Effects: Enforcement Severity--\n")
+print(simple_es)
+
+sink()
+cat("\nResults saved to: Political_vs_NonPolitical_Results.txt\n")
+
+
+## CHART: Political vs Non-political (side-by-side, VR + ES)
+
+# Ensure ordering
+
+desc_compare_vr <- desc_compare_vr %>%
+  mutate(ContentType = factor(ContentType, levels = c("Non-political", "Political")))
+desc_compare_es <- desc_compare_es %>%
+  mutate(ContentType = factor(ContentType, levels = c("Non-political", "Political")))
+
+# Set colors and base theme
+
+COLOR_NONPOL <- "#6B7280"
+COLOR_POL    <- "#3D5A80"
+
+
+base_theme_clean <- theme_pubr() +
+  theme(
+    axis.title       = element_text(face = "bold", size = 11),
+    axis.text        = element_text(size = 10),
+    legend.title     = element_blank(),
+    legend.position  = "top",
+    legend.text      = element_text(size = 10),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+
+# Panel 1: Violation Recognition
+p_vr_compare <- ggplot(desc_compare_vr,
+                       aes(x = Civility, y = Mean, fill = ContentType)) +
+  geom_col(position = position_dodge(width = 0.75),
+           width = 0.65, color = "white", linewidth = 0.3) +
+  geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper),
+                position = position_dodge(width = 0.75),
+                width = 0.15, linewidth = 0.5, color = "#333") +
+  geom_text(aes(y = CI95_upper, label = sprintf("%.1f%%", Mean * 100)),
+            position = position_dodge(width = 0.75),
+            vjust = -0.5, size = 3.2, color = "#444") +
+  scale_fill_manual(values = c(
+    "Non-political" = COLOR_NONPOL,
+    "Political"     = COLOR_POL
+  ),
+  labels = c("Non-political baseline",
+             "Political content (avg. of aligned + opposed)")) +
+  scale_y_continuous(
+    limits = c(0, 1.10),
+    breaks = c(0, 0.25, 0.5, 0.75, 1.0),
+    labels = c("0%", "25%", "50%", "75%", "100%"),
+    expand = c(0, 0)
+  ) +
+  labs(
+    title = "Political vs. Non-political: Violation Recognition",
+    x = "Civility Level",
+    y = "Violation Recognition Rate"
+  ) +
+  base_theme_clean
+
+# Panel 2: Enforcement Severity
+p_es_compare <- ggplot(desc_compare_es,
+                       aes(x = Civility, y = Mean, fill = ContentType)) +
+  geom_col(position = position_dodge(width = 0.75),
+           width = 0.65, color = "white", linewidth = 0.3) +
+  geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper),
+                position = position_dodge(width = 0.75),
+                width = 0.15, linewidth = 0.5, color = "#333") +
+  geom_text(aes(y = CI95_upper, label = sprintf("%.2f", Mean)),
+            position = position_dodge(width = 0.75),
+            vjust = -0.5, size = 3.2, color = "#444") +
+  scale_fill_manual(values = c(
+    "Non-political" = COLOR_NONPOL,
+    "Political"     = COLOR_POL
+  ),
+  labels = c("Non-political baseline",
+             "Political content (avg. of aligned + opposed)")) +
+  scale_y_continuous(
+    limits = c(0, 4),
+    breaks = seq(0, 4, 0.5),
+    expand = c(0, 0)
+  ) +
+  labs(
+    title = "Political vs. Non-political: Enforcement Severity",
+    x = "Civility Level",
+    y = "Enforcement Severity (0-4)"
+  ) +
+  base_theme_clean
+
+# Combine side-by-side with shared legend
+combined_compare <- (p_vr_compare | p_es_compare) +
+  plot_layout(guides = "collect") &
+  theme(legend.position = "top")
+
+ggsave(
+  "Graph_output_results/Political_vs_NonPolitical_Combined.png",
+  combined_compare,
+  width  = 12,
+  height = 5,
+  dpi    = 300,
+  bg     = "white"
+)
+
+cat("\nChart saved to: Political_vs_NonPolitical_Combined.png\n")
+
+
+
+## STANDALONE CHARTS: VR and ES with difference annotations
+
+# Helper: compute per-civility diff and annotation positions
+make_annot_df <- function(desc_df) {
+  np_df <- desc_df %>%
+    filter(ContentType == "Non-political") %>%
+    select(Civility, Mean_NP = Mean, Upper_NP = CI95_upper)
+  p_df  <- desc_df %>%
+    filter(ContentType == "Political") %>%
+    select(Civility, Mean_P = Mean, Upper_P = CI95_upper)
+  np_df %>%
+    left_join(p_df, by = "Civility") %>%
+    mutate(
+      diff      = Mean_P - Mean_NP,
+      max_upper = pmax(Upper_NP, Upper_P),
+      x_num     = as.numeric(Civility)
+    )
+}
+
+# VR annotation frame
+# threshold: |diff| <= 0.03 (i.e. ~3pp) treated as "no gap"
+annot_vr <- make_annot_df(desc_compare_vr) %>%
+  mutate(
+    label       = case_when(
+      diff >  0.03 ~ paste0("+", round(diff * 100), "pp"),
+      diff < -0.03 ~ paste0(round(diff * 100), "pp"),
+      TRUE         ~ "no gap"
+    ),
+    label_color = if_else(abs(diff) > 0.03, "#CC2200", "#888888"),
+    x_pos       = x_num + if_else(abs(diff) <= 0.03, 0.18, 0),  # nudge "no gap" right
+    y_pos       = max_upper + 0.05
+  )
+
+# ES annotation frame
+# threshold: |diff| <= 0.10 treated as "no gap"
+annot_es <- make_annot_df(desc_compare_es) %>%
+  mutate(
+    label       = case_when(
+      diff >  0.10 ~ paste0("+", sprintf("%.2f", diff)),
+      diff < -0.10 ~ sprintf("%.2f", diff),
+      TRUE         ~ "no gap"
+    ),
+    label_color = if_else(abs(diff) > 0.10, "#CC2200", "#888888"),
+    x_pos       = x_num + if_else(abs(diff) <= 0.10, 0.18, 0),
+    y_pos       = max_upper + 0.10
+  )
+
+# Standalone Violation Recognition chart
+p_vr_standalone <- p_vr_compare +
+  labs(
+    title = "Political content is judged more harshly than non-political\ncontent at the same level of incivility",
+    y     = "Violation recognition rate"
+  ) +
+  theme(plot.title = element_text(face = "bold", size = 12)) +
+  geom_text(
+    data        = annot_vr,
+    aes(x = x_pos, y = y_pos, label = label, color = label_color),
+    inherit.aes = FALSE,
+    size        = 4,
+    fontface    = "bold"
+  ) +
+  scale_color_identity()
+
+# Standalone Enforcement Severity chart
+p_es_standalone <- p_es_compare +
+  labs(
+    title = "Same pattern holds for enforcement severity",
+    y     = "Enforcement severity (0-4)"
+  ) +
+  theme(plot.title = element_text(face = "bold", size = 12)) +
+  geom_text(
+    data        = annot_es,
+    aes(x = x_pos, y = y_pos, label = label, color = label_color),
+    inherit.aes = FALSE,
+    size        = 4,
+    fontface    = "bold"
+  ) +
+  scale_color_identity()
+
+ggsave(
+  "Graph_output_results/Political_vs_NonPolitical_VR.png",
+  p_vr_standalone,
+  width  = 7,
+  height = 5,
+  dpi    = 300,
+  bg     = "white"
+)
+
+ggsave(
+  "Graph_output_results/Political_vs_NonPolitical_ES.png",
+  p_es_standalone,
+  width  = 7,
+  height = 5,
+  dpi    = 300,
+  bg     = "white"
+)
+
+cat("\nStandalone charts saved: Political_vs_NonPolitical_VR.png and Political_vs_NonPolitical_ES.png\n")
+
+
+
+## THREE-WAY COMPARISON: NON-POLITICAL vs POLITICAL (ALIGNED) vs POLITICAL (OPPOSED)
+# Descriptives and charts only (no ANOVAs). Keeps aligned and opposed separate rather than
+# averaging them, to see whether the political vs non-political gap is driven by alignment.
+
+## CONSTRUCT THREE-WAY DATA BY PARTICIPANT
+
+# Political rows: one per participant x civility x alignment (6 per participant)
+df_political_split <- df_long %>%
+  filter(ContentType == "Political") %>%
+  select(ParticipantID, Civility, Alignment, ViolationRecognition, EnforcementSeverity) %>%
+  mutate(ContentType3 = case_when(
+    Alignment == "Aligned" ~ "Political - aligned",
+    Alignment == "Opposed" ~ "Political - opposed"
+  )) %>%
+  select(-Alignment)
+
+# Non-political rows: reuse df_nonpolitical from above (3 per participant)
+df_compare3 <- bind_rows(
+  df_nonpolitical %>% rename(ContentType3 = ContentType),
+  df_political_split
+) %>%
+  mutate(
+    Civility     = factor(Civility, levels = c("Civil", "Borderline", "Uncivil")),
+    ContentType3 = factor(ContentType3,
+                          levels = c("Non-political", "Political - aligned", "Political - opposed"))
+  )
+
+cat("\nThree-way dataset:", nrow(df_compare3), "rows\n")
+cat("Expected:", n_distinct(df_long$ParticipantID) * 9,
+    "(N participants x 3 civility x 3 content types)\n")
+cat("Rows with unmapped alignment (should be 0):", sum(is.na(df_compare3$ContentType3)), "\n\n")
+
+
+## DESCRIPTIVE STATISTICS (THREE-WAY)
+
+desc_compare3_vr <- desc_with_ci_2(df_compare3, ViolationRecognition, Civility, ContentType3)
+desc_compare3_es <- desc_with_ci_2(df_compare3, EnforcementSeverity,  Civility, ContentType3)
+
+cat("--- Violation Recognition Descriptives (3-way) ---\n")
+print(desc_compare3_vr)
+
+cat("\n--- Enforcement Severity Descriptives (3-way) ---\n")
+print(desc_compare3_es)
+
+# Consistency check: mean of aligned + opposed should equal the averaged "Political" bar above
+check_avg_vr <- desc_compare3_vr %>%
+  filter(ContentType3 != "Non-political") %>%
+  group_by(Civility) %>%
+  summarise(Mean_avg_aligned_opposed = mean(Mean), .groups = "drop") %>%
+  left_join(desc_compare_vr %>% filter(ContentType == "Political") %>%
+              select(Civility, Mean_political_avg = Mean),
+            by = "Civility")
+
+cat("\n--- Check: avg of aligned + opposed vs averaged political (VR) ---\n")
+print(check_avg_vr)
+
+
+## SAVE THREE-WAY DESCRIPTIVES TO FILE
+
+sink("txt_output_full_results/Political_Aligned_Opposed_vs_NonPolitical_Descriptives.txt")
+
+cat("NON-POLITICAL vs POLITICAL (ALIGNED) vs POLITICAL (OPPOSED): DESCRIPTIVES\n")
+cat("Date:", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "\n")
+cat("N participants:", n_distinct(df_long$ParticipantID), "\n\n")
+
+cat("--Descriptives: Violation Recognition--\n")
+print(desc_compare3_vr)
+cat("\n--Descriptives: Enforcement Severity--\n")
+print(desc_compare3_es)
+
+cat("\n--Check: avg of aligned + opposed vs averaged political (VR)--\n")
+print(check_avg_vr)
+
+sink()
+cat("\nResults saved to: Political_Aligned_Opposed_vs_NonPolitical_Descriptives.txt\n")
+
+
+## CHART: Non-political vs aligned vs opposed (side-by-side, VR + ES)
+
+# Colors: baseline grey as above; aligned / opposed use the green / red from the
+# political line charts in the main ANOVA script
+COLOR_ALIGNED <- "#2E7D32"
+COLOR_OPPOSED <- "#C62828"
+
+fill_3way <- c(
+  "Non-political"       = COLOR_NONPOL,
+  "Political - aligned" = COLOR_ALIGNED,
+  "Political - opposed" = COLOR_OPPOSED
+)
+
+labels_3way <- c(
+  "Non-political baseline",
+  "Political: aligned",
+  "Political: opposed"
+)
+
+dodge_3way <- position_dodge(width = 0.8)
+
+# Panel 1: Violation Recognition
+p_vr_compare3 <- ggplot(desc_compare3_vr,
+                        aes(x = Civility, y = Mean, fill = ContentType3)) +
+  geom_col(position = dodge_3way, width = 0.75, color = "white", linewidth = 0.3) +
+  geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper),
+                position = dodge_3way, width = 0.15, linewidth = 0.5, color = "#333") +
+  geom_text(aes(y = CI95_upper, label = sprintf("%.1f%%", Mean * 100)),
+            position = dodge_3way, vjust = -0.5, size = 2.8, color = "#444") +
+  scale_fill_manual(values = fill_3way, labels = labels_3way) +
+  scale_y_continuous(
+    limits = c(0, 1.10),
+    breaks = c(0, 0.25, 0.5, 0.75, 1.0),
+    labels = c("0%", "25%", "50%", "75%", "100%"),
+    expand = c(0, 0)
+  ) +
+  labs(
+    title = "Violation Recognition by Content Type",
+    x = "Civility Level",
+    y = "Violation Recognition Rate"
+  ) +
+  base_theme_clean
+
+# Panel 2: Enforcement Severity
+p_es_compare3 <- ggplot(desc_compare3_es,
+                        aes(x = Civility, y = Mean, fill = ContentType3)) +
+  geom_col(position = dodge_3way, width = 0.75, color = "white", linewidth = 0.3) +
+  geom_errorbar(aes(ymin = CI95_lower, ymax = CI95_upper),
+                position = dodge_3way, width = 0.15, linewidth = 0.5, color = "#333") +
+  geom_text(aes(y = CI95_upper, label = sprintf("%.2f", Mean)),
+            position = dodge_3way, vjust = -0.5, size = 2.8, color = "#444") +
+  scale_fill_manual(values = fill_3way, labels = labels_3way) +
+  scale_y_continuous(
+    limits = c(0, 4),
+    breaks = seq(0, 4, 0.5),
+    expand = c(0, 0)
+  ) +
+  labs(
+    title = "Enforcement Severity by Content Type",
+    x = "Civility Level",
+    y = "Enforcement Severity (0-4)"
+  ) +
+  base_theme_clean
+
+# Combine side-by-side with shared legend
+combined_compare3 <- (p_vr_compare3 | p_es_compare3) +
+  plot_layout(guides = "collect") &
+  theme(legend.position = "top")
+
+ggsave(
+  "Graph_output_results/Political_Aligned_Opposed_vs_NonPolitical_Combined.png",
+  combined_compare3,
+  width  = 13,
+  height = 5.5,
+  dpi    = 300,
+  bg     = "white"
+)
+
+cat("\nChart saved to: Political_Aligned_Opposed_vs_NonPolitical_Combined.png\n")
+
+
+
 ## EXPORT TABLES
 
 write_csv(desc_compare_vr, "csv_descriptive_results/Political_vs_NonPolitical_VR_Descriptives.csv") #Descriptive results, violation recognition, political vs non-political
@@ -372,4 +1271,7 @@ write_csv(get_anova_table(anova_compare_es, correction="GG"), "csv_output_result
 
 write_csv(simple_vr, "csv_output_results/SimpleEffects_CompareVR.csv") #Simple effects violation recognition, political vs non-political
 write_csv(simple_es, "csv_output_results/SimpleEffects_CompareES.csv") #Simple effects enforcement severity, political vs non-political
+
+write_csv(desc_compare3_vr, "csv_descriptive_results/Political_Aligned_Opposed_vs_NonPolitical_VR_Descriptives.csv") #Descriptive results, violation recognition, non-political vs aligned vs opposed
+write_csv(desc_compare3_es, "csv_descriptive_results/Political_Aligned_Opposed_vs_NonPolitical_ES_Descriptives.csv") #Descriptive results, enforcement severity, non-political vs aligned vs opposed
 cat("\nCSV tables exported\n")

@@ -1,0 +1,39 @@
+NON-POLITICAL vs POLITICAL (ALIGNED) vs POLITICAL (OPPOSED): DESCRIPTIVES
+Date: 2026-10-06 00:23:23 
+N participants: 254 
+
+--Descriptives: Violation Recognition--
+# A tibble: 9 × 9
+  Civility   ContentType3            N   Mean    SD     SE  t_95 CI95_lower CI95_upper
+  <fct>      <fct>               <int>  <dbl> <dbl>  <dbl> <dbl>      <dbl>      <dbl>
+1 Civil      Non-political         254 0.0866 0.282 0.0177  1.97     0.0518      0.121
+2 Civil      Political - aligned   254 0.425  0.495 0.0311  1.97     0.364       0.486
+3 Civil      Political - opposed   254 0.520  0.501 0.0314  1.97     0.458       0.582
+4 Borderline Non-political         254 0.335  0.473 0.0297  1.97     0.276       0.393
+5 Borderline Political - aligned   254 0.587  0.493 0.0310  1.97     0.526       0.648
+6 Borderline Political - opposed   254 0.654  0.477 0.0299  1.97     0.595       0.712
+7 Uncivil    Non-political         254 0.917  0.276 0.0173  1.97     0.883       0.951
+8 Uncivil    Political - aligned   254 0.909  0.288 0.0180  1.97     0.874       0.945
+9 Uncivil    Political - opposed   254 0.917  0.276 0.0173  1.97     0.883       0.951
+
+--Descriptives: Enforcement Severity--
+# A tibble: 9 × 9
+  Civility   ContentType3            N  Mean    SD     SE  t_95 CI95_lower CI95_upper
+  <fct>      <fct>               <int> <dbl> <dbl>  <dbl> <dbl>      <dbl>      <dbl>
+1 Civil      Non-political         254 0.118 0.438 0.0275  1.97     0.0640      0.172
+2 Civil      Political - aligned   254 0.823 1.18  0.0739  1.97     0.677       0.968
+3 Civil      Political - opposed   254 1.10  1.26  0.0789  1.97     0.943       1.25 
+4 Borderline Non-political         254 0.520 0.892 0.0560  1.97     0.409       0.630
+5 Borderline Political - aligned   254 1.09  1.18  0.0740  1.97     0.941       1.23 
+6 Borderline Political - opposed   254 1.37  1.28  0.0806  1.97     1.22        1.53 
+7 Uncivil    Non-political         254 2.54  1.25  0.0784  1.97     2.38        2.69 
+8 Uncivil    Political - aligned   254 2.30  1.23  0.0772  1.97     2.14        2.45 
+9 Uncivil    Political - opposed   254 2.61  1.23  0.0773  1.97     2.46        2.77 
+
+--Check: avg of aligned + opposed vs averaged political (VR)--
+# A tibble: 3 × 3
+  Civility   Mean_avg_aligned_opposed Mean_political_avg
+  <fct>                         <dbl>              <dbl>
+1 Civil                         0.472              0.472
+2 Borderline                    0.620              0.620
+3 Uncivil                       0.913              0.913
