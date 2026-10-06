@@ -234,7 +234,9 @@ To establish the non-political baseline effect, I analyzed three non-political p
 
 I also conducted two secondary exploratory studies. Firstly, I compared responses to political and non-political posts at matched civility levels to assess whether political content was associated with elevated violation recognition or enforcement severity, beyond differences attributed to the assigned civility level itself. As the non-political posts were included as baseline items rather than as a fully randomized factor, this comparison is interpreted descriptively and used to motivate future research, rather than to confirm an a priori hypothesis. Secondly, I estimated the political condition ANOVAs separately for Democrat and Republican respondents to explore whether alignment effects differed across partisan groups. These subgroup analyses are treated as exploratory because the study was not powered to explicitly test differences between partisan groups.
 
-Finally, I conducted an order-block robustness analysis to assess whether the ordering approach affected the main results. This analysis estimated $3\times2$ mixed ANOVAs for each dependent variable, with civility and partisan alignment as within-subjects factors and the order block as a between-subjects factor. The purpose of this analysis was to assess whether the main alignment and civility effects were stable across the six presentation orders, not to validate randomization or test demographic balance.
+I conducted an order-block robustness analysis to assess whether the ordering approach affected the main results. This analysis estimated $3\times2$ mixed ANOVAs for each dependent variable, with civility and partisan alignment as within-subjects factors and the order block as a between-subjects factor. The purpose of this analysis was to assess whether the main alignment and civility effects were stable across the six presentation orders, not to validate randomization or test demographic balance.
+
+Finally, because political condition stimuli vary by topic and meme format, in addition to civility and alignment, I conducted a 'leave-one-topic-out' analysis to assess whether the alignment effects would be dependent on any single topic or meme format. As each participant sees each topic exactly once, and this topic is tied to a specific civility $\times$ alignment condition through the counterbalancing design, removing a topic would remove this condition, making a within-subjects repeated-measures ANOVA design infeasible. To address this, I re-estimated each model as a mixed-effects model that generates a random intercept for each participant, which estimates each participant's baseline stringency in judgment from their other observations. This specification was chosen to retain the topic-condition structure of the core design approach. Enforcement severity was modelled with a linear mixed model, and violation recognition with a logistic mixed model, in each case with civility and alignment as fixed effects and their interaction. Results are interpreted as a stability check rather than a clean re-randomization, because as with order-block analysis, removing a topic slightly unbalanced which civility levels contribute to each estimate. 
 
 % ============================ RESULTS ============================
 \section{Results}
@@ -314,6 +316,36 @@ Figure~\ref{fig:robust_es} presents enforcement severity by civility, alignment 
     \label{fig:robust_es}
 \end{figure}
 
+\subsection{Robustness checks: stability in alignment effect across topics}
+
+Political stimuli simultaneously vary across topic, meme format, and phrasing in addition to civility and alignment. As the memes differ in their formatting and subject matter, one concern is that observed alignment effects may be attributed to differences in memes and topics, rather than partisan opposition. To test this, I conducted a 'leave-one-topic-out' analysis, re-estimating the political-condition models six times, each time removing one of the six topics and testing whether the alignment effect persisted. Full-sample estimates from these models reproduced the main ANOVA findings.
+
+Figure~\ref{fig:robust_leave} presents the model-estimated alignment gap (i.e., the average difference in scores between opposed and alignment content across civility conditions) from the leave-one-out models: raw scale points (0--4) for enforcement severity
+(linear model) and a predicted-probability difference for violation recognition (logistic model, response scale). As the probability-scale gap for a logistic model depends on the baseline recognition rate, the violation-recognition gap should be read as an average marginal difference rather than a constant effect across civility levels. 
+
+For enforcement severity, the alignment effect remained clearly significant when a single topic was removed (all \LeaveESAlignMaxP), with the estimated gap ranging from \LeaveESGapTone{} to \LeaveESGapTthree{} scale points and confidence
+intervals excluding zero in every case. For violation recognition, the more modest of the two effects in the main analysis, the alignment effect remained significant in the five of the six subsets and became marginal when the sixth topic (green energy; \emph{Spongebob}) was removed (\LeaveVRAlignTsix). Even in that case, the estimated gap remained positive and its confidence interval excluded zero (\LeaveVRGapTsix), indicating that the effect was reduced rather than eliminated. 
+
+The civility main effect remained strongly significant across all topics dropped for both outcomes (all \LeaveESCivMaxP{} for enforcement severity; all
+\LeaveVRCivMaxP{} for violation recognition), and the civility $\times$ alignment interaction remained non-significant throughout (smallest \LeaveESIntMinP{} for
+enforcement severity; smallest \LeaveVRIntMinP{} for violation recognition). Full
+statistics for every leave-one-out model are reported in Appendix~\ref{app:leave}.
+
+Overall, these results indicate that the alignmnet effect is not attributable to any given topic. No individual meme, when removed, eliminated the harsher treatment of opposed content, and the effect held across the full set of subject matters tested. Although this analysis does not fully disentangle civility from topic, as the two are confounded by the inherent study design, it provides evidence that observed alignment effects reflect broad partisan opposition rather than the influence of especially provocative topics or meme formats. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Graph_output_results/Robustness_LeaveOneOut_Gap.png}
+    \caption{Model-estimated alignment gap (opposed minus aligned) with 95\%
+    confidence intervals, by dropped topic. Left: enforcement severity (scale
+    points, 0--4). Right: violation recognition (difference in predicted
+    probability). Intervals above the dashed zero line indicate harsher treatment
+    of opposed content after removing that topic. Bars represent 95\% confidence intervals; a gap whose interval does not cross zero indicates a significantly harsher treatment of opposed content in that subset.}
+    \label{fig:robust_leave}
+\end{figure}
+
+
+
 % ============================ DISCUSSION ============================
 \section{Discussion}
 
@@ -329,7 +361,14 @@ These findings inform platform governance debates. Conversations with Reddit com
 
 Several limitations should be noted. The general U.S.\ population sample limits generalizability to actual moderators, who have more experience applying rules in real community contexts than general population respondents. Furthermore, experimental settings lack the real-world consequences of moderation which can include community backlash and reputational risks, as well as how moderators' relational knowledge of accounts in their communities may influence decision-making \parencite{taylorIdentityEffectsSocial2023}. Though prior studies suggest that content sources play a limited role in moderation decisions for U.S.\ general population respondents \parencite{kozyrevaResolvingContentModeration2023,solomonIllusoryInterpartyDisagreement2024}, conversations with moderators indicate they often use heuristics such as choice of avatar and account reputation in decision-making. This could be validated in future studies.
 
-Furthermore, a simplified ruleset, and the limited scale and variety of content reviewed may not reflect the scale and complexity of a full moderation session. Content is restricted to ethically appropriate violations, excluding more extreme cases that moderators encounter in practice (e.g., illegal or illicit content), though such cases are likely to show less partisan divergence in practice due to clearer violation of rules or laws \parencite{kozyrevaResolvingContentModeration2023}. This study was not powered to systematically examine differences between Republican- and Democrat-aligned moderators, limiting comparisons to exploratory analysis. Prior studies focused on hate speech and misinformation suggested that Democrats may be more willing than Republicans to intervene in some moderation contexts \parencite{appelPartisanConflictContent2023a,kozyrevaResolvingContentModeration2023,solomonIllusoryInterpartyDisagreement2024}. The exploratory subgroup analysis suggests a potentially different pattern for political incivility, with Republicans displaying higher violation recognition and enforcement severity than Democrats. Additionally, the ordering approach did not fully cross all topic-condition pairings, meaning that some topics may have been paired with certain conditions more frequently across the full sample. Robustness checks suggest the main conclusions of the study are not significantly affected by presentation order. Finally, the absence of a formal pre-registration means that the analysis plan was not publicly documented prior to data collection, which limits the ability to assess potential researcher degrees of freedom, though hypotheses and analytic approach were determined before data collection began.
+Furthermore, a simplified ruleset, and the limited scale and variety of content reviewed may not reflect the scale and complexity of a full moderation session. Content is restricted to ethically appropriate violations, excluding more extreme cases that moderators encounter in practice (e.g., illegal or illicit content), though such cases are likely to show less partisan divergence in practice due to clearer violation of rules or laws \parencite{kozyrevaResolvingContentModeration2023}. This study was not powered to systematically examine differences between Republican- and Democrat-aligned moderators, limiting comparisons to exploratory analysis. Prior studies focused on hate speech and misinformation suggested that Democrats may be more willing than Republicans to intervene in some moderation contexts \parencite{appelPartisanConflictContent2023a,kozyrevaResolvingContentModeration2023,solomonIllusoryInterpartyDisagreement2024}. The exploratory subgroup analysis suggests a potentially different pattern for political incivility, with Republicans displaying higher violation recognition and enforcement severity than Democrats. Additionally, the ordering approach did not fully cross all topic-condition pairings, meaning that some topics may have been paired with certain conditions more frequently across the full sample. Robustness checks suggest the main conclusions of the study are not significantly affected by presentation order. 
+
+A related limitation concerns the construction of the stimuli themselves. THe poltiical memes were designed not just to vary in civility, but also in topic, target, language, and meme format, even within the same civility band. As a result, the study cannot cleanly isolate a civility effect independent of the topic, meme format, and specific language used to convey it. Observed alignment effects therefore could reflect the differential influence of these factors instead of partisan opposition. A study design that manipulates civility while holding topic and meme format constant would be needed to fully separate the  two. Nevertheless, the 'leave-one-topic-out' robustness analysis suggests that alignment effects on enforcement severity remained significant regardless of which topic was removed (all \LeaveESAlignMaxP), and the effect on violation recognition remained
+significant when removing five of six topics, reducing only when one topic pairing was excluded. No topic, when dropped, eliminated the effect. This suggests that the alignment effect reflects a broader response to partisan opposition than the influence of any one topic, although civility and topic remain confounded by the study design. 
+
+Finally, the absence of a formal pre-registration means that the analysis plan was not publicly documented prior to data collection, which limits the ability to assess potential researcher degrees of freedom, though hypotheses and analytic approach were determined before data collection began.
+
+
 
 \subsection{Is there partisan bias?}
 
@@ -539,7 +578,7 @@ Employment & Full time (n) & 120 & 29 & 11 & 16 & 16 & 22 & 26 \\
 5 & Gov.\ shutdown; Farquaad & Uncivil-L & ``Inbred redneck Christofascist Nazi Republicans digging in their heels on the shutdown, risking plane crashes just to own the libs --- any planes that go down should take these rabid dogs with them'' / ``Some of you may die, but that is a sacrifice I'm willing to make'' \\[2pt]
 5 & Economy; Simpsons   & Uncivil-R  & ``The senile piece of shit Joe Biden pushing devastatingly stupid policies driving inflation --- he and his band of degenerate commie groomers need to be strung up like the traitorous pigs they are'' \\[2pt]
 5 & Laptop/Epstein; Spongebob & Civil-L & ``Republicans when they hear Trump has documented connections to Jeffrey Epstein'' / ``Republicans when they hear rumors about Hunter Biden's laptop'' \\[2pt]
-5 & Green energy; Spongebob & Civil-R  & ``Woke elitist Democrats complaining about tax cuts while giving billions in subsidies to green energy companies and unions'' \\[2pt]
+5 & Green energy; Spongebob & Civil-R  & ``Democrats complaining about tax cuts while giving billions in subsidies to green energy companies and unions'' \\[2pt]
 5 & Mamdani; Pooh       & Bord.-L    & ``Republicans when NY Has a White Mayor'' / ``Republicans when NY has a Black Mayor'' / ``Illiterate fascists losing their minds when New York elects a progressive'' \\[2pt]
 5 & Election sec.; Simpsons & Bord.-R & Homer: ``Election security and integrity''; Bart: ``Voter ID laws opposed by woke elitist Democrats letting illegals vote'' \\
 \midrule
@@ -554,5 +593,40 @@ Employment & Full time (n) & 120 & 29 & 11 & 16 & 16 & 22 & 26 \\
 
 \end{longtable}
 }%
+
+\subsection{Robustness checks: Leave-one-topic-out analysis}
+\label{app:leave}
+
+Table~\ref{tab:leave} reports civility and alignment main effects and their interaction for each leave-one-topic-out model. Enforcement severity was estimated with a linear mixed model ($F$-tests) and violation recognition with a logistic mixed model (Wald $\chi^2$ tests); all models included a by-participant random intercept. Each row removes one topic and re-estimates the full model on the remaining five.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Leave-one-topic-out mixed-model results, by dropped topic.}
+\label{tab:leave}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Topic removed & Civility & Alignment & Civility $\times$ Alignment \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Enforcement severity (linear mixed model)}} \\
+\addlinespace[2pt]
+T1 (Mamdani; \emph{Pooh})             & \LeaveESCivTone   & \LeaveESAlignTone   & \LeaveESIntTone   \\
+T2 (Election sec.; \emph{Simpsons})   & \LeaveESCivTtwo   & \LeaveESAlignTtwo   & \LeaveESIntTtwo   \\
+T3 (Gov. shutdown; \emph{Farquaad})   & \LeaveESCivTthree & \LeaveESAlignTthree & \LeaveESIntTthree \\
+T4 (Economy; \emph{Simpsons})         & \LeaveESCivTfour  & \LeaveESAlignTfour  & \LeaveESIntTfour  \\
+T5 (Laptop/Epstein; \emph{Spongebob}) & \LeaveESCivTfive  & \LeaveESAlignTfive  & \LeaveESIntTfive  \\
+T6 (Green energy; \emph{Spongebob})   & \LeaveESCivTsix   & \LeaveESAlignTsix   & \LeaveESIntTsix   \\
+\addlinespace[4pt]
+\multicolumn{4}{@{}l}{\textit{Violation recognition (logistic mixed model)}} \\
+\addlinespace[2pt]
+T1 (Mamdani; \emph{Pooh})             & \LeaveVRCivTone   & \LeaveVRAlignTone   & \LeaveVRIntTone   \\
+T2 (Election sec.; \emph{Simpsons})   & \LeaveVRCivTtwo   & \LeaveVRAlignTtwo   & \LeaveVRIntTtwo   \\
+T3 (Gov. shutdown; \emph{Farquaad})   & \LeaveVRCivTthree & \LeaveVRAlignTthree & \LeaveVRIntTthree \\
+T4 (Economy; \emph{Simpsons})         & \LeaveVRCivTfour  & \LeaveVRAlignTfour  & \LeaveVRIntTfour  \\
+T5 (Laptop/Epstein; \emph{Spongebob}) & \LeaveVRCivTfive  & \LeaveVRAlignTfive  & \LeaveVRIntTfive  \\
+T6 (Green energy; \emph{Spongebob})   & \LeaveVRCivTsix   & \LeaveVRAlignTsix   & \LeaveVRIntTsix   \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \end{document}
